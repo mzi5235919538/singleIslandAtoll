@@ -5,8 +5,8 @@ import VideoEmbed from '@/components/VideoEmbed';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Activities in Fuvahmulah - Diving, Snorkeling & Water Sports',
-  description: 'Explore thrilling activities in Fuvahmulah including diving, snorkeling, water sports, and cultural tours.',
+  title: 'Activity Centers in Fuvahmulah - Diving, Snorkeling & Water Sports',
+  description: 'Explore thrilling activities at our activity centers including diving, snorkeling, water sports, and cultural tours.',
 };
 
 export default function Activities() {
@@ -21,17 +21,17 @@ export default function Activities() {
 
         <div className="section-container relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
-              💦 Adventure Awaits
+            <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-semibold mb-6">
+              🏄 Adventure Awaits
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Activities & Adventures
+              Activity Centers
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Experience thrilling water sports and island adventures. From diving and snorkeling to fishing and island tours, create unforgettable memories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Explore Activities</button>
+              <button className="btn-primary">Explore Activity Centers</button>
               <button className="btn-outline">Book Now</button>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function Activities() {
       <AdSenseContainer />
 
       <section className="section-container">
-        <h2 className="section-title">Water Activities</h2>
+        <h2 className="section-title">Water Activity Centers</h2>
         <p className="section-subtitle">Professional Operators & Guides</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

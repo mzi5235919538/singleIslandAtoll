@@ -218,11 +218,11 @@ export default function Home() {
 
           <PlaceCard
             icon="🤿"
-            title="Activities"
-            description="Dive, snorkel, fish, or explore - discover thrilling adventures with professional dive centers."
+            title="Activity Centers"
+            description="Dive, snorkel, fish, or explore - discover thrilling adventures at our professional activity centers."
             featured="Diving, Snorkeling, Water Sports"
             href="/activities"
-            buttonText="Explore Activities"
+            buttonText="Explore Activity Centers"
           />
 
           <PlaceCard

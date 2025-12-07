@@ -167,7 +167,7 @@ export default function Contact() {
                   >
                     <option value="">Select a subject</option>
                     <option value="Accommodation">Accommodation Inquiry</option>
-                    <option value="Activities">Activities & Tours</option>
+                    <option value="Activity Centers">Activity Centers & Tours</option>
                     <option value="Dining">Dining Recommendations</option>
                     <option value="General">General Information</option>
                     <option value="Booking">Booking Help</option>

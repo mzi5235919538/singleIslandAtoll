@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Fuvahmulah Tourism - Discover Sinle Atoll, Maldives',
-  description: 'Explore Fuvahmulah (Single Island Atoll) - Your complete guide to hotels, restaurants, dive centers, attractions, and activities in the Maldives',
+  description: 'Explore Fuvahmulah (Single Island Atoll) - Your complete guide to hotels, restaurants, dive centers, attractions, and activity centers in the Maldives',
   keywords: 'Fuvahmulah, Single Island Atoll, Maldives, tourism, hotels, dive centers, restaurants, travel guide',
   authors: [{ name: 'Fuvahmulah Tourism' }],
   openGraph: {
