@@ -48,56 +48,29 @@ export default function Accommodation() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <PlaceCard
             icon="🏨"
-            title="Luxury Resorts"
-            description="World-class resorts with premium amenities, spa services, and fine dining. Perfect for a luxurious tropical getaway."
-            featured="5-star facilities, All-inclusive options"
-            href="/contact"
-            buttonText="View Resorts"
+            title="Hotels"
+            description="Luxury resorts and comfortable hotels with excellent amenities. Browse all hotels from 3-star to 5-star properties."
+            featured="Browse by rating, Direct contact info"
+            href="/accommodation/hotels"
+            buttonText="View All Hotels"
           />
 
           <PlaceCard
-            icon="🛏️"
-            title="Boutique Hotels"
-            description="Charming mid-range hotels with personalized service and local charm. Ideal for travelers seeking comfort and authenticity."
-            featured="Cozy rooms, Local hospitality"
-            href="/contact"
-            buttonText="View Hotels"
-          />
-
-          <PlaceCard
-            icon="🏠"
+            icon="🏡"
             title="Guest Houses"
             description="Affordable and authentic accommodations perfect for budget travelers. Experience genuine Maldivian hospitality."
-            featured="Budget-friendly, Home-like comfort"
-            href="/contact"
-            buttonText="View Guest Houses"
+            featured="Budget-friendly, Local experience"
+            href="/accommodation/guest-houses"
+            buttonText="View All Guest Houses"
           />
 
           <PlaceCard
-            icon="🏝️"
-            title="Island Bungalows"
-            description="Beachfront bungalows offering privacy and direct beach access. Wake up to stunning ocean views."
-            featured="Beach access, Private settings"
-            href="/contact"
-            buttonText="Book Now"
-          />
-
-          <PlaceCard
-            icon="🏠‍♠️"
-            title="Guesthouse Suites"
-            description="Multi-room suites ideal for families and groups. Affordable yet comfortable accommodation with modern facilities."
-            featured="Family-friendly, Spacious"
-            href="/contact"
-            buttonText="View Suites"
-          />
-
-          <PlaceCard
-            icon="🌴"
-            title="Eco-Lodges"
-            description="Sustainable accommodation options emphasizing eco-tourism. Experience nature while minimizing environmental impact."
-            featured="Eco-friendly, Nature immersion"
-            href="/contact"
-            buttonText="Explore"
+            icon="⭐"
+            title="Inns & Boutique Hotels"
+            description="Charming inns with unique character and personal service. Each with its own specialty - diving, culture, wellness, etc."
+            featured="Personalized service, Unique themes"
+            href="/accommodation/inns"
+            buttonText="View All Inns"
           />
         </div>
       </section>
