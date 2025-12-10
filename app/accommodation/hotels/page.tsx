@@ -4,8 +4,8 @@ import AdSenseContainer from '@/components/AdSenseContainer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hotels in Fuvahmulah - Best 3-5 Star Hotels & Resorts',
-  description: 'Discover the best hotels and resorts in Fuvahmulah Single Island Atoll. Browse luxury accommodations with world-class amenities.',
+  title: 'Hotels in Single Atoll - Best 3-5 Star Hotels & Resorts',
+  description: 'Discover the best hotels and resorts in Single Atoll. Browse luxury accommodations with world-class amenities.',
 };
 
 interface Hotel {
@@ -25,11 +25,11 @@ interface Hotel {
 const hotels: Hotel[] = [
   {
     id: 1,
-    name: 'Fuvahmulah Resort & Spa',
+    name: 'Single Atoll Resort & Spa',
     rating: 4.8,
     type: '5-star',
     description: 'Luxury beachfront resort offering world-class diving, spa services, and gourmet dining in an intimate island setting.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     amenities: ['Private Beach', 'Dive Center', 'Spa', 'Restaurant', 'Water Sports', 'WiFi'],
     contact: '+960 681-5000',
     website: 'https://www.fuvahmulahresort.mv',
@@ -42,7 +42,7 @@ const hotels: Hotel[] = [
     rating: 4.6,
     type: '4-star',
     description: 'Modern beachfront hotel with ocean views, excellent restaurants, and easy access to dive sites and attractions.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     amenities: ['Beachfront', 'Restaurant', 'Bar', 'Gym', 'Dive Shop', 'WiFi'],
     contact: '+960 681-6000',
     website: 'https://www.islandparadise.mv',
@@ -55,7 +55,7 @@ const hotels: Hotel[] = [
     rating: 4.5,
     type: '4-star',
     description: 'Comfortable beachside accommodation with spectacular reef views, perfect for divers and beach lovers.',
-    location: 'Ukulhas, Fuvahmulah',
+    location: 'Ukulhas, Single Atoll',
     amenities: ['Reef View', 'Snorkeling', 'Restaurant', 'Bar', 'WiFi', 'Laundry'],
     contact: '+960 681-7000',
     website: 'https://www.coralreefhotel.mv',
@@ -68,7 +68,7 @@ const hotels: Hotel[] = [
     rating: 4.4,
     type: '3-star',
     description: 'Budget-friendly beachfront hotel with comfortable rooms and good access to local attractions and diving.',
-    location: 'Dhuvaafaru, Fuvahmulah',
+    location: 'Dhuvaafaru, Single Atoll',
     amenities: ['Oceanview', 'Restaurant', 'WiFi', 'Bicycle Rentals', 'Tour Desk'],
     contact: '+960 681-8000',
     website: 'https://www.tropicalocean.mv',
@@ -81,7 +81,7 @@ const hotels: Hotel[] = [
     rating: 4.3,
     type: '3-star',
     description: 'Charming hotel with a great sunset view terrace, local restaurant, and friendly staff who speak multiple languages.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     amenities: ['Sunset View', 'Local Restaurant', 'WiFi', 'Room Service', 'Tour Bookings'],
     contact: '+960 681-9000',
     website: 'https://www.sunsetbeachhotel.mv',
@@ -94,7 +94,7 @@ const hotels: Hotel[] = [
     rating: 4.2,
     type: '3-star',
     description: 'Affordable accommodation with lagoon views, excellent for budget travelers seeking comfort and convenience.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     amenities: ['Lagoon View', 'WiFi', 'Restaurant', 'Garden', 'Parking'],
     contact: '+960 681-5500',
     website: 'https://www.lagoonview.mv',
@@ -123,7 +123,7 @@ export default function HotelsPage() {
               🏨 Hotels & Resorts
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Hotels in Fuvahmulah
+              Hotels in Single Atoll
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Discover luxury resorts, comfortable hotels, and great-value accommodations. Find your perfect stay on Single Island Atoll.

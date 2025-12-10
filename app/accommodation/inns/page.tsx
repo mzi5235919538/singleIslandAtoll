@@ -4,8 +4,8 @@ import AdSenseContainer from '@/components/AdSenseContainer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Inns & Small Hotels in Fuvahmulah - Cozy Island Accommodation',
-  description: 'Discover charming inns and small hotels in Fuvahmulah. Personal service and intimate island atmosphere.',
+  title: 'Inns & Small Hotels in Single Atoll - Cozy Island Accommodation',
+  description: 'Discover charming inns and small hotels in Single Atoll. Personal service and intimate island atmosphere.',
 };
 
 interface Inn {
@@ -30,7 +30,7 @@ const inns: Inn[] = [
     name: "Island Breeze Inn",
     owner: 'Nasrin Hassan',
     description: 'Charming beachfront inn with sea-view rooms and personalized service. Perfect for romantic getaways and beach lovers.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     type: 'Inn',
     amenities: ['Sea View', 'Restaurant', 'WiFi', 'Laundry', 'Romantic Ambiance'],
     contact: '+960 789-1001',
@@ -45,7 +45,7 @@ const inns: Inn[] = [
     name: "Fisherman's Haven Inn",
     owner: 'Ali Rashid',
     description: 'Traditional-style inn with authentic local charm. Home-cooked meals and friendly atmosphere perfect for cultural immersion.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     type: 'Inn',
     amenities: ['Local Cuisine', 'WiFi', 'Fishing Trips', 'Traditional Decor', 'Community Dining'],
     contact: '+960 789-1002',
@@ -60,7 +60,7 @@ const inns: Inn[] = [
     name: "Coral Cove Boutique Inn",
     owner: 'Maldha Ahmed',
     description: 'Intimate boutique inn with hand-decorated rooms. Each room tells a story of island life and local heritage.',
-    location: 'Ukulhas, Fuvahmulah',
+    location: 'Ukulhas, Single Atoll',
     type: 'Boutique Guesthouse',
     amenities: ['Boutique Rooms', 'WiFi', 'Art Gallery', 'Spa Services', 'Personalized Tours'],
     contact: '+960 789-1003',
@@ -75,7 +75,7 @@ const inns: Inn[] = [
     name: "Sunset Harbor Inn",
     owner: 'Ibrahim Mohammed',
     description: 'Waterfront inn with sunset views and relaxed island vibe. Great for families and small groups looking for comfort.',
-    location: 'Dhuvaafaru, Fuvahmulah',
+    location: 'Dhuvaafaru, Single Atoll',
     type: 'Inn',
     amenities: ['Sunset View', 'Family Suites', 'WiFi', 'Playground', 'Restaurant'],
     contact: '+960 789-1004',
@@ -90,7 +90,7 @@ const inns: Inn[] = [
     name: "Dive Master's Inn",
     owner: 'Rasheed Hassan',
     description: 'Specialized accommodation for diving enthusiasts. Direct access to dive center and expert diving guides on staff.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     type: 'Small Hotel',
     amenities: ['Dive Center', 'Gear Storage', 'Dive Briefings', 'WiFi', 'Dive Buddies Network'],
     contact: '+960 789-1005',
@@ -105,7 +105,7 @@ const inns: Inn[] = [
     name: "Lagoon Breeze Inn",
     owner: 'Zainab Ali',
     description: 'Peaceful lagoon-view inn with tranquil gardens. Ideal for those seeking relaxation and natural beauty.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     type: 'Inn',
     amenities: ['Lagoon View', 'Garden', 'WiFi', 'Meditation Space', 'Yoga Classes'],
     contact: '+960 789-1006',
@@ -117,10 +117,10 @@ const inns: Inn[] = [
   },
   {
     id: 7,
-    name: "Heritage Inn Fuvahmulah",
+    name: "Heritage Inn Single Atoll",
     owner: 'Amir Hassan',
-    description: 'Historic small hotel preserving island heritage. Museum-quality decor with stories of Fuvahmulah woven throughout.',
-    location: 'Ukulhas, Fuvahmulah',
+    description: 'Historic small hotel preserving island heritage. Museum-quality decor with stories of Single Atoll woven throughout.',
+    location: 'Ukulhas, Single Atoll',
     type: 'Small Hotel',
     amenities: ['Heritage Decor', 'Museum Tours', 'WiFi', 'Cultural Events', 'Local Guides'],
     contact: '+960 789-1007',
@@ -135,7 +135,7 @@ const inns: Inn[] = [
     name: "Manta Reef Inn",
     owner: 'Lamya Ahmed',
     description: 'Eco-friendly inn dedicated to marine conservation. Snorkeling packages and educational programs about reef protection.',
-    location: 'Dhuvaafaru, Fuvahmulah',
+    location: 'Dhuvaafaru, Single Atoll',
     type: 'Boutique Guesthouse',
     amenities: ['Eco-Friendly', 'Snorkeling', 'Marine Education', 'WiFi', 'Conservation Tours'],
     contact: '+960 789-1008',
@@ -172,7 +172,7 @@ export default function InnsPage() {
               Charming Inns & Small Hotels
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Experience the charm and personal service of Fuvahmulah&apos;s intimate accommodations. Each inn has its own unique character and specialty.
+              Experience the charm and personal service of Single Atoll&apos;s intimate accommodations. Each inn has its own unique character and specialty.
             </p>
           </div>
         </div>

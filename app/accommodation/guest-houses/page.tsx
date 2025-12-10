@@ -4,8 +4,8 @@ import AdSenseContainer from '@/components/AdSenseContainer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Guest Houses in Fuvahmulah - Affordable Local Accommodations',
-  description: 'Stay at authentic guest houses in Fuvahmulah. Experience local hospitality with comfortable, budget-friendly accommodations.',
+  title: 'Guest Houses in Single Atoll - Affordable Local Accommodations',
+  description: 'Stay at authentic guest houses in Single Atoll. Experience local hospitality with comfortable, budget-friendly accommodations.',
 };
 
 interface GuestHouse {
@@ -28,7 +28,7 @@ const guestHouses: GuestHouse[] = [
     name: "Ali's Guest House",
     owner: 'Ali Hassan',
     description: 'Cozy, family-run guest house with authentic local hospitality. Perfect for travelers seeking a genuine Maldivian experience.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     amenities: ['WiFi', 'Fan AC', 'Shared Kitchen', 'Garden', 'Bicycle Rentals'],
     contact: '+960 789-0001',
     website: 'https://alisguesthouse.mv',
@@ -41,7 +41,7 @@ const guestHouses: GuestHouse[] = [
     name: "Reef View Guest House",
     owner: 'Fatima Ahmed',
     description: 'Oceanfront guest house with stunning reef views. Great location for snorkeling enthusiasts and budget travelers.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     amenities: ['Oceanview', 'WiFi', 'Shared Kitchen', 'Laundry', 'Snorkeling Gear'],
     contact: '+960 789-0002',
     website: 'https://reefviewgh.mv',
@@ -54,7 +54,7 @@ const guestHouses: GuestHouse[] = [
     name: "Island Home Guest House",
     owner: 'Mohamed Ibrahim',
     description: 'Comfortable and clean accommodations with friendly staff. Central location near shops, restaurants, and dive centers.',
-    location: 'Ukulhas, Fuvahmulah',
+    location: 'Ukulhas, Single Atoll',
     amenities: ['WiFi', 'Fan AC', 'Room Service', 'Restaurant', 'Tour Bookings'],
     contact: '+960 789-0003',
     website: 'https://islandhomegh.mv',
@@ -67,7 +67,7 @@ const guestHouses: GuestHouse[] = [
     name: "Beach Breeze Guest House",
     owner: 'Zainab Hassan',
     description: 'Charming beachfront guest house with relaxing atmosphere. Local restaurant serving fresh seafood daily.',
-    location: 'Dhuvaafaru, Fuvahmulah',
+    location: 'Dhuvaafaru, Single Atoll',
     amenities: ['Beachfront', 'WiFi', 'Restaurant', 'Laundry', 'Bike Rentals'],
     contact: '+960 789-0004',
     website: 'https://beachbreezegh.mv',
@@ -80,7 +80,7 @@ const guestHouses: GuestHouse[] = [
     name: "Tropical Paradise Guest House",
     owner: 'Ahmed Rashid',
     description: 'Budget-friendly accommodation with clean rooms and helpful staff. Ideal location for exploring the island.',
-    location: 'Thinadhoo, Fuvahmulah',
+    location: 'Thinadhoo, Single Atoll',
     amenities: ['Fan AC', 'WiFi', 'Shared Kitchen', 'Garden', 'Common Area'],
     contact: '+960 789-0005',
     website: 'https://tropicalparadisegh.mv',
@@ -93,7 +93,7 @@ const guestHouses: GuestHouse[] = [
     name: "Sunset Cove Guest House",
     owner: 'Mariam Ali',
     description: 'Peaceful guest house with sunset views from the terrace. Perfect for couples and solo travelers seeking tranquility.',
-    location: 'Felidhoo, Fuvahmulah',
+    location: 'Felidhoo, Single Atoll',
     amenities: ['Sunset View', 'WiFi', 'Terrace', 'Laundry', 'Common Kitchen'],
     contact: '+960 789-0006',
     website: 'https://sunsetcovegh.mv',
@@ -106,7 +106,7 @@ const guestHouses: GuestHouse[] = [
     name: "Local Connect Guest House",
     owner: 'Hassan Omar',
     description: 'Excellent base for cultural immersion with staff who organize local tours and fishing trips.',
-    location: 'Ukulhas, Fuvahmulah',
+    location: 'Ukulhas, Single Atoll',
     amenities: ['WiFi', 'Local Tours', 'Kitchen Access', 'Laundry', 'Common Lounge'],
     contact: '+960 789-0007',
     website: 'https://localconnectgh.mv',
@@ -119,7 +119,7 @@ const guestHouses: GuestHouse[] = [
     name: "Peaceful Haven Guest House",
     owner: 'Aisha Mohammed',
     description: 'Quiet retreat in the heart of the island with spacious rooms and excellent home-cooked meals available.',
-    location: 'Dhuvaafaru, Fuvahmulah',
+    location: 'Dhuvaafaru, Single Atoll',
     amenities: ['Quiet Location', 'Home Cooking', 'WiFi', 'Room Service', 'Laundry'],
     contact: '+960 789-0008',
     website: 'https://peacefulhavengh.mv',
@@ -145,7 +145,7 @@ export default function GuestHousesPage() {
               🏡 Local Guest Houses
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Guest Houses in Fuvahmulah
+              Guest Houses in Single Atoll
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               Experience authentic local hospitality at affordable prices. Our guest houses offer a genuine taste of island life.
@@ -269,7 +269,7 @@ export default function GuestHousesPage() {
         <div className="section-container">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Booking Tips</h2>
           <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-            Tips for booking your guest house stay in Fuvahmulah
+            Tips for booking your guest house stay in Single Atoll
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
