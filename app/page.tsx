@@ -12,8 +12,9 @@ export default function Home() {
       <section className="relative bg-white overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-100 to-green-100 rounded-full opacity-40 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-green-100 to-blue-100 rounded-full opacity-40 blur-3xl"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-100 via-cyan-100 to-green-100 rounded-full opacity-30 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-100 to-blue-100 rounded-full opacity-30 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-linear-to-br from-accent-light to-primary rounded-full opacity-20 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
@@ -22,27 +23,27 @@ export default function Home() {
             <div className="animate-slideInLeft space-y-6">
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full">
-                <HiStar className="text-yellow-500" size={16} />
-                <span className="text-sm font-semibold text-blue-700">Welcome to Paradise</span>
+                <HiStar className="text-amber-500" size={16} />
+                <span className="text-sm font-semibold text-primary">Welcome to Paradise</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-                Discover <span className="gradient-text">Fuvahmulah</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark leading-tight">
+                Discover <span className="text-gradient">Single Atoll</span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
-                Single Island Atoll, Maldives - Where pristine beaches meet vibrant culture. Experience world-class diving, authentic island life, and unforgettable moments.
+              <p className="text-lg md:text-xl text-text-light leading-relaxed max-w-lg">
+                Maldives Travel Guide - Where pristine beaches meet vibrant culture. Experience world-class diving, authentic island life, and unforgettable moments.
               </p>
 
               {/* Features */}
               <div className="space-y-3 pt-4">
                 {['World-class diving spots', 'Pristine white-sand beaches', 'Authentic Maldivian culture'].map(
                   (feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <HiCheckCircle className="text-green-500 shrink-0" size={20} />
-                      <span className="text-gray-700 font-medium">{feature}</span>
+                    <div key={idx} className="flex items-center gap-3 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
+                      <HiCheckCircle className="text-success shrink-0" size={20} />
+                      <span className="text-text-light font-medium">{feature}</span>
                     </div>
                   )
                 )}
@@ -80,11 +81,11 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Video */}
             <div className="animate-slideInLeft order-last lg:order-first">
-              <div className="rounded-2xl overflow-hidden shadow-xl-modern">
+              <div className="rounded-2xl overflow-hidden shadow-xl-modern border border-gray-100">
                 <VideoEmbed
                   provider="youtube"
                   videoId="2ySUlrHwPOQ"
-                  title="Fuvahmulah Maldives - Complete Travel Guide"
+                  title="Single Atoll Maldives - Complete Travel Guide"
                 />
               </div>
             </div>
@@ -92,12 +93,12 @@ export default function Home() {
             {/* Right: Content */}
             <div className="animate-slideInRight space-y-6">
               <div>
-                <h2 className="section-title text-left mb-4">Watch Fuvahmulah in 4K</h2>
-                <p className="text-xl text-gray-600">Experience the raw beauty of our island paradise through stunning cinematic footage.</p>
+                <h2 className="section-title text-left mb-4 text-text-dark">Watch Single Atoll in 4K</h2>
+                <p className="text-xl text-text-light">Experience the raw beauty of our island paradise through stunning cinematic footage.</p>
               </div>
 
-              <p className="text-gray-700 leading-relaxed">
-                Discover the pristine beaches, vibrant coral reefs, and authentic island culture that make Fuvahmulah truly special. Our comprehensive travel guide showcases everything from world-class diving spots to hidden local gems.
+              <p className="text-text-light leading-relaxed">
+                Discover the pristine beaches, vibrant coral reefs, and authentic island culture that make Single Atoll truly special. Our comprehensive travel guide showcases everything from world-class diving spots to hidden local gems.
               </p>
 
               <ul className="space-y-3">
@@ -108,10 +109,10 @@ export default function Home() {
                   'Authentic local experiences',
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
-                      <span className="text-green-600 font-bold text-sm">✓</span>
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-success bg-opacity-20 flex items-center justify-center">
+                      <span className="text-success font-bold text-sm">✓</span>
                     </span>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-text-light">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -133,7 +134,7 @@ export default function Home() {
       <section className="section-spacing bg-linear-to-b from-white to-blue-50">
         <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="section-title mb-4">About Fuvahmulah</h2>
+            <h2 className="section-title mb-4 text-text-dark">About Single Atoll</h2>
             <p className="section-subtitle">The Jewel of Single Island Atoll, Maldives</p>
           </div>
 
@@ -143,7 +144,7 @@ export default function Home() {
                 icon: '🏝️',
                 title: 'Your Paradise Awaits',
                 description:
-                  'Fuvahmulah, also known as Single Island Atoll, is the southernmost atoll in the Maldives. With pristine beaches, world-class dive sites, and authentic island culture, it offers an unforgettable tropical experience.',
+                  'Single Island Atoll is the southernmost atoll in the Maldives. With pristine beaches, world-class dive sites, and authentic island culture, it offers an unforgettable tropical experience.',
               },
               {
                 icon: '📍',
@@ -165,10 +166,10 @@ export default function Home() {
                 <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-2xl font-bold text-text-dark mb-3 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <p className="text-text-light leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -182,9 +183,9 @@ export default function Home() {
       <section className="section-spacing bg-white">
         <div className="section-container">
           <div className="text-center mb-16">
-            <h2 className="section-title mb-4">Plan Your Perfect Adventure</h2>
+            <h2 className="section-title mb-4 text-text-dark">Plan Your Perfect Adventure</h2>
             <p className="section-subtitle">
-              Everything you need to explore, stay, dine, and experience Fuvahmulah
+              Everything you need to explore, stay, dine, and experience Single Atoll
             </p>
           </div>
 
