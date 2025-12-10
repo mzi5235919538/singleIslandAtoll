@@ -71,12 +71,9 @@ export default function HeroCarouselWithImages() {
               {/* Dark overlay for text readability - gradient from bottom to center to transparent */}
               <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/70 flex flex-col justify-center items-center text-center p-6">
                 <div className="max-w-2xl">
-                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-xl">
+                  <h3 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-xl">
                     {slide.title}
                   </h3>
-                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-100 drop-shadow-lg">
-                    {slide.description}
-                  </p>
                 </div>
               </div>
             </div>
