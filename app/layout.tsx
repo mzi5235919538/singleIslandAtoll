@@ -4,19 +4,19 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Fuvahmulah Tourism - Discover Sinle Atoll, Maldives',
-  description: 'Explore Fuvahmulah (Single Island Atoll) - Your complete guide to hotels, restaurants, dive centers, attractions, and activity centers in the Maldives',
-  keywords: 'Fuvahmulah, Single Island Atoll, Maldives, tourism, hotels, dive centers, restaurants, travel guide',
-  authors: [{ name: 'Fuvahmulah Tourism' }],
+  title: 'Single Atoll - Your Complete Maldives Travel Guide',
+  description: 'Discover Single Atoll Maldives - Your complete guide to accommodations, dive centers, restaurants, attractions, and travel tips for the most authentic island experience',
+  keywords: 'Single Atoll, Maldives, travel guide, guesthouses, dive centers, island accommodation, Maldives tourism',
+  authors: [{ name: 'Single Atoll' }],
   openGraph: {
-    title: 'Fuvahmulah Tourism - Discover Single Island Atoll, Maldives',
-    description: 'Your complete travel companion for Fuvahmulah',
+    title: 'Single Atoll - Maldives Travel Guide',
+    description: 'Your definitive resource for the most authentic Maldives island experience',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fuvahmulah Tourism',
-    description: 'Explore the beauty of Single Island Atoll',
+    title: 'Single Atoll - Maldives',
+    description: 'Discover authentic island living and world-class diving',
   },
 };
 

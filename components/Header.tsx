@@ -44,8 +44,8 @@ export default function Header() {
           >
             <div className={`text-4xl transition-transform duration-300 hover:scale-110`}>🌴</div>
             <div>
-              <div className="text-lg font-bold tracking-tight hidden sm:block">Fuvahmulah</div>
-              <div className="text-xs text-gray-500 hidden sm:block font-normal">Single Island Atoll</div>
+              <div className="text-lg font-bold tracking-tight hidden sm:block">Single Atoll</div>
+              <div className="text-xs text-gray-500 hidden sm:block font-normal">Maldives Travel Guide</div>
             </div>
           </Link>
 

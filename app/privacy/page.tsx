@@ -131,10 +131,13 @@ export default function PrivacyPolicy() {
             {/* 1. Introduction */}
             <PolicySection id="introduction" title="Introduction" icon={HiShieldCheck}>
               <TextBlock>
-                Fuvahmulah Tourism (&quot;we,&quot; &quot;us,&quot; &quot;our,&quot; or &quot;Company&quot;) operates the website fuvahmulah-tourism.com (the &quot;Site&quot;). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
+                Single Atoll (&quot;we,&quot; &quot;us,&quot; &quot;our,&quot; or &quot;Company&quot;) operates the website www.singleatoll.com (the &quot;Site&quot;). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and submit inquiries through our platform.
               </TextBlock>
               <TextBlock>
-                Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our Site.
+                <strong>Important:</strong> Single Atoll is a hub connecting travelers with third-party service providers (guest houses, dive centers, restaurants, and activity operators). When you submit an inquiry form, your data is shared with the selected vendor for the purpose of responding to your request. Please read this Privacy Policy carefully to understand this data-sharing practice.
+              </TextBlock>
+              <TextBlock>
+                If you do not agree with our policies and practices, please do not use our Site.
               </TextBlock>
             </PolicySection>
 
@@ -249,16 +252,57 @@ export default function PrivacyPolicy() {
             </PolicySection>
 
             {/* 6. Information Sharing */}
-            <PolicySection id="sharing" title="Information Sharing" icon={HiCheckCircle}>
-              <TextBlock>
-                We do not sell, trade, or rent your personal information to third parties. However, we may share information with:
-              </TextBlock>
-              <BulletList items={[
-                (<><strong>Service Providers:</strong> Email, hosting, and analytics services</>),
-                (<><strong>Business Partners:</strong> Hotels, restaurants, and activity operators for booking inquiries</>),
-                (<><strong>Legal Requirements:</strong> When required by law or to protect our rights</>),
-                (<><strong>Third-Party Analytics:</strong> Google Analytics and similar services</>),
-              ]} />
+            <PolicySection id="sharing" title="Information Sharing - Critical for Hub Model" icon={HiCheckCircle}>
+              <div className="space-y-6">
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                  <p className="font-semibold text-blue-900 mb-2">⚠️ Important: Single Atoll Data Sharing Model</p>
+                  <p className="text-blue-800">
+                    Single Atoll operates as a hub that connects travelers with third-party service providers. By submitting an inquiry form, you explicitly consent to your personal data being shared with the selected vendor to fulfill your request.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Third-Party Vendors (Accommodation, Diving, Dining)</h3>
+                  <TextBlock>
+                    When you submit an Inquiry Form requesting information about a specific guest house, dive center, restaurant, or activity, your personal information (name, email, phone, travel dates, and message) is forwarded directly to that vendor for the purpose of:
+                  </TextBlock>
+                  <BulletList items={[
+                    'Responding to your inquiry and answering your questions',
+                    'Providing pricing, availability, and booking information',
+                    'Facilitating direct contact and follow-up communication',
+                    'Processing your request for services',
+                  ]} />
+                  <TextBlock>
+                    <strong>You must accept this data sharing to use our inquiry system.</strong> The selected vendor becomes the recipient of your data and is responsible for their own privacy practices. We recommend reviewing their privacy policy independently.
+                  </TextBlock>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Service Providers & Analytics</h3>
+                  <TextBlock>
+                    We may also share non-personal data with:
+                  </TextBlock>
+                  <BulletList items={[
+                    (<><strong>Google Analytics:</strong> For website usage tracking and performance analysis</>),
+                    (<><strong>Email Service Providers:</strong> To deliver inquiry forms and communications</>),
+                    (<><strong>Hosting Providers:</strong> For website infrastructure and security</>),
+                  ]} />
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Legal Requirements</h3>
+                  <TextBlock>
+                    We may disclose information if required to do so by law, to enforce our terms of service, or to protect the rights and safety of our users.
+                  </TextBlock>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Data Retention</h3>
+                  <TextBlock>
+                    Single Atoll retains a copy of your inquiry data for administrative, customer service, and record-keeping purposes for up to 2 years, unless you request deletion. Third-party vendors may retain your information according to their own policies.
+                  </TextBlock>
+                </div>
+              </div>
             </PolicySection>
 
             {/* 7. Data Security */}
@@ -308,11 +352,12 @@ export default function PrivacyPolicy() {
                 If you have questions about this Privacy Policy or our privacy practices, please contact us at:
               </TextBlock>
               <div className="bg-linear-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 space-y-3 my-4">
-                <p className="text-lg font-bold text-blue-900">Fuvahmulah Tourism</p>
+                <p className="text-lg font-bold text-blue-900">Single Atoll</p>
                 <div className="space-y-2 text-gray-700">
-                  <p>📧 <span className="font-medium">Email:</span> privacy@fuvahmulah-tourism.com</p>
-                  <p>📍 <span className="font-medium">Location:</span> Fuvahmulah, Single Island Atoll, Maldives</p>
-                  <p>🌐 <span className="font-medium">Website:</span> fuvahmulah-tourism.com</p>
+                  <p>📧 <span className="font-medium">Email:</span> privacy@singleatoll.com</p>
+                  <p>📧 <span className="font-medium">Support:</span> support@singleatoll.com</p>
+                  <p>🌐 <span className="font-medium">Website:</span> www.singleatoll.com</p>
+                  <p>📍 <span className="font-medium">Location:</span> Single Atoll, Maldives</p>
                 </div>
               </div>
             </PolicySection>

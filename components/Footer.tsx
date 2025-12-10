@@ -12,10 +12,10 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-              <span className="text-2xl">🏝️</span> Fuvahmulah Guide
+              <span className="text-2xl">🏝️</span> Single Atoll
             </h3>
             <p className="text-blue-100 leading-relaxed">
-              Your complete travel companion for discovering the beauty of Single Island Atoll, Maldives.
+              Your definitive guide to accommodations, dive centers, restaurants, and authentic experiences in the Maldives.
             </p>
           </div>
 
@@ -34,10 +34,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-300">Information</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-blue-100 hover:text-white transition">About Us</a></li>
+              <li><Link href="/about" className="text-blue-100 hover:text-white transition">About Us</Link></li>
               <li><Link href="/contact" className="text-blue-100 hover:text-white transition">Contact</Link></li>
               <li><Link href="/privacy" className="text-blue-100 hover:text-white transition">Privacy Policy</Link></li>
-              <li><a href="#terms" className="text-blue-100 hover:text-white transition">Terms of Service</a></li>
+              <li><Link href="/terms" className="text-blue-100 hover:text-white transition">Terms of Service</Link></li>
             </ul>
           </div>
 
@@ -66,16 +66,16 @@ export default function Footer() {
           {/* Footer Bottom */}
           <div className="text-center text-blue-100">
             <p className="mb-2">
-              &copy; {currentYear} Fuvahmulah Tourism Guide. All rights reserved. |{' '}
+              &copy; {currentYear} Single Atoll. All rights reserved. |{' '}
               <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link> | {' '}
-              <a href="#terms" className="hover:text-white transition">Terms & Conditions</a>
+              <Link href="/terms" className="hover:text-white transition">Terms & Conditions</Link>
             </p>
             <p>
-              Single Island Atoll, Maldives | Email:{' '}
-              <a href="mailto:info@fuvahmulah-tourism.com" className="hover:text-white transition">
-                info@fuvahmulah-tourism.com
+              Single Atoll, Maldives | Email:{' '}
+              <a href="mailto:info@singleatoll.com" className="hover:text-white transition">
+                info@singleatoll.com
               </a>{' '}
-              | Phone: +960 XXX XXXX
+              | Website: www.singleatoll.com
             </p>
           </div>
         </div>
