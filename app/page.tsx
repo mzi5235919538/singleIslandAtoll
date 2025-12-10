@@ -20,7 +20,7 @@ export default function Home() {
               <div className="rounded-2xl overflow-hidden shadow-xl-modern border border-gray-100">
                 <VideoEmbed
                   provider="youtube"
-                  videoId="2ySUlrHwPOQ"
+                  videoId="dvqMvd3DaMY"
                   title="Single Atoll Maldives - Complete Travel Guide"
                 />
               </div>
