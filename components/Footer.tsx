@@ -36,7 +36,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="#about" className="text-blue-100 hover:text-white transition">About Us</a></li>
               <li><Link href="/contact" className="text-blue-100 hover:text-white transition">Contact</Link></li>
-              <li><a href="#privacy" className="text-blue-100 hover:text-white transition">Privacy Policy</a></li>
+              <li><Link href="/privacy" className="text-blue-100 hover:text-white transition">Privacy Policy</Link></li>
               <li><a href="#terms" className="text-blue-100 hover:text-white transition">Terms of Service</a></li>
             </ul>
           </div>
@@ -62,12 +62,12 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white border-opacity-20 pt-8">
+          <div className="border-t border-white border-opacity-20 pt-8">
           {/* Footer Bottom */}
           <div className="text-center text-blue-100">
             <p className="mb-2">
               &copy; {currentYear} Fuvahmulah Tourism Guide. All rights reserved. |{' '}
-              <a href="#privacy" className="hover:text-white transition">Privacy Policy</a> | {' '}
+              <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link> | {' '}
               <a href="#terms" className="hover:text-white transition">Terms & Conditions</a>
             </p>
             <p>
