@@ -19,36 +19,36 @@ interface PolicySectionProps {
 const PolicySection: FC<PolicySectionProps> = ({ id, title, icon: Icon, children }) => (
   <div id={id} className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8 scroll-mt-20 hover:shadow-md-modern transition-shadow duration-300">
     <div className="flex items-start gap-4 mb-6">
-      <div className="shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-        <Icon size={24} className="text-blue-600" />
+      <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+        <Icon size={24} className="text-primary" />
       </div>
-      <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      <h2 className="text-2xl font-bold text-text-dark">{title}</h2>
     </div>
-    <div className="text-gray-700 leading-relaxed space-y-4">
+    <div className="text-text-light leading-relaxed space-y-4">
       {children}
     </div>
   </div>
 );
 
 const TextBlock = ({ children }: { children: ReactNode }) => (
-  <p className="text-gray-700 leading-relaxed">{children}</p>
+  <p className="text-text-light leading-relaxed">{children}</p>
 );
 
 const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
   <ul className="space-y-2 ml-4">
     {items.map((item, idx) => (
       <li key={idx} className="flex items-start gap-3">
-        <HiCheckCircle size={20} className="text-green-500 shrink-0 mt-0.5" />
-        <span className="text-gray-700">{item}</span>
+        <HiCheckCircle size={20} className="text-success shrink-0 mt-0.5" />
+        <span className="text-text-light">{item}</span>
       </li>
     ))}
   </ul>
 );
 
 const HighlightBox = ({ title, children }: { title: string; children: ReactNode }) => (
-  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-    <p className="font-semibold text-blue-900 mb-2">{title}</p>
-    <div className="text-blue-800">{children}</div>
+  <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg">
+    <p className="font-semibold text-primary mb-2">{title}</p>
+    <div className="text-text-dark">{children}</div>
   </div>
 );
 
@@ -60,23 +60,10 @@ const ComplianceCard = ({ text }: { text: string }) => (
 );
 
 export default function PrivacyPolicy() {
-  const sections = [
-    { id: 'introduction', label: 'Introduction' },
-    { id: 'collection', label: 'Information Collection' },
-    { id: 'usage', label: 'Data Usage' },
-    { id: 'cookies', label: 'Cookies' },
-    { id: 'adsense', label: 'Google AdSense' },
-    { id: 'sharing', label: 'Information Sharing' },
-    { id: 'security', label: 'Data Security' },
-    { id: 'rights', label: 'Your Rights' },
-    { id: 'children', label: 'Children&apos;s Privacy' },
-    { id: 'contact', label: 'Contact Us' },
-  ];
-
   return (
     <>
       {/* Hero Section with Gradient */}
-      <section className="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-500 to-cyan-500 text-white">
+      <section className="relative overflow-hidden bg-linear-to-br from-primary via-blue-500 to-accent text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2" />
@@ -85,7 +72,7 @@ export default function PrivacyPolicy() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-white/20 rounded-xl backdrop-blur">
-                <HiShieldCheck size={40} className="text-cyan-300" />
+                <HiShieldCheck size={40} className="text-accent-light" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">Privacy Policy</h1>
             </div>
@@ -106,25 +93,8 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* Quick Navigation */}
-      <div className="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="section-container py-4">
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {sections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg whitespace-nowrap transition-colors duration-200 border border-gray-200 hover:border-blue-300"
-              >
-                {section.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Main Content */}
-      <section className="section-spacing bg-gray-50">
+      <section className="section-spacing bg-bg-light">
         <div className="section-container max-w-4xl">
           {/* Space for anchor links */}
           <div className="space-y-8">
@@ -145,7 +115,7 @@ export default function PrivacyPolicy() {
             <PolicySection id="collection" title="Information We Collect" icon={HiInformationCircle}>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Personal Information You Provide</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Personal Information You Provide</h3>
                   <TextBlock>
                     We collect information you voluntarily provide to us, such as when you:
                   </TextBlock>
@@ -158,7 +128,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Automatically Collected Information</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Automatically Collected Information</h3>
                   <TextBlock>
                     When you visit our Site, we may automatically collect:
                   </TextBlock>
@@ -172,7 +142,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Third-Party Services</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Third-Party Services</h3>
                   <TextBlock>
                     Our Site may include third-party services that collect information:
                   </TextBlock>
@@ -209,23 +179,23 @@ export default function PrivacyPolicy() {
                 Our Site uses cookies and similar technologies to enhance your experience. Cookies are small files stored on your device that help us remember your preferences and track site usage.
               </TextBlock>
               <div className="bg-gray-100 rounded-lg p-6 my-4">
-                <h3 className="font-semibold text-gray-900 mb-4">Types of Cookies We Use</h3>
+                <h3 className="font-semibold text-text-dark mb-4">Types of Cookies We Use</h3>
                 <div className="space-y-3">
-                  <div className="border-l-4 border-blue-500 pl-4">
-                    <p className="font-medium text-gray-900">Essential Cookies</p>
-                    <p className="text-gray-700 text-sm">Required for basic site functionality</p>
+                  <div className="border-l-4 border-primary pl-4">
+                    <p className="font-medium text-text-dark">Essential Cookies</p>
+                    <p className="text-text-light text-sm">Required for basic site functionality</p>
                   </div>
                   <div className="border-l-4 border-green-500 pl-4">
-                    <p className="font-medium text-gray-900">Analytics Cookies</p>
-                    <p className="text-gray-700 text-sm">Help us understand how you use our Site</p>
+                    <p className="font-medium text-text-dark">Analytics Cookies</p>
+                    <p className="text-text-light text-sm">Help us understand how you use our Site</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <p className="font-medium text-gray-900">Advertising Cookies</p>
-                    <p className="text-gray-700 text-sm">Used for ad personalization</p>
+                    <p className="font-medium text-text-dark">Advertising Cookies</p>
+                    <p className="text-text-light text-sm">Used for ad personalization</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <p className="font-medium text-gray-900">Preference Cookies</p>
-                    <p className="text-gray-700 text-sm">Remember your settings and preferences</p>
+                    <p className="font-medium text-text-dark">Preference Cookies</p>
+                    <p className="text-text-light text-sm">Remember your settings and preferences</p>
                   </div>
                 </div>
               </div>
@@ -254,7 +224,7 @@ export default function PrivacyPolicy() {
             {/* 6. Information Sharing */}
             <PolicySection id="sharing" title="Information Sharing - Critical for Hub Model" icon={HiCheckCircle}>
               <div className="space-y-6">
-                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                <div className="bg-primary/10 border-l-4 border-primary p-6 rounded-r-lg">
                   <p className="font-semibold text-blue-900 mb-2">⚠️ Important: Single Atoll Data Sharing Model</p>
                   <p className="text-blue-800">
                     Single Atoll operates as a hub that connects travelers with third-party service providers. By submitting an inquiry form, you explicitly consent to your personal data being shared with the selected vendor to fulfill your request.
@@ -262,7 +232,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Third-Party Vendors (Accommodation, Diving, Dining)</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Third-Party Vendors (Accommodation, Diving, Dining)</h3>
                   <TextBlock>
                     When you submit an Inquiry Form requesting information about a specific guest house, dive center, restaurant, or activity, your personal information (name, email, phone, travel dates, and message) is forwarded directly to that vendor for the purpose of:
                   </TextBlock>
@@ -278,7 +248,7 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Service Providers & Analytics</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Service Providers & Analytics</h3>
                   <TextBlock>
                     We may also share non-personal data with:
                   </TextBlock>
@@ -290,14 +260,14 @@ export default function PrivacyPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Legal Requirements</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Legal Requirements</h3>
                   <TextBlock>
                     We may disclose information if required to do so by law, to enforce our terms of service, or to protect the rights and safety of our users.
                   </TextBlock>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Data Retention</h3>
+                  <h3 className="text-lg font-semibold text-text-dark mb-3">Data Retention</h3>
                   <TextBlock>
                     Single Atoll retains a copy of your inquiry data for administrative, customer service, and record-keeping purposes for up to 2 years, unless you request deletion. Third-party vendors may retain your information according to their own policies.
                   </TextBlock>
@@ -353,7 +323,7 @@ export default function PrivacyPolicy() {
               </TextBlock>
               <div className="bg-linear-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 space-y-3 my-4">
                 <p className="text-lg font-bold text-blue-900">Single Atoll</p>
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 text-text-light">
                   <p>📧 <span className="font-medium">Email:</span> privacy@singleatoll.com</p>
                   <p>📧 <span className="font-medium">Support:</span> support@singleatoll.com</p>
                   <p>🌐 <span className="font-medium">Website:</span> www.singleatoll.com</p>
@@ -364,8 +334,8 @@ export default function PrivacyPolicy() {
 
             {/* Compliance Section */}
             <div className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Legal Compliance</h2>
-              <p className="text-gray-700 mb-6">This Privacy Policy complies with international data protection standards:</p>
+              <h2 className="text-2xl font-bold text-text-dark mb-6">Legal Compliance</h2>
+              <p className="text-text-light mb-6">This Privacy Policy complies with international data protection standards:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ComplianceCard text="General Data Protection Regulation (GDPR)" />
                 <ComplianceCard text="California Consumer Privacy Act (CCPA)" />
@@ -378,7 +348,7 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-12 bg-linear-to-r from-blue-600 to-cyan-500 text-white rounded-xl shadow-lg-modern p-8 md:p-12">
+          <div className="mt-12 bg-linear-to-r from-primary to-accent text-white rounded-xl shadow-lg-modern p-8 md:p-12">
             <div className="flex items-start justify-between gap-6 flex-col md:flex-row">
               <div>
                 <h3 className="text-2xl font-bold mb-3">Questions About Your Privacy?</h3>
