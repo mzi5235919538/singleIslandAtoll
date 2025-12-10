@@ -4,8 +4,8 @@ import PlaceCard from '@/components/PlaceCard';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Dining in Fuvahmulah - Restaurants, Cafes & Local Food',
-  description: 'Discover the best restaurants, cafes, and dining options in Fuvahmulah. Enjoy authentic Maldivian cuisine and international dishes.',
+  title: 'Dining in Single Atoll - Restaurants, Cafes & Local Food',
+  description: 'Discover the best restaurants, cafes, and dining options in Single Atoll. Enjoy authentic Maldivian cuisine and international dishes.',
 };
 
 export default function Dining() {
@@ -14,19 +14,19 @@ export default function Dining() {
       <section className="section-spacing bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         </div>
 
         <div className="section-container relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
-              🍴 Culinary Delights
+            <div className="badge-primary mb-6">
+              🝴 Culinary Delights
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Dining in Fuvahmulah
+            <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
+              Dining in Single Atoll
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-xl text-text-light leading-relaxed mb-8">
               Savor authentic Maldivian cuisine and international dishes. From fresh seafood to local specialties, discover culinary adventures.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -40,8 +40,8 @@ export default function Dining() {
       <AdSenseContainer />
 
       <section className="section-container">
-        <h2 className="section-title">Restaurants & Cafes</h2>
-        <p className="section-subtitle">Culinary Experiences in Fuvahmulah</p>
+        <h2 className="section-title text-text-dark">Restaurants & Cafes</h2>
+        <p className="section-subtitle">Culinary Experiences in Single Atoll</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <PlaceCard
@@ -103,13 +103,13 @@ export default function Dining() {
       <AdSenseContainer />
 
       <section className="section-container bg-gray-50">
-        <h2 className="section-title">Featured Dining Establishments</h2>
+        <h2 className="section-title text-text-dark">Featured Dining Establishments</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="card-base p-8">
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">🍽️ Reef Restaurant</h3>
-            <p className="text-gray-600 mb-4">Premium dining experience with fresh seafood and Asian fusion cuisine. Beachfront setting with sunset views.</p>
-            <div className="text-sm text-gray-600 space-y-2 mb-6">
+            <h3 className="text-2xl font-bold text-primary mb-4">🍽️ Reef Restaurant</h3>
+            <p className="text-text-light mb-4">Premium dining experience with fresh seafood and Asian fusion cuisine. Beachfront setting with sunset views.</p>
+            <div className="text-sm text-text-light space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Seafood, Asian</p>
               <p><strong>Price:</strong> $$$</p>
               <p><strong>Hours:</strong> 6 AM - 11 PM</p>
@@ -119,9 +119,9 @@ export default function Dining() {
           </div>
 
           <div className="card-base p-8">
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">🥘 Maldivian Kitchen</h3>
-            <p className="text-gray-600 mb-4">Authentic traditional Maldivian food in a casual setting. Known for Garudhiya, Mas Huni, and curries.</p>
-            <div className="text-sm text-gray-600 space-y-2 mb-6">
+            <h3 className="text-2xl font-bold text-primary mb-4">🥘 Maldivian Kitchen</h3>
+            <p className="text-text-light mb-4">Authentic traditional Maldivian food in a casual setting. Known for Garudhiya, Mas Huni, and curries.</p>
+            <div className="text-sm text-text-light space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Local Maldivian</p>
               <p><strong>Price:</strong> $</p>
               <p><strong>Hours:</strong> 7 AM - 10 PM</p>
@@ -131,9 +131,9 @@ export default function Dining() {
           </div>
 
           <div className="card-base p-8">
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">☕ Island Cafe</h3>
-            <p className="text-gray-600 mb-4">Relaxing cafe with coffee, pastries, and light meals. Perfect for breakfast or afternoon coffee.</p>
-            <div className="text-sm text-gray-600 space-y-2 mb-6">
+            <h3 className="text-2xl font-bold text-primary mb-4">☕ Island Cafe</h3>
+            <p className="text-text-light mb-4">Relaxing cafe with coffee, pastries, and light meals. Perfect for breakfast or afternoon coffee.</p>
+            <div className="text-sm text-text-light space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Cafe, Light Meals</p>
               <p><strong>Price:</strong> $</p>
               <p><strong>Hours:</strong> 6 AM - 9 PM</p>
@@ -143,9 +143,9 @@ export default function Dining() {
           </div>
 
           <div className="card-base p-8">
-            <h3 className="text-2xl font-bold text-blue-600 mb-4">🍤 Fish Market Grill</h3>
-            <p className="text-gray-600 mb-4">Fresh fish grilled daily from the local market. Choose your catch and enjoy it prepared to your liking.</p>
-            <div className="text-sm text-gray-600 space-y-2 mb-6">
+            <h3 className="text-2xl font-bold text-primary mb-4">🤿 Fish Market Grill</h3>
+            <p className="text-text-light mb-4">Fresh fish grilled daily from the local market. Choose your catch and enjoy it prepared to your liking.</p>
+            <div className="text-sm text-text-light space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Seafood Grill</p>
               <p><strong>Price:</strong> $$</p>
               <p><strong>Hours:</strong> 10 AM - 10 PM</p>
@@ -159,12 +159,12 @@ export default function Dining() {
       <AdSenseContainer />
 
       <section className="section-container">
-        <h2 className="section-title">Dining Tips</h2>
+        <h2 className="section-title text-text-dark">Dining Tips</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="info-box">
-            <h4>🍽️ Traditional Dishes to Try</h4>
-            <ul className="text-gray-600 space-y-2">
+            <h4 className="text-text-dark">🍽️ Traditional Dishes to Try</h4>
+            <ul className="text-text-light space-y-2">
               <li>• <strong>Garudhiya:</strong> Fish soup with rice</li>
               <li>• <strong>Mas Huni:</strong> Tuna salad with coconut</li>
               <li>• <strong>Fihunu Mas:</strong> Grilled fish</li>
@@ -173,8 +173,8 @@ export default function Dining() {
           </div>
 
           <div className="info-box">
-            <h4>💳 Payment & Prices</h4>
-            <p>
+            <h4 className="text-text-dark">💳 Payment & Prices</h4>
+            <p className="text-text-light">
               <strong>Budget meal:</strong> $3-8<br/>
               <strong>Mid-range:</strong> $10-25<br/>
               <strong>Fine dining:</strong> $30+<br/>
@@ -183,8 +183,8 @@ export default function Dining() {
           </div>
 
           <div className="info-box">
-            <h4>🕐 Dining Hours</h4>
-            <p>
+            <h4 className="text-text-dark">🕐 Dining Hours</h4>
+            <p className="text-text-light">
               Breakfast: 6-10 AM<br/>
               Lunch: 12-3 PM<br/>
               Dinner: 6-11 PM<br/>
@@ -193,8 +193,8 @@ export default function Dining() {
           </div>
 
           <div className="info-box">
-            <h4>🚫 Dietary Restrictions</h4>
-            <p>
+            <h4 className="text-text-dark">🚫 Dietary Restrictions</h4>
+            <p className="text-text-light">
               Vegetarian options available at most restaurants. Inform staff of allergies or religious dietary restrictions. Halal is standard in Maldives.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function Dining() {
 
       <AdSenseContainer />
 
-      <section className="section-spacing bg-linear-to-r from-blue-600 to-green-600 relative overflow-hidden">
+      <section className="section-spacing bg-linear-to-r from-primary to-accent relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
@@ -218,7 +218,7 @@ export default function Dining() {
             <p className="text-xl text-blue-50 mb-10">
               Contact restaurants for reservations or get personalized recommendations from our local experts.
             </p>
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transform hover:scale-105 transition">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-blue-50 transform hover:scale-105 transition">
               Get Recommendations
             </Link>
           </div>

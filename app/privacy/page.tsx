@@ -5,8 +5,8 @@ import type { ReactNode } from 'react';
 import { FC } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Fuvahmulah Tourism',
-  description: 'Privacy Policy for Fuvahmulah Tourism website. Learn how we handle your data and protect your privacy.',
+  title: 'Privacy Policy - Single Atoll Tourism',
+  description: 'Privacy Policy for Single Atoll Tourism website. Learn how we handle your data and protect your privacy.',
 };
 
 interface PolicySectionProps {
@@ -335,7 +335,7 @@ export default function PrivacyPolicy() {
                 'Data portability',
               ]} />
               <HighlightBox title="Exercise Your Rights">
-                To exercise these rights, contact us at privacy@fuvahmulah-tourism.com
+                To exercise these rights, contact us at privacy@singleatoll-tourism.com
               </HighlightBox>
             </PolicySection>
 
