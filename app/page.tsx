@@ -105,7 +105,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-text-dark mb-3 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-text-light leading-relaxed">{item.description}</p>
+                <p className="text-text-dark leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

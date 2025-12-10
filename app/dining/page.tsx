@@ -26,7 +26,7 @@ export default function Dining() {
             <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
               Dining in Single Atoll
             </h1>
-            <p className="text-xl text-text-light leading-relaxed mb-8">
+            <p className="text-xl text-text-dark leading-relaxed mb-8">
               Savor authentic Maldivian cuisine and international dishes. From fresh seafood to local specialties, discover culinary adventures.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -108,8 +108,8 @@ export default function Dining() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🍽️ Reef Restaurant</h3>
-            <p className="text-text-light mb-4">Premium dining experience with fresh seafood and Asian fusion cuisine. Beachfront setting with sunset views.</p>
-            <div className="text-sm text-text-light space-y-2 mb-6">
+            <p className="text-text-dark mb-4">Premium dining experience with fresh seafood and Asian fusion cuisine. Beachfront setting with sunset views.</p>
+            <div className="text-sm text-text-dark space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Seafood, Asian</p>
               <p><strong>Price:</strong> $$$</p>
               <p><strong>Hours:</strong> 6 AM - 11 PM</p>
@@ -120,8 +120,8 @@ export default function Dining() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🥘 Maldivian Kitchen</h3>
-            <p className="text-text-light mb-4">Authentic traditional Maldivian food in a casual setting. Known for Garudhiya, Mas Huni, and curries.</p>
-            <div className="text-sm text-text-light space-y-2 mb-6">
+            <p className="text-text-dark mb-4">Authentic traditional Maldivian food in a casual setting. Known for Garudhiya, Mas Huni, and curries.</p>
+            <div className="text-sm text-text-dark space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Local Maldivian</p>
               <p><strong>Price:</strong> $</p>
               <p><strong>Hours:</strong> 7 AM - 10 PM</p>
@@ -132,8 +132,8 @@ export default function Dining() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">☕ Island Cafe</h3>
-            <p className="text-text-light mb-4">Relaxing cafe with coffee, pastries, and light meals. Perfect for breakfast or afternoon coffee.</p>
-            <div className="text-sm text-text-light space-y-2 mb-6">
+            <p className="text-text-dark mb-4">Relaxing cafe with coffee, pastries, and light meals. Perfect for breakfast or afternoon coffee.</p>
+            <div className="text-sm text-text-dark space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Cafe, Light Meals</p>
               <p><strong>Price:</strong> $</p>
               <p><strong>Hours:</strong> 6 AM - 9 PM</p>
@@ -144,8 +144,8 @@ export default function Dining() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🤿 Fish Market Grill</h3>
-            <p className="text-text-light mb-4">Fresh fish grilled daily from the local market. Choose your catch and enjoy it prepared to your liking.</p>
-            <div className="text-sm text-text-light space-y-2 mb-6">
+            <p className="text-text-dark mb-4">Fresh fish grilled daily from the local market. Choose your catch and enjoy it prepared to your liking.</p>
+            <div className="text-sm text-text-dark space-y-2 mb-6">
               <p><strong>Cuisine:</strong> Seafood Grill</p>
               <p><strong>Price:</strong> $$</p>
               <p><strong>Hours:</strong> 10 AM - 10 PM</p>
@@ -164,7 +164,7 @@ export default function Dining() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="info-box">
             <h4 className="text-text-dark">🍽️ Traditional Dishes to Try</h4>
-            <ul className="text-text-light space-y-2">
+            <ul className="text-text-dark space-y-2">
               <li>• <strong>Garudhiya:</strong> Fish soup with rice</li>
               <li>• <strong>Mas Huni:</strong> Tuna salad with coconut</li>
               <li>• <strong>Fihunu Mas:</strong> Grilled fish</li>
@@ -174,7 +174,7 @@ export default function Dining() {
 
           <div className="info-box">
             <h4 className="text-text-dark">💳 Payment & Prices</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               <strong>Budget meal:</strong> $3-8<br/>
               <strong>Mid-range:</strong> $10-25<br/>
               <strong>Fine dining:</strong> $30+<br/>
@@ -184,7 +184,7 @@ export default function Dining() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🕐 Dining Hours</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Breakfast: 6-10 AM<br/>
               Lunch: 12-3 PM<br/>
               Dinner: 6-11 PM<br/>
@@ -194,7 +194,7 @@ export default function Dining() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🚫 Dietary Restrictions</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Vegetarian options available at most restaurants. Inform staff of allergies or religious dietary restrictions. Halal is standard in Maldives.
             </p>
           </div>

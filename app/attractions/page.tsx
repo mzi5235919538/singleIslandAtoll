@@ -28,7 +28,7 @@ export default function Attractions() {
             <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
               Attractions in Single Atoll
             </h1>
-            <p className="text-xl text-text-light leading-relaxed mb-8">
+            <p className="text-xl text-text-dark leading-relaxed mb-8">
               Discover the natural wonders and pristine beauty of Single Island Atoll. From stunning beaches to vibrant coral gardens, explore unforgettable destinations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -117,7 +117,7 @@ export default function Attractions() {
               title="Fuvahmulah Island Tour - Complete Guide"
             />
           </div>
-          <p className="text-center mt-8 text-text-light text-base">
+          <p className="text-center mt-8 text-text-dark text-base">
             Take a visual journey through Single Atoll's most beautiful attractions, beaches, and natural wonders.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function Attractions() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="card-elevated p-8 border-l-4 border-primary">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🐢 Sea Turtles</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Single Atoll is known for sea turtle populations. You may encounter these gentle creatures while snorkeling or diving during certain seasons.
               </p>
               <p className="text-sm text-primary font-semibold">✓ Best Season: March - November</p>
@@ -144,7 +144,7 @@ export default function Attractions() {
 
             <div className="card-elevated p-8 border-l-4 border-accent">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🐠 Tropical Fish</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Vibrant schools of tropical fish in stunning colors. Parrotfish, angelfish, butterflyfish, and endemic species inhabit the reefs.
               </p>
               <p className="text-sm text-accent font-semibold">✓ Best For: Snorkeling & Diving</p>
@@ -152,7 +152,7 @@ export default function Attractions() {
 
             <div className="card-elevated p-8 border-l-4 border-amber-500">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🦑 Manta Rays & Mobulas</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Encounter graceful manta rays gliding through the lagoon. These magnificent creatures are a highlight during specific seasons.
               </p>
               <p className="text-sm text-amber-600 font-semibold">✓ Peak Season: March - May</p>
@@ -160,7 +160,7 @@ export default function Attractions() {
 
             <div className="card-elevated p-8 border-l-4 border-primary">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🐠 Groupers & Snappers</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Large game fish including groupers and snappers are common around the reefs. Popular with anglers and diving photographers.
               </p>
               <p className="text-sm text-primary font-semibold">✓ Best For: Fishing & Diving</p>
@@ -168,7 +168,7 @@ export default function Attractions() {
 
             <div className="card-elevated p-8 border-l-4 border-teal-500">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🐚 Coral & Mollusks</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Pristine coral formations hosting diverse mollusk species. Giant clams and colorful shells are part of this delicate ecosystem.
               </p>
               <p className="text-sm text-teal-600 font-semibold">✓ Conservation: Protected Species</p>
@@ -176,7 +176,7 @@ export default function Attractions() {
 
             <div className="card-elevated p-8 border-l-4 border-orange-500">
               <h3 className="text-2xl font-bold text-text-dark mb-3">🌅 Bird Watching</h3>
-              <p className="text-text-light mb-4 leading-relaxed">
+              <p className="text-text-dark mb-4 leading-relaxed">
                 Single Atoll attracts various seabirds. Spot frigatebirds, herons, and other species along the beaches.
               </p>
               <p className="text-sm text-orange-600 font-semibold">✓ Best Time: Early Morning & Dusk</p>

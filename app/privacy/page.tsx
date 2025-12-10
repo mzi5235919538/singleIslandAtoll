@@ -24,14 +24,14 @@ const PolicySection: FC<PolicySectionProps> = ({ id, title, icon: Icon, children
       </div>
       <h2 className="text-2xl font-bold text-text-dark">{title}</h2>
     </div>
-    <div className="text-text-light leading-relaxed space-y-4">
+    <div className="text-text-dark leading-relaxed space-y-4">
       {children}
     </div>
   </div>
 );
 
 const TextBlock = ({ children }: { children: ReactNode }) => (
-  <p className="text-text-light leading-relaxed">{children}</p>
+  <p className="text-text-dark leading-relaxed">{children}</p>
 );
 
 const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
@@ -39,7 +39,7 @@ const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
     {items.map((item, idx) => (
       <li key={idx} className="flex items-start gap-3">
         <HiCheckCircle size={20} className="text-success shrink-0 mt-0.5" />
-        <span className="text-text-light">{item}</span>
+        <span className="text-text-dark">{item}</span>
       </li>
     ))}
   </ul>
@@ -183,19 +183,19 @@ export default function PrivacyPolicy() {
                 <div className="space-y-3">
                   <div className="border-l-4 border-primary pl-4">
                     <p className="font-medium text-text-dark">Essential Cookies</p>
-                    <p className="text-text-light text-sm">Required for basic site functionality</p>
+                    <p className="text-text-dark text-sm">Required for basic site functionality</p>
                   </div>
                   <div className="border-l-4 border-green-500 pl-4">
                     <p className="font-medium text-text-dark">Analytics Cookies</p>
-                    <p className="text-text-light text-sm">Help us understand how you use our Site</p>
+                    <p className="text-text-dark text-sm">Help us understand how you use our Site</p>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
                     <p className="font-medium text-text-dark">Advertising Cookies</p>
-                    <p className="text-text-light text-sm">Used for ad personalization</p>
+                    <p className="text-text-dark text-sm">Used for ad personalization</p>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
                     <p className="font-medium text-text-dark">Preference Cookies</p>
-                    <p className="text-text-light text-sm">Remember your settings and preferences</p>
+                    <p className="text-text-dark text-sm">Remember your settings and preferences</p>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ export default function PrivacyPolicy() {
               </TextBlock>
               <div className="bg-linear-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 space-y-3 my-4">
                 <p className="text-lg font-bold text-blue-900">Single Atoll</p>
-                <div className="space-y-2 text-text-light">
+                <div className="space-y-2 text-text-dark">
                   <p>📧 <span className="font-medium">Email:</span> privacy@singleatoll.com</p>
                   <p>📧 <span className="font-medium">Support:</span> support@singleatoll.com</p>
                   <p>🌐 <span className="font-medium">Website:</span> www.singleatoll.com</p>
@@ -335,7 +335,7 @@ export default function PrivacyPolicy() {
             {/* Compliance Section */}
             <div className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8">
               <h2 className="text-2xl font-bold text-text-dark mb-6">Legal Compliance</h2>
-              <p className="text-text-light mb-6">This Privacy Policy complies with international data protection standards:</p>
+              <p className="text-text-dark mb-6">This Privacy Policy complies with international data protection standards:</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ComplianceCard text="General Data Protection Regulation (GDPR)" />
                 <ComplianceCard text="California Consumer Privacy Act (CCPA)" />

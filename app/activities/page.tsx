@@ -27,7 +27,7 @@ export default function Activities() {
             <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
               Activity Centers
             </h1>
-            <p className="text-xl text-text-light leading-relaxed mb-8">
+            <p className="text-xl text-text-dark leading-relaxed mb-8">
               Experience thrilling water sports and island adventures. From diving and snorkeling to fishing and island tours, create unforgettable memories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -82,10 +82,10 @@ export default function Activities() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🤿 Fuvahmulah Dive Centre</h3>
-            <p className="text-text-light mb-4">
+            <p className="text-text-dark mb-4">
               PADI 5-Star certified dive center with experienced instructors. Offers courses from Open Water to Divemaster.
             </p>
-            <ul className="text-sm text-text-light space-y-2 mb-6">
+            <ul className="text-sm text-text-dark space-y-2 mb-6">
               <li>✓ Professional PADI instructors</li>
               <li>✓ High-quality equipment</li>
               <li>✓ Small group sizes (max 6)</li>
@@ -97,10 +97,10 @@ export default function Activities() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🤿 Reef Masters Diving</h3>
-            <p className="text-text-light mb-4">
+            <p className="text-text-dark mb-4">
               Specializing in specialized dives like deep dives, wreck dives, and night dives. Experienced guides for all levels.
             </p>
-            <ul className="text-sm text-text-light space-y-2 mb-6">
+            <ul className="text-sm text-text-dark space-y-2 mb-6">
               <li>✓ Specialized dive programs</li>
               <li>✓ Advanced training</li>
               <li>✓ Experienced team</li>
@@ -112,10 +112,10 @@ export default function Activities() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🏊 Snorkel Adventures</h3>
-            <p className="text-text-light mb-4">
+            <p className="text-text-dark mb-4">
               Perfect snorkeling tours with knowledgeable guides. Equipment included. Suitable for families and non-swimmers.
             </p>
-            <ul className="text-sm text-text-light space-y-2 mb-6">
+            <ul className="text-sm text-text-dark space-y-2 mb-6">
               <li>✓ All equipment provided</li>
               <li>✓ Family-friendly</li>
               <li>✓ Expert marine guides</li>
@@ -127,10 +127,10 @@ export default function Activities() {
 
           <div className="card-base p-8">
             <h3 className="text-2xl font-bold text-primary mb-4">🎣 Local Fishing Charters</h3>
-            <p className="text-text-light mb-4">
+            <p className="text-text-dark mb-4">
               Traditional and sport fishing with local experienced fishermen. Learn traditional fishing methods.
             </p>
-            <ul className="text-sm text-text-light space-y-2 mb-6">
+            <ul className="text-sm text-text-dark space-y-2 mb-6">
               <li>✓ Traditional fishing</li>
               <li>✓ Big game fishing</li>
               <li>✓ Local expertise</li>
@@ -153,7 +153,7 @@ export default function Activities() {
             title="Diving in Fuvahmulah - Coral Reefs and Marine Life"
           />
         </div>
-        <p className="text-center mt-4 text-text-light text-sm">
+        <p className="text-center mt-4 text-text-dark text-sm">
           Watch incredible underwater footage of vibrant coral reefs, tropical fish, manta rays, and more!
         </p>
       </section>
@@ -166,7 +166,7 @@ export default function Activities() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="info-box">
             <h4 className="text-text-dark">🤿 Diving Information</h4>
-            <ul className="text-text-light space-y-2">
+            <ul className="text-text-dark space-y-2">
               <li><strong>Certification:</strong> PADI or equivalent required for most dives</li>
               <li><strong>Cost:</strong> $50-150 per dive</li>
               <li><strong>Training:</strong> $300-400 for certification courses</li>
@@ -177,7 +177,7 @@ export default function Activities() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🏊 Snorkeling Information</h4>
-            <ul className="text-text-light space-y-2">
+            <ul className="text-text-dark space-y-2">
               <li><strong>Certification:</strong> None required</li>
               <li><strong>Cost:</strong> $20-50 per tour</li>
               <li><strong>Duration:</strong> 2-4 hours</li>
@@ -188,7 +188,7 @@ export default function Activities() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🎣 Fishing Information</h4>
-            <ul className="text-text-light space-y-2">
+            <ul className="text-text-dark space-y-2">
               <li><strong>Types:</strong> Sport and traditional fishing</li>
               <li><strong>Cost:</strong> $100-300 per trip</li>
               <li><strong>Duration:</strong> 4-8 hours</li>
@@ -199,7 +199,7 @@ export default function Activities() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🚤 Other Activities</h4>
-            <ul className="text-text-light space-y-2">
+            <ul className="text-text-dark space-y-2">
               <li><strong>Island Tours:</strong> $30-80 per person</li>
               <li><strong>Sunset Cruises:</strong> $40-100 per person</li>
               <li><strong>Water Sports:</strong> $50-150 per activity</li>
@@ -217,7 +217,7 @@ export default function Activities() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="card-base p-6">
             <h3 className="text-xl font-bold text-primary mb-4">📋 Before Booking</h3>
-            <ul className="text-sm text-text-light space-y-2">
+            <ul className="text-sm text-text-dark space-y-2">
               <li>✓ Check operator credentials</li>
               <li>✓ Read reviews</li>
               <li>✓ Confirm group sizes</li>
@@ -228,7 +228,7 @@ export default function Activities() {
 
           <div className="card-base p-6">
             <h3 className="text-xl font-bold text-primary mb-4">🏥 Health & Safety</h3>
-            <ul className="text-sm text-text-light space-y-2">
+            <ul className="text-sm text-text-dark space-y-2">
               <li>✓ Medical screening for diving</li>
               <li>✓ Wear sun protection</li>
               <li>✓ Stay hydrated</li>
@@ -239,7 +239,7 @@ export default function Activities() {
 
           <div className="card-base p-6">
             <h3 className="text-xl font-bold text-primary mb-4">🌊 Water Conditions</h3>
-            <ul className="text-sm text-text-light space-y-2">
+            <ul className="text-sm text-text-dark space-y-2">
               <li>✓ Check weather forecast</li>
               <li>✓ Respect marine life</li>
               <li>✓ Use reef-safe sunscreen</li>

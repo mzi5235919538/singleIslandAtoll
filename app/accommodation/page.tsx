@@ -27,7 +27,7 @@ export default function Accommodation() {
             <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
               Where to Stay in Single Atoll
             </h1>
-            <p className="text-xl text-text-light leading-relaxed mb-8">
+            <p className="text-xl text-text-dark leading-relaxed mb-8">
               Find your perfect accommodation from luxury resorts to cozy guest houses. All options offer warm hospitality and unforgettable experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -91,19 +91,19 @@ export default function Accommodation() {
             <div className="card-elevated p-8 border-l-4 border-primary">
               <h3 className="text-2xl font-bold text-text-dark mb-2">🏨 Fuvahmulah Resort & Spa</h3>
               <p className="text-sm badge-primary mb-4">Luxury 5-Star Resort</p>
-              <p className="text-text-light mb-6 leading-relaxed">
+              <p className="text-text-dark mb-6 leading-relaxed">
                 A luxury resort offering world-class amenities, spa services, and fine dining. Located on the pristine Thinadhoo Beach.
               </p>
               <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-primary">✓</span>
                   <span>50+ Deluxe Rooms & Villas</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-primary">✓</span>
                   <span>All-Inclusive Packages</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-primary">✓</span>
                   <span>Spa & Wellness Center</span>
                 </div>
@@ -117,19 +117,19 @@ export default function Accommodation() {
             <div className="card-elevated p-8 border-l-4 border-accent">
               <h3 className="text-2xl font-bold text-text-dark mb-2">🏨 Island Paradise Hotel</h3>
               <p className="text-sm badge-primary mb-4">Boutique 3-Star Hotel</p>
-              <p className="text-text-light mb-6 leading-relaxed">
+              <p className="text-text-dark mb-6 leading-relaxed">
                 Mid-range hotel with excellent service, local cuisine, and cultural experiences. Perfect for authentic island living.
               </p>
               <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-accent">✓</span>
                   <span>30 Comfortable Rooms</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-accent">✓</span>
                   <span>Restaurant & Café</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-accent">✓</span>
                   <span>Tour Arrangements</span>
                 </div>
@@ -143,19 +143,19 @@ export default function Accommodation() {
             <div className="card-elevated p-8 border-l-4 border-amber-500">
               <h3 className="text-2xl font-bold text-text-dark mb-2">🏠 Cozy Guest House</h3>
               <p className="text-sm badge-primary mb-4">Budget-Friendly Guesthouse</p>
-              <p className="text-text-light mb-6 leading-relaxed">
+              <p className="text-text-dark mb-6 leading-relaxed">
                 Budget-friendly accommodation with warm hospitality. A home away from home for budget-conscious travelers.
               </p>
               <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-amber-600">✓</span>
                   <span>20 Clean & Basic Rooms</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-amber-600">✓</span>
                   <span>Shared Kitchen & Dining</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-amber-600">✓</span>
                   <span>Very Affordable Rates</span>
                 </div>
@@ -169,19 +169,19 @@ export default function Accommodation() {
             <div className="card-elevated p-8 border-l-4 border-purple-500">
               <h3 className="text-2xl font-bold text-text-dark mb-2">🏝️ Beachfront Bungalows</h3>
               <p className="text-sm badge-primary mb-4">Romantic Beachfront</p>
-              <p className="text-text-light mb-6 leading-relaxed">
+              <p className="text-text-dark mb-6 leading-relaxed">
                 Private beachfront bungalows with direct beach access. Ideal for couples and honeymooners seeking privacy and romance.
               </p>
               <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-purple-600">✓</span>
                   <span>15 Private Bungalows</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-purple-600">✓</span>
                   <span>Direct Beach Access</span>
                 </div>
-                <div className="flex items-center gap-2 text-text-light">
+                <div className="flex items-center gap-2 text-text-dark">
                   <span className="text-purple-600">✓</span>
                   <span>Sunset Views & Romance</span>
                 </div>
@@ -205,7 +205,7 @@ export default function Accommodation() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="info-box">
             <h4 className="text-text-dark">🍽️ Dining & Cuisine</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Most accommodations offer in-house restaurants serving authentic Maldivian and international cuisine. 
               Local cafes provide affordable meals and refreshing beverages.
             </p>
@@ -213,21 +213,21 @@ export default function Accommodation() {
 
           <div className="info-box">
             <h4 className="text-text-dark">🚗 Transportation</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Hotels can arrange boat transfers to attractions and activity centers. Local transport is affordable and readily available.
             </p>
           </div>
 
           <div className="info-box">
             <h4 className="text-text-dark">🏊 Recreation</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Many accommodations offer water sports, spa services, and cultural programs. Beach access is standard at most properties.
             </p>
           </div>
 
           <div className="info-box">
             <h4 className="text-text-dark">📱 Connectivity</h4>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               WiFi is available at most properties. Mobile networks provide good coverage throughout the island for reliable communication.
             </p>
           </div>
@@ -245,14 +245,14 @@ export default function Accommodation() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card-elevated p-8">
               <h3 className="text-2xl font-bold text-text-dark mb-4">📅 Best Time to Book</h3>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed">
                 Book 2-3 months in advance during peak season (Nov-Mar). Shoulder season offers better rates with good weather conditions.
               </p>
             </div>
 
             <div className="card-elevated p-8">
               <h3 className="text-2xl font-bold text-text-dark mb-4">💰 Budget Planning</h3>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed">
                 <strong>Guest houses:</strong> $30-60/night | <strong>Hotels:</strong> $80-150/night | <strong>Resorts:</strong> $200+/night
               </p>
             </div>

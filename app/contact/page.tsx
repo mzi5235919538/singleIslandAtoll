@@ -61,7 +61,7 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
               Contact Us
             </h1>
-            <p className="text-xl text-text-light leading-relaxed mb-8">
+            <p className="text-xl text-text-dark leading-relaxed mb-8">
               Have questions about your Single Atoll adventure? Our team is ready to help you plan the perfect getaway.
             </p>
           </div>
@@ -78,21 +78,21 @@ export default function Contact() {
 
             <div className="card-base p-6 mb-6">
               <h3 className="text-xl font-semibold text-primary mb-2">📧 Email</h3>
-              <a href="mailto:info@singleatoll-tourism.com" className="text-text-light hover:text-primary">
+              <a href="mailto:info@singleatoll-tourism.com" className="text-text-dark hover:text-primary">
                 info@singleatoll-tourism.com
               </a>
             </div>
 
             <div className="card-base p-6 mb-6">
               <h3 className="text-xl font-semibold text-primary mb-2">📞 Phone</h3>
-              <a href="tel:+960XXXX" className="text-text-light hover:text-primary">
+              <a href="tel:+960XXXX" className="text-text-dark hover:text-primary">
                 +960 (Maldives)
               </a>
             </div>
 
             <div className="card-base p-6 mb-6">
               <h3 className="text-xl font-semibold text-primary mb-2">📍 Location</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 Thinadhoo, Single Atoll<br />
                 Maldives
               </p>
@@ -100,7 +100,7 @@ export default function Contact() {
 
             <div className="card-base p-6">
               <h3 className="text-xl font-semibold text-primary mb-2">⏰ Hours</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 Monday - Friday: 9 AM - 5 PM<br />
                 Saturday: 10 AM - 3 PM<br />
                 Sunday: Closed<br />
@@ -205,7 +205,7 @@ export default function Contact() {
 
             <div className="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
               <h3 className="font-semibold text-primary mb-2">📋 Required Fields</h3>
-              <p className="text-text-light text-sm">
+              <p className="text-text-dark text-sm">
                 Please fill in all required fields (marked with *). We will respond to your inquiry within 24 hours during business hours.
               </p>
             </div>
@@ -223,42 +223,42 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">How do I get to Single Atoll?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               You can fly to Malé International Airport and take a domestic flight to Single Atoll. The flight takes about 1 hour. Alternatively, you can take a speedboat (4-5 hours).
             </p>
           </div>
 
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">What is the best time to visit?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               The best time is November to April when the weather is dry and sunny. However, May to October is also good for diving with fewer tourists and lower prices.
             </p>
           </div>
 
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">Do I need a visa for Maldives?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Most nationalities receive a 30-day tourist visa upon arrival. Check with your local Maldives embassy for specific requirements for your country.
             </p>
           </div>
 
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">What currency is used?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               The official currency is the Maldivian Rufiyaa (MVR). US Dollars are widely accepted. ATMs and money exchanges are available on the island.
             </p>
           </div>
 
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">Is it safe to visit Single Atoll?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               Yes, Single Atoll is a safe destination for tourists. The local community is welcoming and helpful. Standard travel precautions apply.
             </p>
           </div>
 
           <div className="card-base p-6">
             <h3 className="text-lg font-bold text-primary mb-3">Can I drink tap water?</h3>
-            <p className="text-text-light">
+            <p className="text-text-dark">
               It&apos;s recommended to drink bottled or boiled water. Most accommodations provide filtered water. Hotels and restaurants have safe drinking water.
             </p>
           </div>

@@ -24,14 +24,14 @@ const TermsSection: FC<SectionProps> = ({ id, title, icon: Icon, children }) => 
       </div>
       <h2 className="text-2xl font-bold text-text-dark">{title}</h2>
     </div>
-    <div className="text-text-light leading-relaxed space-y-4">
+    <div className="text-text-dark leading-relaxed space-y-4">
       {children}
     </div>
   </div>
 );
 
 const TextBlock = ({ children }: { children: ReactNode }) => (
-  <p className="text-text-light leading-relaxed">{children}</p>
+  <p className="text-text-dark leading-relaxed">{children}</p>
 );
 
 const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
@@ -39,7 +39,7 @@ const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
     {items.map((item, idx) => (
       <li key={idx} className="flex items-start gap-3">
         <HiCheckCircle size={20} className="text-primary shrink-0 mt-0.5" />
-        <span className="text-text-light">{item}</span>
+        <span className="text-text-dark">{item}</span>
       </li>
     ))}
   </ul>
@@ -202,7 +202,7 @@ export default function TermsOfService() {
               </TextBlock>
               <div className="bg-linear-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 space-y-3 my-4">
                 <p className="text-lg font-bold text-blue-900">Single Atoll Support</p>
-                <div className="space-y-2 text-text-light">
+                <div className="space-y-2 text-text-dark">
                   <p>📧 <span className="font-medium">Email:</span> support@singleatoll.com</p>
                   <p>🌐 <span className="font-medium">Website:</span> www.singleatoll.com</p>
                   <p>📍 <span className="font-medium">Location:</span> Single Atoll, Maldives</p>

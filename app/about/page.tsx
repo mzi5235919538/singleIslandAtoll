@@ -69,16 +69,16 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="section-title text-text-dark mb-6">Our Story</h2>
-              <p className="text-text-light leading-relaxed mb-4">
+              <p className="text-text-dark leading-relaxed mb-4">
                 Single Atoll was created to solve a real problem: travelers and divers couldn&apos;t find comprehensive, authentic information about island accommodations and diving opportunities in one place.
               </p>
-              <p className="text-text-light leading-relaxed mb-4">
+              <p className="text-text-dark leading-relaxed mb-4">
                 Instead of scattered information across multiple websites, we built a centralized hub that brings together verified accommodations, dive operators, restaurants, and local expertise—all on one platform.
               </p>
-              <p className="text-text-light leading-relaxed mb-4">
+              <p className="text-text-dark leading-relaxed mb-4">
                 Our focus is on quality over quantity. Every listing is carefully vetted. Every photo is high-resolution. Every description is detailed and honest.
               </p>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed">
                 We believe that travelers deserve accurate, helpful information to make the best decisions about their island experience.
               </p>
             </div>
@@ -87,17 +87,17 @@ export default function About() {
                 <div>
                   <p className="text-sm font-semibold text-primary uppercase tracking-wide">Our Focus</p>
                   <p className="text-3xl font-bold text-text-dark mt-2">Authentic Island Living</p>
-                  <p className="text-text-light mt-2">Beyond resorts. Real local experiences.</p>
+                  <p className="text-text-dark mt-2">Beyond resorts. Real local experiences.</p>
                 </div>
                 <div className="border-t border-primary border-opacity-20 pt-6">
                   <p className="text-sm font-semibold text-primary uppercase tracking-wide">Service Area</p>
                   <p className="text-2xl font-bold text-text-dark mt-2">Single Atoll, Maldives</p>
-                  <p className="text-text-light mt-2">A diving paradise with world-class sites and local hospitality.</p>
+                  <p className="text-text-dark mt-2">A diving paradise with world-class sites and local hospitality.</p>
                 </div>
                 <div className="border-t border-primary border-opacity-20 pt-6">
                   <p className="text-sm font-semibold text-primary uppercase tracking-wide">Coverage</p>
                   <p className="text-2xl font-bold text-text-dark mt-2">20+ Accommodations</p>
-                  <p className="text-text-light mt-2">Plus dive centers, restaurants, and activities.</p>
+                  <p className="text-text-dark mt-2">Plus dive centers, restaurants, and activities.</p>
                 </div>
               </div>
             </div>
@@ -111,13 +111,13 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-text-dark mb-4">Our Mission</h3>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed">
                 To provide the most comprehensive, authentic, and reliable guide to accommodations, diving, and authentic experiences in the Maldives—making island discovery easy, transparent, and unforgettable.
               </p>
             </div>
             <div className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8">
               <h3 className="text-2xl font-bold text-text-dark mb-4">Our Vision</h3>
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed">
                 To become the most trusted, go-to resource for travelers seeking authentic island living and world-class diving in the Maldives—where quality information and verified partners create unforgettable experiences.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function About() {
                     </div>
                     <h3 className="text-xl font-bold text-text-dark">{value.title}</h3>
                   </div>
-                  <p className="text-text-light leading-relaxed">{value.description}</p>
+                  <p className="text-text-dark leading-relaxed">{value.description}</p>
                 </div>
               );
             })}
@@ -159,7 +159,7 @@ export default function About() {
                   <div className="w-6 h-6 bg-success bg-opacity-20 rounded-full flex items-center justify-center shrink-0 mt-1">
                     <span className="text-success text-sm font-bold">✓</span>
                   </div>
-                  <p className="text-text-light font-medium">{feature}</p>
+                  <p className="text-text-dark font-medium">{feature}</p>
                 </div>
               ))}
             </div>
@@ -174,31 +174,31 @@ export default function About() {
           <div className="space-y-6">
             <div className="border-l-4 border-primary pl-6 py-2">
               <h3 className="text-xl font-bold text-text-dark mb-2">Curated Quality</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 We don&apos;t list every accommodation—we list the best. Our team personally vets every property to ensure quality standards.
               </p>
             </div>
             <div className="border-l-4 border-accent pl-6 py-2">
               <h3 className="text-xl font-bold text-text-dark mb-2">Professional Content</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 High-resolution photography, detailed descriptions, practical travel guides, and authentic reviews help you make confident decisions.
               </p>
             </div>
             <div className="border-l-4 border-success pl-6 py-2">
               <h3 className="text-xl font-bold text-text-dark mb-2">Easy Connections</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 Our direct inquiry system connects you instantly with accommodations and service providers—no third-party booking fees or intermediaries.
               </p>
             </div>
             <div className="border-l-4 border-purple-500 pl-6 py-2">
               <h3 className="text-xl font-bold text-text-dark mb-2">Local Expertise</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 Our team understands island tourism intimately. We provide insider tips, local insights, and practical knowledge to enhance your experience.
               </p>
             </div>
             <div className="border-l-4 border-orange-500 pl-6 py-2">
               <h3 className="text-xl font-bold text-text-dark mb-2">Transparent & Honest</h3>
-              <p className="text-text-light">
+              <p className="text-text-dark">
                 No hidden commissions affecting our recommendations. Every review and rating is honest and independent. Your trust is everything.
               </p>
             </div>
