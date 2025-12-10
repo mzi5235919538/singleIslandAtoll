@@ -69,17 +69,23 @@ export default function HeroCarouselWithImages() {
                 sizes="100vw"
               />
               {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent flex flex-col justify-center items-start p-12 lg:p-20">
-                <div className="max-w-2xl">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
-                    {slide.title}
+              <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-6">
+                <div className="max-w-3xl">
+                  <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
+                    Welcome to<br />
+                    Single Atoll
                   </h2>
-                  <p className="text-lg md:text-xl text-gray-200 mb-8 drop-shadow-md max-w-xl leading-relaxed">
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-100 mb-12 drop-shadow-md leading-relaxed">
                     {slide.description}
                   </p>
-                  <button className="btn-primary px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all">
-                    Explore Now
-                  </button>
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100 transition-all">
+                      Explore Services
+                    </button>
+                    <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-100 transition-all">
+                      Contact Us
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
