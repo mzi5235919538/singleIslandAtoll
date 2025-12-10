@@ -29,11 +29,11 @@ export default function Home() {
             {/* Right: Content */}
             <div className="animate-slideInRight space-y-6">
               <div>
-                <h2 className="section-title text-left mb-4 text-text-dark">Watch Single Atoll in 4K</h2>
-                <p className="text-xl text-text-light">Experience the raw beauty of our island paradise through stunning cinematic footage.</p>
+                <h2 className="section-title text-left mb-4 text-primary font-bold">Watch Single Atoll in 4K</h2>
+                <p className="text-xl text-text-dark font-medium">Experience the raw beauty of our island paradise through stunning cinematic footage.</p>
               </div>
 
-              <p className="text-text-light leading-relaxed">
+              <p className="text-text-dark leading-relaxed font-medium">
                 Discover the pristine beaches, vibrant coral reefs, and authentic island culture that make Single Atoll truly special. Our comprehensive travel guide showcases everything from world-class diving spots to hidden local gems.
               </p>
 
@@ -48,7 +48,7 @@ export default function Home() {
                     <span className="shrink-0 w-6 h-6 rounded-full bg-success bg-opacity-20 flex items-center justify-center">
                       <span className="text-success font-bold text-sm">✓</span>
                     </span>
-                    <span className="text-text-light">{item}</span>
+                    <span className="text-text-dark font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
