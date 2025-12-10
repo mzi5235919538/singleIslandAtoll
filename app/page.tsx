@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { HiArrowRight } from 'react-icons/hi';
-import HeroCarouselWithImages from '@/components/HeroCarouselWithImages';
+import { HiArrowRight, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import AdSenseContainer from '@/components/AdSenseContainer';
 import PlaceCard from '@/components/PlaceCard';
 import VideoEmbed from '@/components/VideoEmbed';
@@ -8,8 +7,79 @@ import VideoEmbed from '@/components/VideoEmbed';
 export default function Home() {
   return (
     <>
-      {/* Full Screen Hero Carousel */}
-      <HeroCarouselWithImages />
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen">
+        {/* Fixed Hero Content */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Welcome to Single Atoll
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 opacity-90">
+              Discover the underwater world with professional diving experiences
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+                Explore Services
+              </button>
+              <button className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Background Image Carousel */}
+        <div className="relative h-screen">
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Image backgrounds */}
+            <div className="flex h-full">
+              {[
+                'https://images.pexels.com/photos/3601421/pexels-photo-3601421.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+                'https://images.pexels.com/photos/3155657/pexels-photo-3155657.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+                'https://images.pexels.com/photos/3155639/pexels-photo-3155639.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+                'https://images.pexels.com/photos/2784747/pexels-photo-2784747.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+              ].map((image, index) => (
+                <div 
+                  key={index}
+                  className="flex-[0_0_100%] min-w-0 relative"
+                >
+                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }} />
+                  <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/40 to-black/50" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Carousel Controls */}
+          <button className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20">
+            <HiChevronLeft className="h-6 w-6" />
+          </button>
+          <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20">
+            <HiChevronRight className="h-6 w-6" />
+          </button>
+
+          {/* Carousel Indicators */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+            {[0, 1, 2, 3].map((index) => (
+              <button key={index} className={`w-3 h-3 rounded-full transition-all cursor-pointer ${index === 0 ? 'bg-white scale-110' : 'bg-white/40'}`} />
+            ))}
+          </div>
+
+          {/* Quick Access Cards */}
+          <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 hidden lg:flex space-x-4 z-30">
+            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+              View Packages
+            </button>
+            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+              Diving Courses
+            </button>
+            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+              About Us
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Video Section */}
       <section className="section-spacing bg-white">
