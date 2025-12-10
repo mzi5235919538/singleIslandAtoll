@@ -46,17 +46,6 @@ const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
 );
 
 export default function TermsOfService() {
-  const sections = [
-    { id: 'agreement', label: 'User Agreement' },
-    { id: 'use', label: 'Acceptable Use' },
-    { id: 'inquiries', label: 'Inquiry Form' },
-    { id: 'thirdparty', label: 'Third-Party Vendors' },
-    { id: 'liability', label: 'Limitation of Liability' },
-    { id: 'cookies', label: 'Cookies & Tracking' },
-    { id: 'intellectual', label: 'Intellectual Property' },
-    { id: 'contact', label: 'Contact & Support' },
-  ];
-
   return (
     <>
       {/* Hero Section */}
@@ -83,23 +72,6 @@ export default function TermsOfService() {
           </div>
         </div>
       </section>
-
-      {/* Quick Navigation */}
-      <div className="sticky top-20 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="section-container py-4">
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {sections.map((section) => (
-              <a
-                key={section.id}
-                href={`#${section.id}`}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg whitespace-nowrap transition-colors duration-200 border border-gray-200 hover:border-blue-300"
-              >
-                {section.label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <section className="section-spacing bg-gray-50">
