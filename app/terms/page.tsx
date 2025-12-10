@@ -19,27 +19,27 @@ interface SectionProps {
 const TermsSection: FC<SectionProps> = ({ id, title, icon: Icon, children }) => (
   <div id={id} className="bg-white rounded-xl shadow-sm-modern border border-gray-200 p-8 scroll-mt-20 hover:shadow-md-modern transition-shadow duration-300">
     <div className="flex items-start gap-4 mb-6">
-      <div className="shrink-0 w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center">
-        <Icon size={24} className="text-blue-600" />
+      <div className="shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+        <Icon size={24} className="text-primary" />
       </div>
-      <h2 className="text-2xl font-bold text-gray-900">{title}</h2>
+      <h2 className="text-2xl font-bold text-text-dark">{title}</h2>
     </div>
-    <div className="text-gray-700 leading-relaxed space-y-4">
+    <div className="text-text-light leading-relaxed space-y-4">
       {children}
     </div>
   </div>
 );
 
 const TextBlock = ({ children }: { children: ReactNode }) => (
-  <p className="text-gray-700 leading-relaxed">{children}</p>
+  <p className="text-text-light leading-relaxed">{children}</p>
 );
 
 const BulletList = ({ items }: { items: (string | ReactNode)[] }) => (
   <ul className="space-y-2 ml-4">
     {items.map((item, idx) => (
       <li key={idx} className="flex items-start gap-3">
-        <HiCheckCircle size={20} className="text-blue-500 shrink-0 mt-0.5" />
-        <span className="text-gray-700">{item}</span>
+        <HiCheckCircle size={20} className="text-primary shrink-0 mt-0.5" />
+        <span className="text-text-light">{item}</span>
       </li>
     ))}
   </ul>
@@ -49,7 +49,7 @@ export default function TermsOfService() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-blue-600 via-blue-500 to-cyan-500 text-white">
+      <section className="relative overflow-hidden bg-linear-to-br from-primary via-blue-500 to-accent text-white">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2" />
@@ -58,14 +58,14 @@ export default function TermsOfService() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-white/20 rounded-xl backdrop-blur">
-                <HiShieldCheck size={40} className="text-cyan-300" />
+                <HiShieldCheck size={40} className="text-accent-light" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">Terms of Service</h1>
             </div>
-            <p className="text-xl text-blue-50 mb-6 leading-relaxed">
+            <p className="text-xl text-white/90 mb-6 leading-relaxed">
               Please read these terms carefully before using Single Atoll.
             </p>
-            <div className="flex items-center gap-2 text-blue-200">
+            <div className="flex items-center gap-2 text-white/80">
               <HiClock size={20} />
               <span>Last updated: December 2025</span>
             </div>
@@ -74,7 +74,7 @@ export default function TermsOfService() {
       </section>
 
       {/* Main Content */}
-      <section className="section-spacing bg-gray-50">
+      <section className="section-spacing bg-bg-light">
         <div className="section-container max-w-4xl">
           <div className="space-y-8">
             {/* 1. User Agreement */}
@@ -202,7 +202,7 @@ export default function TermsOfService() {
               </TextBlock>
               <div className="bg-linear-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-xl p-6 space-y-3 my-4">
                 <p className="text-lg font-bold text-blue-900">Single Atoll Support</p>
-                <div className="space-y-2 text-gray-700">
+                <div className="space-y-2 text-text-light">
                   <p>📧 <span className="font-medium">Email:</span> support@singleatoll.com</p>
                   <p>🌐 <span className="font-medium">Website:</span> www.singleatoll.com</p>
                   <p>📍 <span className="font-medium">Location:</span> Single Atoll, Maldives</p>
@@ -224,7 +224,7 @@ export default function TermsOfService() {
             <div className="flex items-start justify-between gap-6 flex-col md:flex-row">
               <div>
                 <h3 className="text-2xl font-bold mb-3">Questions About Our Terms?</h3>
-                <p className="text-blue-50 text-lg">
+                <p className="text-white/90 text-lg">
                   We&apos;re here to help. Contact us with any concerns or inquiries.
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function TermsOfService() {
 
           {/* Back to Home */}
           <div className="mt-8 text-center">
-            <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium hover:underline">
+            <Link href="/" className="inline-flex items-center gap-2 text-primary hover:text-blue-700 font-medium hover:underline">
               <HiArrowLeft size={18} />
               Back to Home
             </Link>
