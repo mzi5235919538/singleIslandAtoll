@@ -8,70 +8,8 @@ import VideoEmbed from '@/components/VideoEmbed';
 export default function Home() {
   return (
     <>
-      {/* Modern Hero Section with Overlay */}
-      <section className="relative bg-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-linear-to-br from-blue-100 via-cyan-100 to-green-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-linear-to-br from-teal-100 to-blue-100 rounded-full opacity-30 blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-linear-to-br from-accent-light to-primary rounded-full opacity-20 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="animate-slideInLeft space-y-6">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full">
-                <HiStar className="text-amber-500" size={16} />
-                <span className="text-sm font-semibold text-primary">Welcome to Paradise</span>
-              </div>
-
-              {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark leading-tight">
-                Discover <span className="text-gradient">Single Atoll</span>
-              </h1>
-
-              {/* Subtitle */}
-              <p className="text-lg md:text-xl text-text-light leading-relaxed max-w-lg">
-                Maldives Travel Guide - Where pristine beaches meet vibrant culture. Experience world-class diving, authentic island life, and unforgettable moments.
-              </p>
-
-              {/* Features */}
-              <div className="space-y-3 pt-4">
-                {['World-class diving spots', 'Pristine white-sand beaches', 'Authentic Maldivian culture'].map(
-                  (feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3 animate-fadeInUp" style={{ animationDelay: `${idx * 100}ms` }}>
-                      <HiCheckCircle className="text-success shrink-0" size={20} />
-                      <span className="text-text-light font-medium">{feature}</span>
-                    </div>
-                  )
-                )}
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-8">
-                <Link href="/accommodation" className="btn-primary flex items-center justify-center gap-2 group">
-                  Start Your Journey
-                  <HiArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
-                </Link>
-                <Link href="/attractions" className="btn-outline flex items-center justify-center gap-2">
-                  Explore
-                  <HiArrowRight size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Carousel */}
-            <div className="animate-slideInRight hidden lg:block">
-              <HeroCarouselWithImages />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile Carousel */}
-      <section className="lg:hidden section-container">
+      {/* Full Screen Hero Carousel */}
+      <section className="relative w-screen left-1/2 right-1/2 -mx-1/2">
         <HeroCarouselWithImages />
       </section>
 
