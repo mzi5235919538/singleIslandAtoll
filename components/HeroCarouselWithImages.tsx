@@ -68,12 +68,18 @@ export default function HeroCarouselWithImages() {
                 className="object-cover"
                 sizes="100vw"
               />
-              {/* Dark overlay for text readability - gradient from bottom to center to transparent */}
-              <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/70 flex flex-col justify-center items-center text-center p-6">
+              {/* Dark overlay for text readability */}
+              <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-transparent flex flex-col justify-center items-start p-12 lg:p-20">
                 <div className="max-w-2xl">
-                  <h3 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white drop-shadow-xl">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg leading-tight">
                     {slide.title}
-                  </h3>
+                  </h2>
+                  <p className="text-lg md:text-xl text-gray-200 mb-8 drop-shadow-md max-w-xl leading-relaxed">
+                    {slide.description}
+                  </p>
+                  <button className="btn-primary px-8 py-3 text-lg font-semibold hover:shadow-lg transition-all">
+                    Explore Now
+                  </button>
                 </div>
               </div>
             </div>
