@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { HiArrowRight, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import AdSenseContainer from '@/components/AdSenseContainer';
 import PlaceCard from '@/components/PlaceCard';
@@ -16,6 +17,7 @@ const CAROUSEL_IMAGES = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const router = useRouter();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,6 +38,10 @@ export default function Home() {
     setCurrentSlide(index);
   };
 
+  const handleNavigate = (route: string) => {
+    router.push(route);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -50,10 +56,16 @@ export default function Home() {
               Discover the underwater world with professional diving experiences
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+              <button 
+                onClick={() => handleNavigate('/activities')}
+                className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+              >
                 Explore Services
               </button>
-              <button className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+              <button 
+                onClick={() => handleNavigate('/contact')}
+                className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+              >
                 Contact Us
               </button>
             </div>
@@ -110,13 +122,22 @@ export default function Home() {
 
           {/* Quick Access Cards */}
           <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 hidden lg:flex space-x-4 z-30">
-            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+            <button 
+              onClick={() => handleNavigate('/accommodation')}
+              className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+            >
               View Packages
             </button>
-            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+            <button 
+              onClick={() => handleNavigate('/activities')}
+              className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+            >
               Diving Courses
             </button>
-            <button className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer">
+            <button 
+              onClick={() => handleNavigate('/about')}
+              className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+            >
               About Us
             </button>
           </div>
