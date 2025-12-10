@@ -71,33 +71,6 @@ export default function Activities() {
             href="/contact"
             buttonText="Arrange Trip"
           />
-
-          <PlaceCard
-            icon="🚤"
-            title="Island Hopping"
-            description="Visit nearby islands with speedboats or ferries. Explore different communities and local attractions."
-            featured="Multiple islands, Local culture"
-            href="/contact"
-            buttonText="Book Tour"
-          />
-
-          <PlaceCard
-            icon="🏄"
-            title="Water Sports"
-            description="Jet ski, windsurfing, kayaking, and more. Rent equipment or take lessons from experienced instructors."
-            featured="Multiple activities available"
-            href="/contact"
-            buttonText="Explore"
-          />
-
-          <PlaceCard
-            icon="🌅"
-            title="Sunset Cruises"
-            description="Romantic sunset cruises with refreshments. Perfect for couples and families. Professional crew."
-            featured="Scenic views, Relaxation"
-            href="/contact"
-            buttonText="Book Cruise"
-          />
         </div>
       </section>
 
