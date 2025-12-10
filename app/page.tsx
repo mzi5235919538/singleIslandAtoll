@@ -1,10 +1,41 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiArrowRight, HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 import AdSenseContainer from '@/components/AdSenseContainer';
 import PlaceCard from '@/components/PlaceCard';
 import VideoEmbed from '@/components/VideoEmbed';
 
+const CAROUSEL_IMAGES = [
+  'https://images.unsplash.com/photo-1542641734-3b824eaabad0?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8NHx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+  'https://images.unsplash.com/photo-1632056634558-a6c836149e54?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8M3x8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+  'https://images.unsplash.com/photo-1711238549189-e562f1dec35e?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8OXx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+  'https://images.unsplash.com/photo-1561659569-c2a51a7237f4?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8MTZ8fEZ1dmFobXVsYWh8ZW58MHx8fHwxNzY1MzkyOTQ1fDA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+];
+
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToPrevious = () => {
+    setCurrentSlide((prev) => (prev - 1 + CAROUSEL_IMAGES.length) % CAROUSEL_IMAGES.length);
+  };
+
+  const goToNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % CAROUSEL_IMAGES.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -30,39 +61,50 @@ export default function Home() {
         </div>
 
         {/* Background Image Carousel */}
-        <div className="relative h-screen">
-          <div className="absolute inset-0 overflow-hidden">
-            {/* Image backgrounds */}
-            <div className="flex h-full">
-              {[
-                'https://images.unsplash.com/photo-1542641734-3b824eaabad0?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8NHx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
-                'https://images.unsplash.com/photo-1632056634558-a6c836149e54?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8M3x8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
-                'https://images.unsplash.com/photo-1711238549189-e562f1dec35e?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8OXx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
-                'https://images.unsplash.com/photo-1561659569-c2a51a7237f4?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8MTZ8fEZ1dmFobXVsYWh8ZW58MHx8fHwxNzY1MzkyOTQ1fDA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
-              ].map((image, index) => (
-                <div 
-                  key={index}
-                  className="flex-[0_0_100%] min-w-0 relative"
-                >
-                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${image})` }} />
-                  <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/40 to-black/50" />
-                </div>
-              ))}
+        <div className="relative h-screen overflow-hidden">
+          {/* Image backgrounds with smooth transitions */}
+          {CAROUSEL_IMAGES.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${image})` }}
+              />
+              <div className="absolute inset-0 bg-linear-to-b from-black/30 via-black/40 to-black/50" />
             </div>
-          </div>
+          ))}
 
           {/* Carousel Controls */}
-          <button className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20">
+          <button
+            onClick={goToPrevious}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20"
+            aria-label="Previous slide"
+          >
             <HiChevronLeft className="h-6 w-6" />
           </button>
-          <button className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20">
+          <button
+            onClick={goToNext}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all z-30 cursor-pointer backdrop-blur-sm border border-white/20"
+            aria-label="Next slide"
+          >
             <HiChevronRight className="h-6 w-6" />
           </button>
 
           {/* Carousel Indicators */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-            {[0, 1, 2, 3].map((index) => (
-              <button key={index} className={`w-3 h-3 rounded-full transition-all cursor-pointer ${index === 0 ? 'bg-white scale-110' : 'bg-white/40'}`} />
+            {CAROUSEL_IMAGES.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                  index === currentSlide ? 'bg-white scale-110' : 'bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
             ))}
           </div>
 
