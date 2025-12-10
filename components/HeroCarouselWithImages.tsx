@@ -48,18 +48,18 @@ const slides: CarouselSlide[] = [
 
 export default function HeroCarouselWithImages() {
   return (
-    <div className="carousel-container shadow-lg rounded-lg overflow-hidden">
+    <div className="carousel-container w-screen left-1/2 right-1/2 -mx-1/2 overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
         loop={true}
-        className="w-full"
+        className="w-full h-screen"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-screen bg-gray-900">
+            <div className="relative w-full h-screen bg-gray-900">
               <Image
                 src={slide.imageUrl}
                 alt={slide.imageAlt}
@@ -68,14 +68,16 @@ export default function HeroCarouselWithImages() {
                 className="object-cover"
                 sizes="100vw"
               />
-              {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-center items-center text-center p-6">
-                <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 drop-shadow-lg">
-                  {slide.title}
-                </h3>
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-100 drop-shadow-lg max-w-2xl">
-                  {slide.description}
-                </p>
+              {/* Dark overlay for text readability - gradient from bottom to center to transparent */}
+              <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/40 to-black/70 flex flex-col justify-center items-center text-center p-6">
+                <div className="max-w-2xl">
+                  <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-xl">
+                    {slide.title}
+                  </h3>
+                  <p className="text-xl md:text-2xl lg:text-3xl text-gray-100 drop-shadow-lg">
+                    {slide.description}
+                  </p>
+                </div>
               </div>
             </div>
           </SwiperSlide>

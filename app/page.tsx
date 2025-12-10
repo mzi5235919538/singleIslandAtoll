@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { HiArrowRight, HiCheckCircle, HiStar } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
 import HeroCarouselWithImages from '@/components/HeroCarouselWithImages';
 import AdSenseContainer from '@/components/AdSenseContainer';
 import PlaceCard from '@/components/PlaceCard';
@@ -9,9 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Full Screen Hero Carousel */}
-      <section className="relative w-screen left-1/2 right-1/2 -mx-1/2">
-        <HeroCarouselWithImages />
-      </section>
+      <HeroCarouselWithImages />
 
       {/* Video Section */}
       <section className="section-spacing bg-white">
