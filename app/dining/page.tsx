@@ -1,87 +1,10 @@
-import PageHero from '@/components/PageHero';
-import FilterBar from '@/components/FilterBar';
-import ListingCard from '@/components/ListingCard';
+'use client';
 
-const DINING = [
-  {
-    id: '1',
-    title: 'Reef Restaurant',
-    description: 'Premium beachfront dining with fresh seafood, Asian fusion, and sunset views. Perfect for special occasions',
-    image: 'https://images.unsplash.com/photo-1631504949f45-b0fc0e7bab67?w=600&h=600&fit=crop',
-    category: 'Fine Dining',
-    categoryIcon: '🍽️',
-    location: 'Thinadhoo Beach',
-    type: 'Seafood',
-    href: '/dining/reef-restaurant',
-    rating: 5,
-    reviews: 187,
-  },
-  {
-    id: '2',
-    title: 'Maldivian Kitchen',
-    description: 'Authentic traditional Maldivian cuisine. Famous for Garudhiya, Mas Huni, and aromatic curries',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop',
-    category: 'Local Food',
-    categoryIcon: '🥘',
-    location: 'Town Center',
-    type: 'Maldivian',
-    href: '/dining/maldivian-kitchen',
-    rating: 4.7,
-    reviews: 124,
-  },
-  {
-    id: '3',
-    title: 'Island Cafe',
-    description: 'Cozy cafe with premium coffee, pastries, and light meals. Perfect for breakfast and afternoon relaxation',
-    image: 'https://images.unsplash.com/photo-1459521828906-47cbb7ee9b8e?w=600&h=600&fit=crop',
-    category: 'Cafe',
-    categoryIcon: '☕',
-    location: 'Main Island',
-    type: 'Cafe',
-    href: '/dining/island-cafe',
-    rating: 4.6,
-    reviews: 95,
-  },
-  {
-    id: '4',
-    title: 'Fish Market Grill',
-    description: 'Fresh fish grilled daily from local market. Choose your catch and enjoy it prepared to your liking',
-    image: 'https://images.unsplash.com/photo-1614707267537-b85faf00021d?w=600&h=600&fit=crop',
-    category: 'Seafood Grill',
-    categoryIcon: '🦞',
-    location: 'Near Market',
-    type: 'Seafood',
-    href: '/dining/fish-market-grill',
-    rating: 4.8,
-    reviews: 142,
-  },
-  {
-    id: '5',
-    title: 'Asian Fusion Kitchen',
-    description: 'Thai, Indian, and pan-Asian cuisine with authentic flavors and fresh ingredients',
-    image: 'https://images.unsplash.com/photo-1589301760014-d4c26eee8e49?w=600&h=600&fit=crop',
-    category: 'Asian',
-    categoryIcon: '🍜',
-    location: 'City Center',
-    type: 'Asian',
-    href: '/dining/asian-fusion',
-    rating: 4.7,
-    reviews: 118,
-  },
-  {
-    id: '6',
-    title: 'Green Leaf Vegetarian',
-    description: 'Healthy vegetarian and vegan cuisine with fresh local produce and international salads',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop',
-    category: 'Vegetarian',
-    categoryIcon: '🥗',
-    location: 'Main Island',
-    type: 'Vegetarian',
-    href: '/dining/green-leaf',
-    rating: 4.5,
-    reviews: 87,
-  },
-];
+import { useState, useMemo } from 'react';
+import PageHero from '@/components/PageHero';
+import SearchFilterBar from '@/components/SearchFilterBar';
+import ListingCard from '@/components/ListingCard';
+import { LISTINGS } from '@/data/listings';
 
 export const metadata = {
   title: 'Dining in Fuvahmulah - Restaurants, Cafes & Local Food',
@@ -89,6 +12,53 @@ export const metadata = {
 };
 
 export default function DiningPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedType, setSelectedType] = useState('');
+
+  // Get dining options from listings
+  const dining = useMemo(() => {
+    return LISTINGS.filter((listing) => listing.category === 'dining').map((listing) => ({
+      id: listing.slug,
+      title: listing.title,
+      description: listing.shortDescription,
+      image: listing.images[0],
+      category: listing.categoryIcon,
+      categoryIcon: listing.categoryIcon,
+      location: listing.location,
+      type: 'Restaurant', // Default type
+      href: `/place/${listing.slug}`,
+      rating: listing.rating,
+      reviews: listing.reviews,
+    }));
+  }, []);
+
+  // Filter dining options based on search and filters
+  const filteredDining = useMemo(() => {
+    return dining.filter((item) => {
+      const searchLower = searchQuery.toLowerCase();
+      const matchesSearch =
+        !searchQuery ||
+        item.title.toLowerCase().includes(searchLower) ||
+        item.description.toLowerCase().includes(searchLower) ||
+        item.location.toLowerCase().includes(searchLower);
+
+      const matchesLocation =
+        !selectedLocation ||
+        item.location.toLowerCase().includes(selectedLocation.toLowerCase());
+
+      const matchesType = !selectedType || item.type.toLowerCase() === selectedType.toLowerCase();
+
+      return matchesSearch && matchesLocation && matchesType;
+    });
+  }, [dining, searchQuery, selectedLocation, selectedType]);
+
+  const handleClear = () => {
+    setSearchQuery('');
+    setSelectedLocation('');
+    setSelectedType('');
+  };
+
   return (
     <>
       <PageHero
@@ -97,7 +67,64 @@ export default function DiningPage() {
         backgroundImage="https://images.unsplash.com/photo-1631504949f45-b0fc0e7bab67?w=1200&h=600&fit=crop"
       />
 
-      <FilterBar
+      <SearchFilterBar
+        onSearch={setSearchQuery}
+        onLocationChange={setSelectedLocation}
+        onTypeChange={setSelectedType}
+        locationOptions={[
+          { value: 'north', label: 'North' },
+          { value: 'south', label: 'South' },
+          { value: 'east', label: 'East' },
+          { value: 'west', label: 'West' },
+          { value: 'central', label: 'Central' },
+        ]}
+        typeOptions={[
+          { value: 'restaurant', label: 'Restaurant' },
+          { value: 'cafe', label: 'Cafe' },
+          { value: 'local food', label: 'Local Food' },
+          { value: 'fine dining', label: 'Fine Dining' },
+        ]}
+        resultsCount={filteredDining.length}
+        searchQuery={searchQuery}
+        selectedLocation={selectedLocation}
+        selectedType={selectedType}
+        onClear={handleClear}
+      />
+
+      <section className="section-spacing bg-white">
+        <div className="section-container">
+          {filteredDining.length > 0 ? (
+            <>
+              <div className="mb-8">
+                <p className="text-gray-600 text-lg">
+                  Showing <span className="font-semibold text-primary">{filteredDining.length}</span> restaurant
+                  {filteredDining.length !== 1 ? 's' : ''}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {filteredDining.map((item) => (
+                  <ListingCard key={item.id} {...item} />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="text-center py-16">
+              <p className="text-2xl font-bold text-gray-900 mb-4">No restaurants found</p>
+              <p className="text-gray-600 mb-8">Try adjusting your filters or search query</p>
+              <button
+                onClick={handleClear}
+                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+              >
+                Clear Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </>
+  );
+}
         locationOptions={[
           { value: 'thinadhoo-beach', label: 'Thinadhoo Beach' },
           { value: 'town-center', label: 'Town Center' },
