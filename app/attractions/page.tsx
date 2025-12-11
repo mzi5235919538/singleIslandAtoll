@@ -4,7 +4,9 @@ import { useState, useMemo } from 'react';
 import PageHero from '@/components/PageHero';
 import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
+import MapWrapper from '@/components/MapWrapper';
 import { LISTINGS } from '@/data/listings';
+import { mapLocations } from '@/data/mapLocations';
 
 const LOCATION_MAP: { [key: string]: string } = {
   'north': 'North',
@@ -25,7 +27,7 @@ export default function AttractionsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedType, setSelectedType] = useState('');
-
+  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
   // Get attractions from listings
   const attractions = useMemo(() => {
     return LISTINGS.filter((listing) => listing.category === 'attractions' || listing.category === 'diving').map(
@@ -43,6 +45,19 @@ export default function AttractionsPage() {
         reviews: listing.reviews,
       })
     );
+  }, []);
+
+  // Get attraction markers for map
+  const attractionMarkers = useMemo(() => {
+    return mapLocations
+      .filter(loc => loc.category === 'Diving' || loc.category === 'Attractions')
+      .map(loc => ({
+        position: [loc.coordinates.lat, loc.coordinates.lng] as [number, number],
+        title: loc.title,
+        category: loc.category,
+        slug: loc.slug,
+        description: loc.description,
+      }));
   }, []);
 
   // Filter attractions based on search and filters
@@ -105,32 +120,70 @@ export default function AttractionsPage() {
 
       <section className="section-spacing bg-white">
         <div className="section-container">
-          {filteredAttractions.length > 0 ? (
+          {/* View Mode Toggle */}
+          <div className="flex gap-2 mb-8">
+            <button
+              onClick={() => setViewMode('grid')}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                viewMode === 'grid'
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🏠 Grid View
+            </button>
+            <button
+              onClick={() => setViewMode('map')}
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+                viewMode === 'map'
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              🗺️ Map View
+            </button>
+          </div>
+
+          {viewMode === 'map' ? (
             <>
-              <div className="mb-8">
-                <p className="text-gray-600 text-lg">
-                  Showing <span className="font-semibold text-primary">{filteredAttractions.length}</span> attraction
-                  {filteredAttractions.length !== 1 ? 's' : ''}
+              <div className="mb-4">
+                <p className="text-gray-600">
+                  Showing <span className="font-semibold text-primary">{attractionMarkers.length}</span> locations on
+                  map
                 </p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {filteredAttractions.map((attraction) => (
-                  <ListingCard key={attraction.id} {...attraction} />
-                ))}
-              </div>
+              <MapWrapper markers={attractionMarkers} height="h-96" />
             </>
           ) : (
-            <div className="text-center py-16">
-              <p className="text-2xl font-bold text-gray-900 mb-4">No attractions found</p>
-              <p className="text-gray-600 mb-8">Try adjusting your filters or search query</p>
-              <button
-                onClick={handleClear}
-                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-semibold"
-              >
-                Clear Filters
-              </button>
-            </div>
+            <>
+              {filteredAttractions.length > 0 ? (
+                <>
+                  <div className="mb-8">
+                    <p className="text-gray-600 text-lg">
+                      Showing <span className="font-semibold text-primary">{filteredAttractions.length}</span> attraction
+                      {filteredAttractions.length !== 1 ? 's' : ''}
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {filteredAttractions.map((attraction) => (
+                      <ListingCard key={attraction.id} {...attraction} />
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-16">
+                  <p className="text-2xl font-bold text-gray-900 mb-4">No attractions found</p>
+                  <p className="text-gray-600 mb-8">Try adjusting your filters or search query</p>
+                  <button
+                    onClick={handleClear}
+                    className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+                  >
+                    Clear Filters
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

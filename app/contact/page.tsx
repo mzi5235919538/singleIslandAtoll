@@ -111,58 +111,60 @@ export default function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-primary mb-8">Send Us a Message</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-8">Send Us a Message</h2>
 
-            <form onSubmit={handleSubmit} className="card-base p-8">
+            <form onSubmit={handleSubmit} className="card-base p-4 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-text-dark font-semibold mb-2">Name *</label>
+                  <label className="block text-text-dark font-semibold mb-2 text-sm md:text-base">Name *</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-3 min-h-12 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-base"
                     placeholder="Your Name"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-text-dark font-semibold mb-2">Email *</label>
+                  <label className="block text-text-dark font-semibold mb-2 text-sm md:text-base">Email *</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"
-                    placeholder="Your Email"
+                    className="w-full px-4 py-3 min-h-12 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-base"
+                    placeholder="your@email.com"
+                    inputMode="email"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-text-dark font-semibold mb-2">Phone</label>
+                  <label className="block text-text-dark font-semibold mb-2 text-sm md:text-base">Phone</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"
-                    placeholder="Your Phone Number"
+                    className="w-full px-4 py-3 min-h-12 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-base"
+                    placeholder="+960 XXXX XXXX"
+                    inputMode="tel"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-text-dark font-semibold mb-2">Subject *</label>
+                  <label className="block text-text-dark font-semibold mb-2 text-sm md:text-base">Subject *</label>
                   <select
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"
+                    className="w-full px-4 py-3 min-h-12 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-base bg-white"
                   >
                     <option value="">Select a subject</option>
                     <option value="Accommodation">Accommodation Inquiry</option>
@@ -177,15 +179,15 @@ export default function Contact() {
               </div>
 
               <div className="mb-6">
-                <label className="block text-text-dark font-semibold mb-2">Message *</label>
+                <label className="block text-text-dark font-semibold mb-2 text-sm md:text-base">Message *</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-primary"
-                  placeholder="Your Message"
+                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-base"
+                  placeholder="Your message here..."
                 />
               </div>
 
@@ -198,15 +200,15 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="btn-primary w-full"
+                className="w-full px-6 py-3 min-h-12 bg-primary text-white font-semibold rounded hover:bg-primary/90 active:bg-primary/80 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
 
-            <div className="mt-8 p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
+            <div className="mt-8 p-4 md:p-6 bg-primary bg-opacity-10 rounded-lg border-l-4 border-primary">
               <h3 className="font-semibold text-primary mb-2">📋 Required Fields</h3>
-              <p className="text-text-dark text-sm">
+              <p className="text-text-dark text-sm md:text-base">
                 Please fill in all required fields (marked with *). We will respond to your inquiry within 24 hours during business hours.
               </p>
             </div>

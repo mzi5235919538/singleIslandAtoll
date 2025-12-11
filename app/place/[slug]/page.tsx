@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getListingBySlug, getRelatedListings } from '@/data/listings';
 import RelatedListings from '@/components/RelatedListings';
+import MapWrapper from '@/components/MapWrapper';
+import { mapLocations, getLocationBySlug } from '@/data/mapLocations';
 import { HiArrowRight, HiPhone, HiAtSymbol } from 'react-icons/hi';
 
 interface PageProps {
@@ -40,6 +42,20 @@ export default function PlaceDetailPage({ params }: PageProps) {
 
   const relatedListings = getRelatedListings(listing.slug, 4);
   const categoryLabel = listing.category.charAt(0).toUpperCase() + listing.category.slice(1);
+  
+  // Get location data for map
+  const locationData = getLocationBySlug(params.slug);
+  const locationMarker = locationData
+    ? [
+        {
+          position: [locationData.coordinates.lat, locationData.coordinates.lng] as [number, number],
+          title: locationData.title,
+          category: locationData.category,
+          slug: locationData.slug,
+          description: locationData.description,
+        },
+      ]
+    : [];
 
   return (
     <>
@@ -188,6 +204,26 @@ export default function PlaceDetailPage({ params }: PageProps) {
                         </span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Location Map */}
+              {locationMarker.length > 0 && locationData && (
+                <div className="mb-12">
+                  <h2 className="text-3xl font-bold text-text-dark mb-6">Location on Map</h2>
+                  <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200 mb-4">
+                    <MapWrapper markers={locationMarker} height="h-96" />
+                  </div>
+                  <div className="flex gap-3">
+                    <a
+                      href={`https://www.google.com/maps?q=${locationData.coordinates.lat},${locationData.coordinates.lng}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+                    >
+                      📍 Get Directions
+                    </a>
                   </div>
                 </div>
               )}

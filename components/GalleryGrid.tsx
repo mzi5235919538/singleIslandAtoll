@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface GalleryItem {
   id: string;
@@ -35,10 +36,13 @@ export default function GalleryGrid({
             className="group cursor-pointer relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
             onClick={() => setSelectedImage(image)}
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
+              fill
               className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
             />
             {image.title && (
               <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
+import { mapLocations } from '@/data/mapLocations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://fuvahmulah-tourism.com';
+  const baseUrl = 'https://single-island-atoll.vercel.app';
 
   return [
     {
@@ -59,10 +60,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/privacy`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    // Dynamic location pages
+    ...mapLocations.map(location => ({
+      url: `${baseUrl}/place/${location.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.75,
+    })),
   ];
 }

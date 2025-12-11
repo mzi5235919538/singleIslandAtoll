@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { HiMenu, HiX, HiArrowRight, HiChevronDown } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import MegaMenu from './MegaMenu';
+import { useBookingModal } from './BookingModalProvider';
 
 // TypeScript Interfaces
 interface NavSubItem {
@@ -29,6 +30,7 @@ interface MegaMenuItem {
 
 export default function Header() {
   const pathname = usePathname();
+  const { openBookingModal } = useBookingModal();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -232,22 +234,21 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
-            <Link
-              href="/contact"
+            <button
+              onClick={() => openBookingModal()}
               className="btn-primary flex items-center gap-2 whitespace-nowrap"
             >
               BOOK NOW
               <HiArrowRight size={18} />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className={`lg:hidden p-2 rounded-lg transition-all duration-300 text-text-light ${
-              scrolled ? 'hover:bg-gray-100' : 'hover:bg-gray-50'
-            }`}
+            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-lg transition-all duration-300 text-text-light hover:bg-gray-100 active:bg-gray-200"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
           </button>
@@ -265,7 +266,7 @@ export default function Header() {
 
             {/* Mobile menu */}
             <nav
-              className="fixed left-0 top-16 bottom-0 w-80 max-w-full bg-white shadow-2xl z-30 lg:hidden flex flex-col overflow-y-auto animate-slideInLeft"
+              className="fixed right-0 top-16 bottom-0 w-full sm:w-80 bg-white shadow-2xl z-30 lg:hidden flex flex-col overflow-y-auto animate-slideInRight"
               ref={menuRef}
             >
               {/* Menu items */}
@@ -280,7 +281,7 @@ export default function Header() {
                               openMobileDropdown === item.label ? null : item.label
                             )
                           }
-                          className={`px-4 py-3 text-left font-semibold transition-all duration-300 flex items-center justify-between ${
+                          className={`w-full px-4 py-3 text-left font-semibold transition-all duration-300 flex items-center justify-between min-h-12 active:bg-gray-100 ${
                             isPageActive(item.submenu?.[0]?.href)
                               ? 'text-primary bg-blue-50'
                               : 'text-text-light hover:text-primary hover:bg-blue-50'
@@ -305,7 +306,7 @@ export default function Header() {
                                 <Link
                                   key={`${item.label}-${idx}`}
                                   href={subitem.href}
-                                  className={`block px-6 py-3 text-sm font-medium transition-all duration-300 ${
+                                  className={`flex items-center px-6 py-3 text-sm font-medium transition-all duration-300 min-h-12 active:bg-blue-200 ${
                                     isPageActive(subitem.href)
                                       ? 'text-primary bg-blue-100'
                                       : 'text-text-light hover:text-primary hover:bg-blue-100'
@@ -325,7 +326,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href || '#'}
-                        className={`px-4 py-3 text-left font-semibold transition-all duration-300 ${
+                        className={`block px-4 py-3 text-left font-semibold transition-all duration-300 min-h-12 flex items-center active:bg-gray-100 ${
                           isPageActive(item.href)
                             ? 'text-primary bg-blue-50'
                             : 'text-text-light hover:text-primary hover:bg-blue-50'
@@ -346,7 +347,7 @@ export default function Header() {
               <div className="px-4 pb-4">
                 <Link
                   href="/contact"
-                  className="btn-primary flex items-center justify-center gap-2 w-full font-semibold py-3"
+                  className="flex items-center justify-center gap-2 w-full font-semibold py-3 px-4 min-h-12 rounded-lg bg-primary text-white hover:bg-primary/90 active:bg-primary/80 transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   BOOK NOW
@@ -355,12 +356,12 @@ export default function Header() {
               </div>
 
               {/* Social Media Icons */}
-              <div className="px-4 py-4 border-t border-gray-200 flex items-center justify-center gap-4">
+              <div className="px-4 py-4 border-t border-gray-200 flex items-center justify-center gap-2">
                 <a
                   href="https://facebook.com/fuvahmulah"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  className="flex items-center justify-center w-12 h-12 text-text-muted hover:text-primary transition-all duration-300 hover:bg-blue-50 active:bg-blue-100 rounded-lg"
                   aria-label="Facebook"
                 >
                   <FaFacebook size={20} />
@@ -369,7 +370,7 @@ export default function Header() {
                   href="https://instagram.com/fuvahmulah"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  className="flex items-center justify-center w-12 h-12 text-text-muted hover:text-primary transition-all duration-300 hover:bg-blue-50 active:bg-blue-100 rounded-lg"
                   aria-label="Instagram"
                 >
                   <FaInstagram size={20} />
@@ -378,7 +379,7 @@ export default function Header() {
                   href="https://twitter.com/fuvahmulah"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  className="flex items-center justify-center w-12 h-12 text-text-muted hover:text-primary transition-all duration-300 hover:bg-blue-50 active:bg-blue-100 rounded-lg"
                   aria-label="Twitter"
                 >
                   <FaTwitter size={20} />
