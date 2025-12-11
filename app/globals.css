@@ -398,6 +398,37 @@ body {
   50% { opacity: 0.5; }
 }
 
+/* Dropdown Menu Animations */
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+.animate-dropdownIn {
+  animation: dropdownIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-dropdownOut {
+  animation: dropdownOut 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
