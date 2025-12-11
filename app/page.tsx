@@ -4,29 +4,34 @@ import CategoryCard from '@/components/CategoryCard';
 import PlaceCard from '@/components/PlaceCard';
 import GalleryGrid from '@/components/GalleryGrid';
 import TestimonialCard from '@/components/TestimonialCard';
+import { IMAGES } from '@/lib/images';
 
 const HERO_SLIDES = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1542641734-3b824eaabad0?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8NHx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+    // TODO: Replace with real Fuvahmulah diving photo
+    image: IMAGES.hero.slide1,
     title: 'Dive into Adventure',
     subtitle: 'Discover the Untamed Beauty of Tiger Shark Island',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1632056634558-a6c836149e54?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8M3x8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+    // TODO: Replace with real Fuvahmulah beach photo
+    image: IMAGES.hero.slide2,
     title: 'Experience Paradise',
     subtitle: 'World-Class Diving in Pristine Waters',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1711238549189-e562f1dec35e?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8OXx8RnV2YWhtdWxhaHxlbnwwfHx8fDE3NjUzOTI5NDV8MA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+    // TODO: Replace with real Fuvahmulah island view
+    image: IMAGES.hero.slide3,
     title: 'Explore Fuvahmulah',
     subtitle: 'The Maldives\' Premier Diving Destination',
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1561659569-c2a51a7237f4?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMDk3fDB8MXxzZWFyY2h8MTZ8fEZ1dmFobXVsYWh8ZW58MHx8fHwxNzY1MzkyOTQ1fDA&ixlib=rb-4.1.0&q=85&w=1920&h=1080&fit=crop',
+    // TODO: Replace with real tourist/cultural photo
+    image: IMAGES.hero.slide4,
     title: 'Create Memories',
     subtitle: 'Unforgettable Island Experiences Await',
   },
@@ -60,7 +65,8 @@ const HIGHLIGHTS = [
     location: 'North Reef',
     category: 'Diving',
     categoryIcon: '🤿',
-    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop',
+    // TODO: Replace with real Tiger Point photo
+    image: IMAGES.highlights.tigerPointReef,
     featured: 'Premium Diving, Tiger Sharks',
     href: '/place/tiger-point-reef',
   },
@@ -70,7 +76,8 @@ const HIGHLIGHTS = [
     location: 'South Beach',
     category: 'Attractions',
     categoryIcon: '🏖️',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop',
+    // TODO: Replace with real Vasho Veyo Beach photo
+    image: IMAGES.highlights.vashoVeyoBeach,
     featured: 'Beach, Swimming',
     href: '/place/vasho-veyo-beach',
   },
@@ -80,7 +87,8 @@ const HIGHLIGHTS = [
     location: 'East Reef',
     category: 'Diving',
     categoryIcon: '🤿',
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop',
+    // TODO: Replace with real Hammerhead Point photo
+    image: IMAGES.highlights.hammerheadPoint,
     featured: 'Hammerhead Sharks',
     href: '/place/hammerhead-point',
   },
@@ -90,7 +98,8 @@ const HIGHLIGHTS = [
     location: 'Thinadhoo Beach',
     category: 'Stay',
     categoryIcon: '⭐',
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop',
+    // TODO: Replace with real resort photo
+    image: IMAGES.highlights.fuvahmulahResort,
     featured: 'Luxury, Spa',
     href: '/place/fuvahmulah-resort-spa',
   },
@@ -100,7 +109,8 @@ const HIGHLIGHTS = [
     location: 'Thinadhoo Beach',
     category: 'Dining',
     categoryIcon: '🍽️',
-    image: 'https://images.unsplash.com/photo-1631504949f45-b0fc0e7bab67?w=400&h=300&fit=crop',
+    // TODO: Replace with real restaurant photo
+    image: IMAGES.highlights.reefRestaurant,
     featured: 'Fresh Seafood',
     href: '/place/reef-restaurant',
   },
@@ -110,7 +120,8 @@ const HIGHLIGHTS = [
     location: 'Main Beach',
     category: 'Activity',
     categoryIcon: '🚤',
-    image: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=300&fit=crop',
+    // TODO: Replace with real sunset/cruise photo
+    image: IMAGES.highlights.sunsetCruise,
     featured: 'Sunset, Romance',
     href: '/place/sunset-cruise',
   },
@@ -122,65 +133,75 @@ const TESTIMONIALS = [
     author: 'John Smith',
     title: 'Adventure Enthusiast',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
+    // TODO: Replace with real user photo or avatar
+    image: IMAGES.testimonials.johnSmith,
   },
   {
     quote: 'Fuvahmulah offers the most authentic island experience in the Maldives. Highly recommended!',
     author: 'Sarah Johnson',
     title: 'Travel Blogger',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
+    // TODO: Replace with real user photo or avatar
+    image: IMAGES.testimonials.sarahJohnson,
   },
   {
     quote: 'The local hospitality and stunning natural beauty left us speechless. We\'ll definitely return!',
     author: 'Michael Chen',
     title: 'Photographer',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop',
+    // TODO: Replace with real user photo or avatar
+    image: IMAGES.testimonials.michaelChen,
   },
   {
     quote: 'Best diving destination I\'ve ever visited. Saw tiger sharks, hammerheads, and so much more!',
     author: 'Emma Wilson',
     title: 'Certified Diver',
     rating: 5,
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
+    // TODO: Replace with real user photo or avatar
+    image: IMAGES.testimonials.emmaWilson,
   },
 ];
 
 const GALLERY_IMAGES = [
   {
     id: '1',
-    src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&h=500&fit=crop',
+    // TODO: Replace with real Fuvahmulah landscape photo
+    src: IMAGES.gallery.landscapes[0],
     alt: 'Sunset Beach',
     title: 'Golden Sunset',
   },
   {
     id: '2',
-    src: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=500&h=500&fit=crop',
+    // TODO: Replace with real underwater photo
+    src: IMAGES.gallery.underwater[0],
     alt: 'Coral Reef',
     title: 'Vibrant Reefs',
   },
   {
     id: '3',
-    src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=500&fit=crop',
+    // TODO: Replace with real beach photo
+    src: IMAGES.gallery.landscapes[1],
     alt: 'Beach Paradise',
     title: 'Paradise Found',
   },
   {
     id: '4',
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop',
+    // TODO: Replace with real water/landscape photo
+    src: IMAGES.gallery.landscapes[2],
     alt: 'Clear Waters',
     title: 'Crystal Clear',
   },
   {
     id: '5',
-    src: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=500&fit=crop',
+    // TODO: Replace with real underwater photo
+    src: IMAGES.gallery.underwater[1],
     alt: 'Marine Life',
     title: 'Underwater World',
   },
   {
     id: '6',
-    src: 'https://images.unsplash.com/photo-1491250967868-94e055118857?w=500&h=500&fit=crop',
+    // TODO: Replace with real island photo
+    src: IMAGES.gallery.landscapes[3],
     alt: 'Island Living',
     title: 'Island Bliss',
   },

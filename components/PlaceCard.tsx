@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { HiArrowRight } from 'react-icons/hi';
 import { ReactNode } from 'react';
 
@@ -34,10 +35,14 @@ export default function PlaceCard({
       {/* Image Container */}
       {image ? (
         <div className="relative h-48 md:h-56 overflow-hidden bg-linear-to-br from-blue-100 to-teal-100">
-          <img
+          <Image
             src={image}
             alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            priority={false}
+            // TODO: Add placeholder="blur" and blurDataURL once real images are added
           />
 
           {/* Category Badge - Top Right */}

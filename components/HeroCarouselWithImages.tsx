@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { IMAGES } from '@/lib/images';
 
 interface CarouselSlide {
   id: number;
@@ -20,28 +21,32 @@ const slides: CarouselSlide[] = [
     id: 1,
     title: 'Pristine Beaches',
     description: 'White sand beaches with crystal clear turquoise waters',
-    imageUrl: 'https://images.pexels.com/photos/3601421/pexels-photo-3601421.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+    // TODO: Replace with real Fuvahmulah beach photo
+    imageUrl: IMAGES.hero.slide1,
     imageAlt: 'Beautiful beach in Fuvahmulah with turquoise water',
   },
   {
     id: 2,
     title: 'World-Class Diving',
     description: 'Experience vibrant coral reefs and abundant marine life',
-    imageUrl: 'https://images.pexels.com/photos/3155657/pexels-photo-3155657.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+    // TODO: Replace with real underwater/diving photo
+    imageUrl: IMAGES.hero.slide2,
     imageAlt: 'Divers exploring the coral reef in Fuvahmulah',
   },
   {
     id: 3,
     title: 'Sunset Paradise',
     description: 'Breathtaking sunsets over the Indian Ocean',
-    imageUrl: 'https://images.pexels.com/photos/3155639/pexels-photo-3155639.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+    // TODO: Replace with real sunset photo
+    imageUrl: IMAGES.hero.slide3,
     imageAlt: 'Golden sunset over the beach in Fuvahmulah',
   },
   {
     id: 4,
     title: 'Island Adventures',
     description: 'Explore water sports and island hopping experiences',
-    imageUrl: 'https://images.pexels.com/photos/2784747/pexels-photo-2784747.jpeg?auto=compress&cs=tinysrgb&w=1200&h=675&fit=crop',
+    // TODO: Replace with real island aerial photo
+    imageUrl: IMAGES.hero.slide4,
     imageAlt: 'Aerial view of Fuvahmulah Island with lush vegetation',
   },
 ];

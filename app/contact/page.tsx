@@ -168,6 +168,7 @@ export default function Contact() {
                     <option value="Accommodation">Accommodation Inquiry</option>
                     <option value="Activity Centers">Activity Centers & Tours</option>
                     <option value="Dining">Dining Recommendations</option>
+                    <option value="Photo Submission">Photo Submission for Website</option>
                     <option value="General">General Information</option>
                     <option value="Booking">Booking Help</option>
                     <option value="Other">Other</option>
@@ -215,7 +216,88 @@ export default function Contact() {
 
       <AdSenseContainer />
 
-      {/* Quick FAQ */}
+      {/* Photo Submission Section */}
+      <section className="section-spacing bg-linear-to-r from-primary to-accent text-white">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">📸 Share Your Fuvahmulah Moments</h2>
+              <p className="text-lg text-blue-50 leading-relaxed">
+                Help us showcase the true beauty of Fuvahmulah! We're looking for high-quality authentic photos from your visit to feature on our website.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+                <div className="text-3xl mb-3">🏖️</div>
+                <h3 className="text-xl font-semibold mb-2">Beaches & Landscapes</h3>
+                <p className="text-blue-50 text-sm">
+                  Scenic views, sunsets, and island landscapes
+                </p>
+              </div>
+
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+                <div className="text-3xl mb-3">🤿</div>
+                <h3 className="text-xl font-semibold mb-2">Diving & Marine Life</h3>
+                <p className="text-blue-50 text-sm">
+                  Underwater photos, coral reefs, and wildlife
+                </p>
+              </div>
+
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-lg">
+                <div className="text-3xl mb-3">🏨</div>
+                <h3 className="text-xl font-semibold mb-2">Local Experiences</h3>
+                <p className="text-blue-50 text-sm">
+                  Accommodations, dining, and cultural moments
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg mb-8">
+              <h3 className="text-2xl font-semibold mb-4">📋 Requirements</h3>
+              <ul className="space-y-3 text-blue-50">
+                <li className="flex items-start gap-3">
+                  <span className="text-xl mt-1">✓</span>
+                  <span>High resolution (minimum 1200px on longest side)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-xl mt-1">✓</span>
+                  <span>Authentic photos from Fuvahmulah only</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-xl mt-1">✓</span>
+                  <span>Natural lighting preferred, minimal filters</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-xl mt-1">✓</span>
+                  <span>You must have rights to use/distribute the image</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-xl mt-1">✓</span>
+                  <span>Include location, date, and brief description</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="text-center">
+              <p className="text-blue-50 mb-4">
+                <strong>Ready to submit?</strong> Use the contact form above and select "Photo Submission for Website" as your subject.
+              </p>
+              <p className="text-blue-50 mb-6">
+                Or email high-resolution photos directly to: <strong>photos@singleatoll-tourism.com</strong>
+              </p>
+              <a
+                href="#contact-form"
+                className="inline-block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-all"
+              >
+                Submit Your Photos
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <AdSenseContainer />
       <section className="section-container bg-gray-50">
         <h2 className="section-title text-text-dark">Frequently Asked Questions</h2>
         <p className="section-subtitle">Common Questions About Single Atoll</p>
