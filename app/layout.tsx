@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { getOrganizationSchema, getTouristDestinationSchema, renderStructuredData } from '@/lib/structuredData';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import SkipToMainContent from '@/components/SkipToMainContent';
@@ -72,15 +72,16 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico'
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1
-  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent'
   }
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1
 };
 
 export default function RootLayout({
