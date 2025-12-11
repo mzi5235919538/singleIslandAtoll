@@ -22,6 +22,7 @@ export default function Header() {
     { href: '/accommodation', label: 'Stay' },
     { href: '/dining', label: 'Dine' },
     { href: '/activities', label: 'Activities' },
+    { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
 
@@ -40,10 +41,12 @@ export default function Header() {
             href="/"
             className={`flex items-center gap-2 md:gap-3 font-bold transition-all duration-300 hover:opacity-80 text-primary`}
           >
-            <div className={`text-3xl md:text-4xl transition-transform duration-300 hover:scale-110`}>🌴</div>
+            <div className={`text-3xl md:text-4xl transition-transform duration-300 hover:scale-110`}>🏝️</div>
             <div>
-              <div className="text-base md:text-lg font-bold tracking-tight hidden sm:block text-primary">Single Atoll</div>
-              <div className="text-xs text-muted hidden sm:block font-normal">Fuvahmulah Travel Guide</div>
+              <div className="text-base md:text-lg font-bold tracking-tight hidden sm:block text-primary">
+                Fuvahmulah
+              </div>
+              <div className="text-xs text-text-muted hidden sm:block font-normal">Travel Guide</div>
             </div>
           </Link>
 
@@ -70,7 +73,7 @@ export default function Header() {
               href="/contact"
               className="btn-primary flex items-center gap-2"
             >
-              Book Now
+              Contact
               <HiArrowRight size={18} />
             </Link>
           </div>
@@ -102,14 +105,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="btn-primary mt-2 flex items-center justify-center gap-2 w-full"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Book Now
-              <HiArrowRight size={18} />
-            </Link>
           </nav>
         )}
       </div>
