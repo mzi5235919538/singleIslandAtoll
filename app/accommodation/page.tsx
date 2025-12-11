@@ -1,298 +1,134 @@
-import Link from 'next/link';
-import AdSenseContainer from '@/components/AdSenseContainer';
-import PlaceCard from '@/components/PlaceCard';
-import type { Metadata } from 'next';
+import PageHero from '@/components/PageHero';
+import FilterBar from '@/components/FilterBar';
+import ListingCard from '@/components/ListingCard';
 
-export const metadata: Metadata = {
-  title: 'Accommodation in Single Atoll - Hotels, Resorts & Guest Houses',
-  description: 'Find the best accommodation options in Single Atoll including luxury resorts, hotels, and guest houses for all budgets',
+const ACCOMMODATIONS = [
+  {
+    id: '1',
+    title: 'Fuvahmulah Resort & Spa',
+    description: 'Luxury 5-star resort with world-class amenities, spa services, and fine dining overlooking pristine beaches',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=600&fit=crop',
+    category: 'Resort',
+    categoryIcon: '⭐',
+    location: 'Thinadhoo Beach',
+    type: 'Luxury',
+    href: '/accommodation/fuvahmulah-resort',
+    rating: 5,
+    reviews: 342,
+  },
+  {
+    id: '2',
+    title: 'Island Paradise Hotel',
+    description: 'Charming 3-star hotel with authentic hospitality, local cuisine, and convenient island location',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&h=600&fit=crop',
+    category: 'Hotel',
+    categoryIcon: '🏨',
+    location: 'City Center',
+    type: 'Mid-Range',
+    href: '/accommodation/island-paradise',
+    rating: 4.7,
+    reviews: 218,
+  },
+  {
+    id: '3',
+    title: 'Cozy Guest House',
+    description: 'Affordable and welcoming guesthouse with shared facilities perfect for budget travelers seeking authentic experience',
+    image: 'https://images.unsplash.com/photo-1555686519-6861da3ca18f?w=600&h=600&fit=crop',
+    category: 'Guesthouse',
+    categoryIcon: '🏡',
+    location: 'Local Area',
+    type: 'Budget',
+    href: '/accommodation/cozy-guesthouse',
+    rating: 4.5,
+    reviews: 156,
+  },
+  {
+    id: '4',
+    title: 'Beachfront Bungalows',
+    description: 'Romantic private bungalows with direct beach access, perfect for couples and honeymooners',
+    image: 'https://images.unsplash.com/photo-1578654881063-f3f4ebc36371?w=600&h=600&fit=crop',
+    category: 'Bungalow',
+    categoryIcon: '🏝️',
+    location: 'South Beach',
+    type: 'Romantic',
+    href: '/accommodation/beachfront-bungalows',
+    rating: 4.9,
+    reviews: 287,
+  },
+  {
+    id: '5',
+    title: 'Diving Paradise Inn',
+    description: 'Specialized diving resort with direct access to world-famous dive sites and professional dive center',
+    image: 'https://images.unsplash.com/photo-1520521821577-fea43ff16d4f?w=600&h=600&fit=crop',
+    category: 'Resort',
+    categoryIcon: '🤿',
+    location: 'North Reef',
+    type: 'Specialty',
+    href: '/accommodation/diving-paradise',
+    rating: 4.8,
+    reviews: 201,
+  },
+  {
+    id: '6',
+    title: 'Eco-Lodge Island Retreat',
+    description: 'Sustainable eco-friendly accommodation with local design, perfect for environmentally conscious travelers',
+    image: 'https://images.unsplash.com/photo-1584124268002-c4646a10f329?w=600&h=600&fit=crop',
+    category: 'Eco-Lodge',
+    categoryIcon: '🌿',
+    location: 'Central Island',
+    type: 'Eco-Friendly',
+    href: '/accommodation/eco-lodge',
+    rating: 4.6,
+    reviews: 134,
+  },
+];
+
+export const metadata = {
+  title: 'Accommodation in Fuvahmulah - Hotels, Resorts & Guest Houses',
+  description: 'Find the perfect place to stay in Fuvahmulah. From luxury resorts to budget-friendly guest houses, all options offer authentic island hospitality.',
 };
 
-export default function Accommodation() {
+export default function AccommodationPage() {
   return (
     <>
-      {/* Hero - Modern */}
-      <section className="section-spacing bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-        </div>
+      <PageHero
+        title="Where to Stay in Fuvahmulah"
+        subtitle="Discover comfortable accommodations from luxury resorts to budget-friendly guest houses"
+        backgroundImage="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&h=600&fit=crop"
+      />
 
-        <div className="section-container relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="badge-primary mb-6">
-              🛏️ Comfortable Stays
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-text-dark mb-6 leading-tight">
-              Where to Stay in Single Atoll
-            </h1>
-            <p className="text-xl text-text-dark leading-relaxed mb-8">
-              Find your perfect accommodation from luxury resorts to cozy guest houses. All options offer warm hospitality and unforgettable experiences.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">Explore Options</button>
-              <button className="btn-outline">View Rates</button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FilterBar
+        locationOptions={[
+          { value: 'thinadhoo-beach', label: 'Thinadhoo Beach' },
+          { value: 'city-center', label: 'City Center' },
+          { value: 'south-beach', label: 'South Beach' },
+          { value: 'north-reef', label: 'North Reef' },
+          { value: 'central-island', label: 'Central Island' },
+        ]}
+        typeOptions={[
+          { value: 'luxury', label: 'Luxury' },
+          { value: 'mid-range', label: 'Mid-Range' },
+          { value: 'budget', label: 'Budget' },
+          { value: 'romantic', label: 'Romantic' },
+          { value: 'eco-friendly', label: 'Eco-Friendly' },
+        ]}
+      />
 
-      <AdSenseContainer />
-
-      {/* Accommodation Types */}
       <section className="section-spacing bg-white">
         <div className="section-container">
-          <h2 className="section-title text-text-dark">Accommodation Options</h2>
-          <p className="section-subtitle">Choose From a Variety of Options to Suit Your Budget and Preferences</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <PlaceCard
-              icon="🏨"
-              title="Hotels"
-              description="Luxury resorts and comfortable hotels with excellent amenities. Browse all hotels from 3-star to 5-star properties."
-              featured="Browse by rating, Direct contact info"
-              href="/accommodation/hotels"
-              buttonText="View All Hotels"
-            />
-
-            <PlaceCard
-              icon="🏡"
-              title="Guest Houses"
-              description="Affordable and authentic accommodations perfect for budget travelers. Experience genuine Maldivian hospitality."
-              featured="Budget-friendly, Local experience"
-              href="/accommodation/guest-houses"
-              buttonText="View All Guest Houses"
-            />
-
-            <PlaceCard
-              icon="⭐"
-              title="Inns & Boutique Hotels"
-              description="Charming inns with unique character and personal service. Each with its own specialty - diving, culture, wellness, etc."
-              featured="Personalized service, Unique themes"
-              href="/accommodation/inns"
-              buttonText="View All Inns"
-            />
-          </div>
-        </div>
-      </section>
-
-      <AdSenseContainer />
-
-      {/* Featured Properties - Modern */}
-      <section className="section-spacing bg-linear-to-b from-white to-blue-50">
-        <div className="section-container">
-          <div className="text-center mb-16">
-            <h2 className="section-title text-text-dark mb-4">Featured Properties</h2>
-            <p className="section-subtitle">Popular accommodation options in Single Atoll</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="card-elevated p-8 border-l-4 border-primary">
-              <h3 className="text-2xl font-bold text-text-dark mb-2">🏨 Fuvahmulah Resort & Spa</h3>
-              <p className="text-sm badge-primary mb-4">Luxury 5-Star Resort</p>
-              <p className="text-text-dark mb-6 leading-relaxed">
-                A luxury resort offering world-class amenities, spa services, and fine dining. Located on the pristine Thinadhoo Beach.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-primary">✓</span>
-                  <span>50+ Deluxe Rooms & Villas</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-primary">✓</span>
-                  <span>All-Inclusive Packages</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-primary">✓</span>
-                  <span>Spa & Wellness Center</span>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <a href="tel:+9601234567" className="btn-primary text-sm px-4 py-2">Call Now</a>
-                <a href="mailto:info@fuvahmulahresort.com" className="btn-outline text-sm px-4 py-2">Email</a>
-              </div>
-            </div>
-
-            <div className="card-elevated p-8 border-l-4 border-accent">
-              <h3 className="text-2xl font-bold text-text-dark mb-2">🏨 Island Paradise Hotel</h3>
-              <p className="text-sm badge-primary mb-4">Boutique 3-Star Hotel</p>
-              <p className="text-text-dark mb-6 leading-relaxed">
-                Mid-range hotel with excellent service, local cuisine, and cultural experiences. Perfect for authentic island living.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-accent">✓</span>
-                  <span>30 Comfortable Rooms</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-accent">✓</span>
-                  <span>Restaurant & Café</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-accent">✓</span>
-                  <span>Tour Arrangements</span>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <a href="tel:+9601234568" className="btn-primary text-sm px-4 py-2">Call Now</a>
-                <a href="mailto:info@islandparadise.mv" className="btn-outline text-sm px-4 py-2">Email</a>
-              </div>
-            </div>
-
-            <div className="card-elevated p-8 border-l-4 border-amber-500">
-              <h3 className="text-2xl font-bold text-text-dark mb-2">🏠 Cozy Guest House</h3>
-              <p className="text-sm badge-primary mb-4">Budget-Friendly Guesthouse</p>
-              <p className="text-text-dark mb-6 leading-relaxed">
-                Budget-friendly accommodation with warm hospitality. A home away from home for budget-conscious travelers.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-amber-600">✓</span>
-                  <span>20 Clean & Basic Rooms</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-amber-600">✓</span>
-                  <span>Shared Kitchen & Dining</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-amber-600">✓</span>
-                  <span>Very Affordable Rates</span>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <a href="tel:+9601234569" className="btn-primary text-sm px-4 py-2">Call Now</a>
-                <a href="mailto:cozy@guesthouses.mv" className="btn-outline text-sm px-4 py-2">Email</a>
-              </div>
-            </div>
-
-            <div className="card-elevated p-8 border-l-4 border-purple-500">
-              <h3 className="text-2xl font-bold text-text-dark mb-2">🏝️ Beachfront Bungalows</h3>
-              <p className="text-sm badge-primary mb-4">Romantic Beachfront</p>
-              <p className="text-text-dark mb-6 leading-relaxed">
-                Private beachfront bungalows with direct beach access. Ideal for couples and honeymooners seeking privacy and romance.
-              </p>
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-purple-600">✓</span>
-                  <span>15 Private Bungalows</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-purple-600">✓</span>
-                  <span>Direct Beach Access</span>
-                </div>
-                <div className="flex items-center gap-2 text-text-dark">
-                  <span className="text-purple-600">✓</span>
-                  <span>Sunset Views & Romance</span>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <a href="tel:+9601234570" className="btn-primary text-sm px-4 py-2">Call Now</a>
-                <a href="mailto:info@beachfrontbungalows.mv" className="btn-outline text-sm px-4 py-2">Email</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <AdSenseContainer />
-
-      {/* Amenities & Services */}
-      <section className="section-container">
-        <h2 className="section-title text-text-dark">Amenities & Services</h2>
-        <p className="section-subtitle">What to Expect at Our Recommended Accommodations</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="info-box">
-            <h4 className="text-text-dark">🍽️ Dining & Cuisine</h4>
-            <p className="text-text-dark">
-              Most accommodations offer in-house restaurants serving authentic Maldivian and international cuisine. 
-              Local cafes provide affordable meals and refreshing beverages.
+          <div className="mb-8">
+            <p className="text-gray-600 text-lg">
+              Showing <span className="font-semibold text-primary">{ACCOMMODATIONS.length}</span> accommodations
             </p>
           </div>
 
-          <div className="info-box">
-            <h4 className="text-text-dark">🚗 Transportation</h4>
-            <p className="text-text-dark">
-              Hotels can arrange boat transfers to attractions and activity centers. Local transport is affordable and readily available.
-            </p>
-          </div>
-
-          <div className="info-box">
-            <h4 className="text-text-dark">🏊 Recreation</h4>
-            <p className="text-text-dark">
-              Many accommodations offer water sports, spa services, and cultural programs. Beach access is standard at most properties.
-            </p>
-          </div>
-
-          <div className="info-box">
-            <h4 className="text-text-dark">📱 Connectivity</h4>
-            <p className="text-text-dark">
-              WiFi is available at most properties. Mobile networks provide good coverage throughout the island for reliable communication.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {ACCOMMODATIONS.map((accommodation) => (
+              <ListingCard key={accommodation.id} {...accommodation} />
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Booking Tips - Modern */}
-      <section className="section-spacing bg-white">
-        <div className="section-container">
-          <div className="text-center mb-16">
-            <h2 className="section-title text-text-dark mb-4">Booking Tips</h2>
-            <p className="section-subtitle">Everything you need to know before booking</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card-elevated p-8">
-              <h3 className="text-2xl font-bold text-text-dark mb-4">📅 Best Time to Book</h3>
-              <p className="text-text-dark leading-relaxed">
-                Book 2-3 months in advance during peak season (Nov-Mar). Shoulder season offers better rates with good weather conditions.
-              </p>
-            </div>
-
-            <div className="card-elevated p-8">
-              <h3 className="text-2xl font-bold text-text-dark mb-4">💰 Budget Planning</h3>
-              <p className="text-text-dark leading-relaxed">
-                <strong>Guest houses:</strong> $30-60/night | <strong>Hotels:</strong> $80-150/night | <strong>Resorts:</strong> $200+/night
-              </p>
-            </div>
-
-            <div className="card-elevated p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">🛠️ Special Requests</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Most properties accommodate special requests for honeymoons, celebrations, or dietary needs. Contact ahead for arrangements.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <AdSenseContainer />
-
-      {/* CTA - Modern */}
-      <section className="section-spacing bg-linear-to-r from-primary to-accent relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
-        </div>
-
-        <div className="section-container relative z-10">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Book Your Stay?
-            </h2>
-            <p className="text-xl text-blue-50 mb-10">
-              Contact our partners directly or reach out for personalized accommodation recommendations.
-            </p>
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-blue-50 transform hover:scale-105 transition">
-              Get Help Booking
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <AdSenseContainer />
     </>
   );
 }
