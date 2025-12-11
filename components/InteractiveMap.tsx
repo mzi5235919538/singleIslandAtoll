@@ -138,6 +138,26 @@ const LocationButton = () => {
   );
 };
 
+// Google Maps button component
+const GoogleMapsButton = () => {
+  const googleMapsUrl = 'https://www.google.com/maps/place/Fuvahmulah/@-0.2927242,73.4173175,15z/data=!4m6!3m5!1s0x24b5607b12195bab:0x278caa887478b60b!8m2!3d-0.2983944!4d73.4268608!16zL20vMDc2NnBx?entry=ttu&g_ep=EgoyMDI1MTIwOC4wIKXMDSoASAFQAw%3D%3D';
+
+  return (
+    <a
+      href={googleMapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="absolute bottom-4 left-4 z-401 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition-colors font-semibold text-sm flex items-center gap-2 border border-gray-300"
+      title="View on Google Maps"
+    >
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 7.14 11 21 12 21s12-13.86 12-21c0-6.63-5.37-12-12-12zm0 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+      </svg>
+      Google Maps
+    </a>
+  );
+};
+
 export default function InteractiveMap({
   center = [-0.30, 73.42], // Fuvahmulah center
   markers,
@@ -173,6 +193,9 @@ export default function InteractiveMap({
 
         {/* Current location button */}
         {showCurrentLocation && <LocationButton />}
+        
+        {/* Google Maps button */}
+        <GoogleMapsButton />
       </MapContainer>
 
       {/* Map attribution text */}
