@@ -1,35 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  /* Light Theme - Optimized for AdSense & Tourism */
-  /* Maldivian Color Palette - Blue Lagoon & Teal */
-  --primary: #0099CC; /* Blue Lagoon */
-  --primary-light: #1AA3D9; /* Lighter Blue for hovers */
-  --primary-dark: #0077AA; /* Darker Blue for depth */
-  --secondary: #2ba84a; /* Fresh Green */
-  --accent: #00B5B8; /* Teal Maldives */
-  --accent-light: #4DCCC5; /* Light Teal */
-  --danger: #d64545; /* Modern Red */
-  --success: #2ba84a; /* Modern Green */
+  /* Premium Ocean Theme - Professional Diving & Tourism */
+  /* Inspired by Shark Heaven & Fuvahmulah Tourism Sites */
+  --primary: #003D5C; /* Deep Ocean Blue */
+  --primary-light: #0055A4; /* Professional Blue */
+  --primary-dark: #001F3F; /* Dark Ocean Depth */
+  --secondary: #006B7F; /* Professional Teal */
+  --accent: #00B5B8; /* Bright Teal - Premium */
+  --accent-light: #2CCCCF; /* Light Teal for highlights */
+  --danger: #E74C3C; /* Premium Red */
+  --success: #27AE60; /* Premium Green */
   
   /* Light Theme Text Colors - Maximum Readability */
   --text-dark: #1a202c; /* Dark Slate */
   --text-light: #4a5568; /* Medium Gray */
   --text-muted: #718096; /* Muted Gray */
   
-  /* Light Theme Background - White Sand Palette */
-  --bg-light: #F5F9FA; /* Clean White Sand */
+  /* Light Theme Background - Clean & Professional */
+  --bg-light: #F8FBFC; /* Clean background */
   --bg-warmth: #FFFFFF; /* Pure White */
   --bg-surface: #FFFFFF; /* Pure White for cards */
   
   /* Borders & Dividers */
-  --border-color: #E0E7FF; /* Subtle Blue-tinted Border */
-  --border-subtle: #F8FAFC; /* Very Subtle Border */
+  --border-color: #D4E3ED; /* Blue-tinted Border */
+  --border-subtle: #E8F1F5; /* Subtle Blue Border */
   
-  /* Gradients - Maldivian Ocean Theme */
-  --gradient-primary: linear-gradient(135deg, #0099CC 0%, #00B5B8 100%);
-  --gradient-warm: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
-  --gradient-soft: linear-gradient(135deg, #0099CC 0%, #00D4D4 100%);
+  /* Gradients - Premium Ocean Theme */
+  --gradient-primary: linear-gradient(135deg, #003D5C 0%, #00B5B8 100%);
+  --gradient-warm: linear-gradient(135deg, #006B7F 0%, #2CCCCF 100%);
+  --gradient-soft: linear-gradient(135deg, #0055A4 0%, #00B5B8 100%);
 }
 
 * {
@@ -44,7 +44,7 @@ body {
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F5F9FA;
+  background-color: #F8FBFC;
   color: var(--text-dark);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -56,39 +56,39 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F5F9FA;
+  background: #F8FBFC;
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #0099CC, #00B5B8);
+  background: linear-gradient(to bottom, #003D5C, #00B5B8);
   border-radius: 6px;
-  border: 3px solid #F5F9FA;
+  border: 3px solid #F8FBFC;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #0077AA, #0099CC);
+  background: linear-gradient(to bottom, #001F3F, #003D5C);
 }
 
-/* Modern Gradients - Maldivian Ocean Theme */
+/* Modern Gradients - Premium Ocean Theme */
 .gradient-primary {
-  background: linear-gradient(135deg, #0099CC 0%, #00B5B8 100%);
+  background: linear-gradient(135deg, #003D5C 0%, #00B5B8 100%);
 }
 
 .gradient-primary-to-right {
-  background: linear-gradient(90deg, #0099CC 0%, #00B5B8 100%);
+  background: linear-gradient(90deg, #003D5C 0%, #00B5B8 100%);
 }
 
 .gradient-secondary {
-  background: linear-gradient(135deg, #2ba84a 0%, #00B5B8 100%);
+  background: linear-gradient(135deg, #006B7F 0%, #2CCCCF 100%);
 }
 
 .gradient-warm {
-  background: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #0055A4 0%, #00B5B8 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #1e5a96, #0fa4a4);
+  background: linear-gradient(90deg, #003D5C, #00B5B8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -96,7 +96,7 @@ body {
 }
 
 .gradient-overlay {
-  background: linear-gradient(135deg, rgba(30, 90, 150, 0.92) 0%, rgba(15, 164, 164, 0.92) 100%);
+  background: linear-gradient(135deg, rgba(0, 61, 92, 0.92) 0%, rgba(0, 181, 184, 0.92) 100%);
 }
 
 .gradient-light-overlay {
@@ -160,10 +160,10 @@ body {
   transform: translateY(-8px);
 }
 
-/* Button Utilities - Modern Design with Maldivian Colors */
+/* Button Utilities - Premium Ocean Theme */
 .btn-primary {
   padding: 12px 32px;
-  background: linear-gradient(135deg, #0099CC 0%, #00B5B8 100%);
+  background: linear-gradient(135deg, #003D5C 0%, #00B5B8 100%);
   color: white;
   border-radius: 10px;
   font-weight: 600;
@@ -175,11 +175,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 10px 15px rgba(0, 153, 204, 0.2);
+  box-shadow: 0 10px 15px rgba(0, 61, 92, 0.25);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 15px 25px rgba(0, 153, 204, 0.3);
+  box-shadow: 0 15px 25px rgba(0, 61, 92, 0.35);
   transform: translateY(-3px);
 }
 
@@ -189,7 +189,7 @@ body {
 
 .btn-secondary {
   padding: 12px 32px;
-  background: linear-gradient(135deg, #2ba84a 0%, #229037 100%);
+  background: linear-gradient(135deg, #006B7F 0%, #2CCCCF 100%);
   color: white;
   border-radius: 10px;
   font-weight: 600;
@@ -200,18 +200,18 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  box-shadow: 0 8px 16px rgba(32, 33, 36, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 107, 127, 0.2);
 }
 
 .btn-secondary:hover {
-  box-shadow: 0 12px 24px rgba(32, 33, 36, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 107, 127, 0.3);
   transform: translateY(-4px);
 }
 
 .btn-outline {
   padding: 12px 32px;
-  border: 2px solid #0099CC;
-  color: #0099CC;
+  border: 2px solid #003D5C;
+  color: #003D5C;
   border-radius: 10px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -220,7 +220,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: rgba(0, 153, 204, 0.05);
+  background: rgba(0, 61, 92, 0.05);
   border-color: #00B5B8;
   color: #00B5B8;
 }
@@ -228,16 +228,16 @@ body {
 .btn-white {
   padding: 12px 32px;
   background: var(--bg-surface);
-  color: #0099CC;
+  color: #003D5C;
   border-radius: 10px;
   font-weight: 600;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 4px 6px rgba(0, 61, 92, 0.1);
 }
 
 .btn-white:hover {
-  box-shadow: 0 10px 15px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 10px 15px rgba(0, 61, 92, 0.15);
   transform: translateY(-2px);
 }
 
@@ -446,14 +446,14 @@ body {
 
 /* Typography Utilities */
 .text-gradient {
-  background: linear-gradient(135deg, #1e5a96 0%, #0fa4a4 100%);
+  background: linear-gradient(135deg, #003D5C 0%, #00B5B8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-primary {
-  color: #1e5a96;
+  color: #003D5C;
 }
 
 .text-secondary {
@@ -461,7 +461,7 @@ body {
 }
 
 .text-accent {
-  color: #0fa4a4;
+  color: #00B5B8;
 }
 
 .text-muted {
@@ -474,7 +474,7 @@ a {
 }
 
 a:hover {
-  color: #0fa4a4;
+  color: #00B5B8;
 }
 
 /* Divider Styles */
@@ -485,19 +485,19 @@ a:hover {
 
 .divider-thick {
   height: 2px;
-  background: linear-gradient(90deg, transparent, #1e5a96, transparent);
+  background: linear-gradient(90deg, transparent, #003D5C, transparent);
 }
 
 /* Badge Styles */
 .badge-primary {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(30, 90, 150, 0.1) 0%, rgba(15, 164, 164, 0.1) 100%);
-  color: #1e5a96;
+  background: linear-gradient(135deg, rgba(0, 61, 92, 0.1) 0%, rgba(0, 181, 184, 0.1) 100%);
+  color: #003D5C;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid rgba(30, 90, 150, 0.2);
+  border: 1px solid rgba(0, 61, 92, 0.2);
 }
 
 .badge-success {
@@ -513,20 +513,20 @@ a:hover {
 
 .badge-accent {
   display: inline-block;
-  background: rgba(15, 164, 164, 0.1);
-  color: #0fa4a4;
+  background: rgba(0, 181, 184, 0.1);
+  color: #00B5B8;
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid rgba(15, 164, 164, 0.2);
+  border: 1px solid rgba(0, 181, 184, 0.2);
 }
 
 /* Focus States for Accessibility */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-  outline: 2px solid #1e5a96;
+  outline: 2px solid #003D5C;
   outline-offset: 2px;
 }
 

@@ -57,16 +57,10 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                onClick={() => handleNavigate('/activities')}
+                onClick={() => handleNavigate('/attractions')}
                 className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
               >
-                Explore Services
-              </button>
-              <button 
-                onClick={() => handleNavigate('/contact')}
-                className="bg-transparent hover:bg-transparent text-white px-8 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
-              >
-                Contact Us
+                Explore
               </button>
             </div>
           </div>
@@ -126,19 +120,19 @@ export default function Home() {
               onClick={() => handleNavigate('/accommodation')}
               className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
             >
-              View Packages
+              View Stay
+            </button>
+            <button 
+              onClick={() => handleNavigate('/dining')}
+              className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
+            >
+              View Dinings
             </button>
             <button 
               onClick={() => handleNavigate('/activities')}
               className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
             >
-              Diving Courses
-            </button>
-            <button 
-              onClick={() => handleNavigate('/about')}
-              className="bg-transparent hover:bg-transparent text-white px-6 py-3 rounded-lg font-semibold transition-colors border border-transparent hover:border-white cursor-pointer"
-            >
-              About Us
+              View Activities
             </button>
           </div>
         </div>
