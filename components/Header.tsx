@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { HiMenu, HiX, HiArrowRight, HiChevronDown } from 'react-icons/hi';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import MegaMenu from './MegaMenu';
 
 // TypeScript Interfaces
 interface NavSubItem {
@@ -14,18 +17,24 @@ interface NavItem {
   href?: string;
   label: string;
   submenu?: NavSubItem[];
+  isMega?: boolean;
 }
 
-interface NavSection {
+interface MegaMenuItem {
+  icon: string;
   title: string;
-  items: NavItem[];
+  description: string;
+  href: string;
 }
 
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,9 +44,39 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close menu when Escape key is pressed
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+        setOpenMobileDropdown(null);
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
   const navItems: NavItem[] = [
     {
       label: 'DO',
+      isMega: true,
       submenu: [
         { href: '/activities', label: 'Diving' },
         { href: '/activities', label: 'Surfing' },
@@ -50,14 +89,48 @@ export default function Header() {
     {
       label: 'TRAVEL GUIDE',
       submenu: [
-        { href: '/attractions', label: 'Discover' },
-        { href: '/about', label: 'Getting Here' },
-        { href: '/attractions', label: 'Getting Around' },
-        { href: '/about', label: 'Blog' },
+        { href: '/attractions', label: 'Attractions' },
+        { href: '/about', label: 'About Fuvahmulah' },
+        { href: '/contact', label: 'Contact Us' },
+        { href: '/blog', label: 'Travel Blog' },
       ],
     },
-    { href: '/contact', label: 'CONTACT US' },
+    { href: '/contact', label: 'CONTACT' },
   ];
+
+  // Mega menu items for "DO" category
+  const megaMenuItems: MegaMenuItem[] = [
+    {
+      icon: '🤿',
+      title: 'Diving',
+      description: 'Explore world-class dive sites',
+      href: '/activities',
+    },
+    {
+      icon: '🏄',
+      title: 'Surfing',
+      description: 'Ride the island waves',
+      href: '/activities',
+    },
+    {
+      icon: '🎣',
+      title: 'Fishing',
+      description: 'Deep sea adventures',
+      href: '/activities',
+    },
+    {
+      icon: '🗺️',
+      title: 'Sightseeing',
+      description: 'Explore the island',
+      href: '/attractions',
+    },
+  ];
+
+  // Check if current page is active
+  const isPageActive = (href?: string) => {
+    if (!href) return false;
+    return pathname === href || pathname.startsWith(href + '/');
+  };
 
   return (
     <header
@@ -82,7 +155,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex gap-1 items-center">
+          <nav className="hidden lg:flex gap-1 items-center" ref={dropdownRef}>
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -91,31 +164,66 @@ export default function Header() {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {item.submenu ? (
-                  <button className="px-4 py-2 rounded-lg font-semibold text-text-light hover:text-primary transition-all duration-300 flex items-center gap-1 hover:bg-blue-50 group">
+                  <button
+                    className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center gap-1 ${
+                      openDropdown === item.label || isPageActive(item.submenu?.[0]?.href)
+                        ? 'text-primary bg-blue-50'
+                        : 'text-text-light hover:text-primary hover:bg-blue-50'
+                    }`}
+                    aria-expanded={openDropdown === item.label}
+                    aria-haspopup={item.isMega ? 'menu' : 'true'}
+                  >
                     {item.label}
-                    <HiChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+                    <HiChevronDown
+                      size={16}
+                      className={`transition-transform duration-300 ${
+                        openDropdown === item.label ? 'rotate-180' : ''
+                      }`}
+                    />
                   </button>
                 ) : (
                   <Link
                     href={item.href || '#'}
-                    className="px-4 py-2 rounded-lg font-semibold text-text-light hover:text-primary hover:bg-blue-50 transition-all duration-300"
+                    className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+                      isPageActive(item.href)
+                        ? 'text-primary bg-blue-50'
+                        : 'text-text-light hover:text-primary hover:bg-blue-50'
+                    }`}
                   >
                     {item.label}
                   </Link>
                 )}
 
-                {/* Dropdown Menu */}
-                {item.submenu && (
-                  <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-lg shadow-lg-modern opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    {item.submenu.map((subitem, idx) => (
-                      <Link
-                        key={`${item.label}-${idx}`}
-                        href={subitem.href}
-                        className="block px-4 py-3 text-text-light hover:text-primary hover:bg-blue-50 transition-all duration-300 first:rounded-t-lg last:rounded-b-lg text-sm font-medium"
-                      >
-                        {subitem.label}
-                      </Link>
-                    ))}
+                {/* Mega Menu for "DO" */}
+                {item.isMega && item.submenu && (
+                  <MegaMenu
+                    items={megaMenuItems}
+                    isOpen={openDropdown === item.label}
+                    onClose={() => setOpenDropdown(null)}
+                  />
+                )}
+
+                {/* Regular Dropdown Menu */}
+                {item.submenu && !item.isMega && (
+                  <div className="absolute left-0 top-full mt-0 w-56 bg-white border border-gray-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-40">
+                    {item.submenu.map((subitem, idx) => {
+                      const isLast = idx === item.submenu!.length - 1;
+                      return (
+                        <Link
+                          key={`${item.label}-${idx}`}
+                          href={subitem.href}
+                          className={`block px-4 py-3 text-sm font-medium transition-all duration-300 ${
+                            isPageActive(subitem.href)
+                              ? 'text-primary bg-blue-50'
+                              : 'text-text-light hover:text-primary hover:bg-blue-50'
+                          } ${idx === 0 ? 'rounded-t-xl' : ''} ${
+                            isLast ? 'rounded-b-xl' : ''
+                          } ${!isLast ? 'border-b border-gray-100' : ''}`}
+                        >
+                          {subitem.label}
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -147,65 +255,137 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden flex flex-col gap-2 pb-6 border-t border-gray-100 pt-4 animate-slideInDown max-h-96 overflow-y-auto">
-            {navItems.map((item) => (
-              <div key={item.label} className="flex flex-col">
-                {item.submenu ? (
-                  <>
-                    <button
-                      onClick={() =>
-                        setOpenMobileDropdown(
-                          openMobileDropdown === item.label ? null : item.label
-                        )
-                      }
-                      className="px-4 py-3 rounded-lg text-text-light font-semibold hover:text-primary hover:bg-blue-50 transition-all duration-300 flex items-center justify-between"
-                    >
-                      {item.label}
-                      <HiChevronDown
-                        size={16}
-                        className={`transition-transform duration-300 ${
-                          openMobileDropdown === item.label ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    {openMobileDropdown === item.label && (
-                      <div className="bg-blue-50 animate-slideInDown">
-                        {item.submenu.map((subitem, idx) => (
-                          <Link
-                            key={`${item.label}-${idx}`}
-                            href={subitem.href}
-                            className="block px-6 py-2 text-text-light hover:text-primary hover:bg-blue-100 transition-all duration-300 text-sm font-medium"
-                            onClick={() => {
-                              setIsMenuOpen(false);
-                              setOpenMobileDropdown(null);
-                            }}
-                          >
-                            {subitem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href || '#'}
-                    className="px-4 py-3 rounded-lg text-text-light font-semibold hover:text-primary hover:bg-blue-50 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-            <Link
-              href="/contact"
-              className="btn-primary mt-4 flex items-center justify-center gap-2 w-full font-semibold"
+          <>
+            {/* Backdrop blur */}
+            <div
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-20 lg:hidden"
               onClick={() => setIsMenuOpen(false)}
+              aria-hidden="true"
+            />
+
+            {/* Mobile menu */}
+            <nav
+              className="fixed left-0 top-16 bottom-0 w-80 max-w-full bg-white shadow-2xl z-30 lg:hidden flex flex-col overflow-y-auto animate-slideInLeft"
+              ref={menuRef}
             >
-              BOOK NOW
-              <HiArrowRight size={18} />
-            </Link>
-          </nav>
+              {/* Menu items */}
+              <div className="flex flex-col pt-4">
+                {navItems.map((item) => (
+                  <div key={item.label} className="flex flex-col">
+                    {item.submenu ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setOpenMobileDropdown(
+                              openMobileDropdown === item.label ? null : item.label
+                            )
+                          }
+                          className={`px-4 py-3 text-left font-semibold transition-all duration-300 flex items-center justify-between ${
+                            isPageActive(item.submenu?.[0]?.href)
+                              ? 'text-primary bg-blue-50'
+                              : 'text-text-light hover:text-primary hover:bg-blue-50'
+                          }`}
+                          aria-expanded={openMobileDropdown === item.label}
+                        >
+                          <span>{item.label}</span>
+                          <HiChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              openMobileDropdown === item.label ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+
+                        {/* Expandable submenu */}
+                        {openMobileDropdown === item.label && (
+                          <div className="bg-blue-50 border-t border-blue-100 max-h-96 overflow-hidden animate-slideInDown">
+                            {item.submenu.map((subitem, idx) => {
+                              const isLast = idx === item.submenu!.length - 1;
+                              return (
+                                <Link
+                                  key={`${item.label}-${idx}`}
+                                  href={subitem.href}
+                                  className={`block px-6 py-3 text-sm font-medium transition-all duration-300 ${
+                                    isPageActive(subitem.href)
+                                      ? 'text-primary bg-blue-100'
+                                      : 'text-text-light hover:text-primary hover:bg-blue-100'
+                                  } ${!isLast ? 'border-b border-blue-100' : ''}`}
+                                  onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setOpenMobileDropdown(null);
+                                  }}
+                                >
+                                  {subitem.label}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href || '#'}
+                        className={`px-4 py-3 text-left font-semibold transition-all duration-300 ${
+                          isPageActive(item.href)
+                            ? 'text-primary bg-blue-50'
+                            : 'text-text-light hover:text-primary hover:bg-blue-50'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-gray-200 my-4" />
+
+              {/* CTA Button */}
+              <div className="px-4 pb-4">
+                <Link
+                  href="/contact"
+                  className="btn-primary flex items-center justify-center gap-2 w-full font-semibold py-3"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  BOOK NOW
+                  <HiArrowRight size={18} />
+                </Link>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="px-4 py-4 border-t border-gray-200 flex items-center justify-center gap-4">
+                <a
+                  href="https://facebook.com/fuvahmulah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook size={20} />
+                </a>
+                <a
+                  href="https://instagram.com/fuvahmulah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram size={20} />
+                </a>
+                <a
+                  href="https://twitter.com/fuvahmulah"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-muted hover:text-primary transition-colors duration-300 p-2 hover:bg-blue-50 rounded-lg"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter size={20} />
+                </a>
+              </div>
+            </nav>
+          </>
         )}
       </div>
     </header>
