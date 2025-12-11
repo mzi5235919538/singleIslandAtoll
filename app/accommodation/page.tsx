@@ -12,7 +12,6 @@ export default function AccommodationPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedType, setSelectedType] = useState('');
-  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
 
   // Get accommodations from listings
   const accommodations = useMemo(() => {
@@ -104,69 +103,32 @@ export default function AccommodationPage() {
 
       <section className="section-spacing bg-white">
         <div className="section-container">
-          <div className="flex gap-2 mb-8">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                viewMode === 'grid'
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              🏠 Grid View
-            </button>
-            <button
-              onClick={() => setViewMode('map')}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                viewMode === 'map'
-                  ? 'bg-primary text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              🗺️ Map View
-            </button>
-          </div>
-
-          {viewMode === 'map' ? (
+          {filteredAccommodations.length > 0 ? (
             <>
-              <div className="mb-4">
-                <p className="text-gray-600">
-                  Showing <span className="font-semibold text-primary">{accommodationMarkers.length}</span> locations on
-                  map
+              <div className="mb-8">
+                <p className="text-gray-600 text-lg">
+                  Showing <span className="font-semibold text-primary">{filteredAccommodations.length}</span>{' '}
+                  accommodation{filteredAccommodations.length !== 1 ? 's' : ''}
                 </p>
               </div>
-              <MapWrapper markers={accommodationMarkers} height="h-96" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {filteredAccommodations.map((accommodation) => (
+                  <ListingCard key={accommodation.id} {...accommodation} />
+                ))}
+              </div>
             </>
           ) : (
-            <>
-              {filteredAccommodations.length > 0 ? (
-                <>
-                  <div className="mb-8">
-                    <p className="text-gray-600 text-lg">
-                      Showing <span className="font-semibold text-primary">{filteredAccommodations.length}</span>{' '}
-                      accommodation{filteredAccommodations.length !== 1 ? 's' : ''}
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {filteredAccommodations.map((accommodation) => (
-                      <ListingCard key={accommodation.id} {...accommodation} />
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <div className="text-center py-16">
-                  <p className="text-2xl font-bold text-gray-900 mb-4">No accommodations found</p>
-                  <p className="text-gray-600 mb-8">Try adjusting your filters or search query</p>
-                  <button
-                    onClick={handleClear}
-                    className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-semibold"
-                  >
-                    Clear Filters
-                  </button>
-                </div>
-              )}
-            </>
+            <div className="text-center py-16">
+              <p className="text-2xl font-bold text-gray-900 mb-4">No accommodations found</p>
+              <p className="text-gray-600 mb-8">Try adjusting your filters or search query</p>
+              <button
+                onClick={handleClear}
+                className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-semibold"
+              >
+                Clear Filters
+              </button>
+            </div>
           )}
         </div>
       </section>
