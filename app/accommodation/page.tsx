@@ -6,11 +6,6 @@ import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
 import { LISTINGS } from '@/data/listings';
 
-export const metadata = {
-  title: 'Accommodation in Fuvahmulah - Hotels, Resorts & Guest Houses',
-  description: 'Find the perfect place to stay in Fuvahmulah. From luxury resorts to budget-friendly guest houses, all options offer authentic island hospitality.',
-};
-
 export default function AccommodationPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -120,40 +115,6 @@ export default function AccommodationPage() {
               </button>
             </div>
           )}
-        </div>
-      </section>
-    </>
-  );
-}
-        locationOptions={[
-          { value: 'thinadhoo-beach', label: 'Thinadhoo Beach' },
-          { value: 'city-center', label: 'City Center' },
-          { value: 'south-beach', label: 'South Beach' },
-          { value: 'north-reef', label: 'North Reef' },
-          { value: 'central-island', label: 'Central Island' },
-        ]}
-        typeOptions={[
-          { value: 'luxury', label: 'Luxury' },
-          { value: 'mid-range', label: 'Mid-Range' },
-          { value: 'budget', label: 'Budget' },
-          { value: 'romantic', label: 'Romantic' },
-          { value: 'eco-friendly', label: 'Eco-Friendly' },
-        ]}
-      />
-
-      <section className="section-spacing bg-white">
-        <div className="section-container">
-          <div className="mb-8">
-            <p className="text-gray-600 text-lg">
-              Showing <span className="font-semibold text-primary">{ACCOMMODATIONS.length}</span> accommodations
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {ACCOMMODATIONS.map((accommodation) => (
-              <ListingCard key={accommodation.id} {...accommodation} />
-            ))}
-          </div>
         </div>
       </section>
     </>

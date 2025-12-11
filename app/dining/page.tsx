@@ -6,11 +6,6 @@ import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
 import { LISTINGS } from '@/data/listings';
 
-export const metadata = {
-  title: 'Dining in Fuvahmulah - Restaurants, Cafes & Local Food',
-  description: 'Discover the best restaurants and cafes in Fuvahmulah. Enjoy authentic Maldivian cuisine, fresh seafood, and international dining options.',
-};
-
 export default function DiningPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -120,40 +115,6 @@ export default function DiningPage() {
               </button>
             </div>
           )}
-        </div>
-      </section>
-    </>
-  );
-}
-        locationOptions={[
-          { value: 'thinadhoo-beach', label: 'Thinadhoo Beach' },
-          { value: 'town-center', label: 'Town Center' },
-          { value: 'main-island', label: 'Main Island' },
-          { value: 'city-center', label: 'City Center' },
-          { value: 'near-market', label: 'Near Market' },
-        ]}
-        typeOptions={[
-          { value: 'seafood', label: 'Seafood' },
-          { value: 'maldivian', label: 'Maldivian' },
-          { value: 'asian', label: 'Asian' },
-          { value: 'vegetarian', label: 'Vegetarian' },
-          { value: 'cafe', label: 'Cafe' },
-        ]}
-      />
-
-      <section className="section-spacing bg-white">
-        <div className="section-container">
-          <div className="mb-8">
-            <p className="text-gray-600 text-lg">
-              Showing <span className="font-semibold text-primary">{DINING.length}</span> restaurants & cafes
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {DINING.map((restaurant) => (
-              <ListingCard key={restaurant.id} {...restaurant} />
-            ))}
-          </div>
         </div>
       </section>
     </>

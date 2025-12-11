@@ -6,11 +6,6 @@ import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
 import { LISTINGS } from '@/data/listings';
 
-export const metadata = {
-  title: 'Attractions in Fuvahmulah - Things to Do',
-  description: 'Discover the best attractions and activities in Fuvahmulah, from world-class diving to pristine beaches and local culture.',
-};
-
 const LOCATION_MAP: { [key: string]: string } = {
   'north': 'North',
   'south': 'South',

@@ -6,11 +6,6 @@ import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
 import { LISTINGS } from '@/data/listings';
 
-export const metadata = {
-  title: 'Activities in Fuvahmulah - Diving, Snorkeling & Adventure',
-  description: 'Discover exciting water sports and activities in Fuvahmulah including diving, snorkeling, fishing, and cultural tours with experienced operators.',
-};
-
 export default function ActivitiesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -120,40 +115,6 @@ export default function ActivitiesPage() {
               </button>
             </div>
           )}
-        </div>
-      </section>
-    </>
-  );
-}
-        locationOptions={[
-          { value: 'main-harbor', label: 'Main Harbor' },
-          { value: 'north-reef', label: 'North Reef' },
-          { value: 'coral-gardens', label: 'Coral Gardens' },
-          { value: 'island-harbor', label: 'Island Harbor' },
-          { value: 'central-island', label: 'Central Island' },
-        ]}
-        typeOptions={[
-          { value: 'water-sports', label: 'Water Sports' },
-          { value: 'cultural', label: 'Cultural' },
-          { value: 'experience', label: 'Experience' },
-          { value: 'diving', label: 'Diving' },
-          { value: 'snorkeling', label: 'Snorkeling' },
-        ]}
-      />
-
-      <section className="section-spacing bg-white">
-        <div className="section-container">
-          <div className="mb-8">
-            <p className="text-gray-600 text-lg">
-              Showing <span className="font-semibold text-primary">{ACTIVITIES.length}</span> activity operators
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {ACTIVITIES.map((activity) => (
-              <ListingCard key={activity.id} {...activity} />
-            ))}
-          </div>
         </div>
       </section>
     </>
