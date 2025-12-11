@@ -1,63 +1,100 @@
 import Link from 'next/link';
-import { HiArrowRight, HiStar } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
+import { ReactNode } from 'react';
 
 interface PlaceCardProps {
-  icon: string;
+  image?: string;
+  icon?: string | ReactNode;
   title: string;
   description: string;
-  featured: string;
+  featured?: string;
   href: string;
-  buttonText: string;
+  buttonText?: string;
+  category?: string;
+  categoryIcon?: ReactNode;
+  location?: string;
   featured_count?: number;
 }
 
 export default function PlaceCard({
+  image,
   icon,
   title,
   description,
   featured,
   href,
-  buttonText,
+  buttonText = 'Learn More',
+  category,
+  categoryIcon,
+  location,
   featured_count = 0,
 }: PlaceCardProps) {
   return (
-    <div className="group card-elevated h-full flex flex-col">
-      {/* Header with Icon and Title */}
-      <div className="bg-linear-to-br from-blue-50 to-green-50 px-6 py-6 border-b border-gray-100">
-        <div className="flex items-start justify-between gap-4 mb-3">
-          <span className="text-5xl group-hover:scale-110 transition-transform duration-300">{icon}</span>
-          {featured_count > 0 && (
-            <div className="flex items-center gap-1 bg-yellow-100 px-3 py-1 rounded-full">
-              <HiStar size={16} className="text-yellow-600" />
-              <span className="text-xs font-semibold text-yellow-800">{featured_count}</span>
+    <div className="group card-elevated h-full flex flex-col overflow-hidden hover:shadow-xl-modern transition-all duration-300 hover:-translate-y-2">
+      {/* Image Container */}
+      {image ? (
+        <div className="relative h-48 md:h-56 overflow-hidden bg-linear-to-br from-blue-100 to-teal-100">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+
+          {/* Category Badge - Top Right */}
+          {category && (
+            <div className="absolute top-3 right-3 bg-linear-to-r from-primary to-accent text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold flex items-center gap-1 shadow-md-modern">
+              {categoryIcon && <span className="text-lg">{categoryIcon}</span>}
+              <span>{category}</span>
+            </div>
+          )}
+
+          {/* Location Tag - Bottom Left */}
+          {location && (
+            <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-xs md:text-sm font-semibold shadow-md-modern">
+              📍 {location}
             </div>
           )}
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+      ) : (
+        <div className="bg-linear-to-br from-blue-50 to-teal-50 px-6 py-6 border-b border-gray-100 min-h-24">
+          {icon && (
+            <span className="text-5xl group-hover:scale-110 transition-transform duration-300 inline-block">
+              {icon}
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* Content Container */}
+      <div className="p-6 grow flex flex-col">
+        {/* Title */}
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300 mb-2">
           {title}
         </h3>
-      </div>
 
-      {/* Content */}
-      <div className="p-6 grow">
-        <p className="text-gray-700 mb-6 leading-relaxed line-clamp-3">{description}</p>
-        <div className="flex flex-wrap gap-2 mb-6">
-          {featured.split(',').map((item, idx) => (
-            <span
-              key={idx}
-              className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-medium"
-            >
-              ✓ {item.trim()}
-            </span>
-          ))}
-        </div>
-      </div>
+        {/* Description */}
+        <p className="text-gray-700 mb-4 leading-relaxed text-sm md:text-base line-clamp-2 grow">
+          {description}
+        </p>
 
-      {/* Footer with Button */}
-      <div className="px-6 pb-6 pt-2 border-t border-gray-100 mt-auto">
+        {/* Features */}
+        {featured && (
+          <div className="flex flex-wrap gap-2 mb-6">
+            {featured.split(',').slice(0, 2).map((item, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center px-2 py-1 rounded-full bg-linear-to-r from-blue-100 to-teal-100 text-primary text-xs font-medium"
+              >
+                ✓ {item.trim()}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Button */}
         <Link
           href={href}
-          className="btn-primary w-full flex items-center justify-center gap-2 group/btn"
+          className="btn-primary w-full flex items-center justify-center gap-2 group/btn mt-auto"
         >
           {buttonText}
           <HiArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
