@@ -8,24 +8,11 @@ import { useEffect, useState, useCallback } from 'react';
  * Remove this component in production
  */
 export default function MobileTestChecklist() {
-  const [viewportWidth, setViewportWidth] = useState(() =>
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
-  const [viewportHeight, setViewportHeight] = useState(() =>
-    typeof window !== 'undefined' ? window.innerHeight : 0
-  );
-  const [orientation, setOrientation] = useState(() =>
-    typeof window !== 'undefined'
-      ? window.innerWidth > window.innerHeight
-        ? 'Landscape'
-        : 'Portrait'
-      : ''
-  );
-  const [touchEnabled] = useState(() =>
-    typeof window !== 'undefined'
-      ? window.matchMedia('(hover: none)').matches || 'ontouchstart' in window
-      : false
-  );
+  const [isClient, setIsClient] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
+  const [orientation, setOrientation] = useState('');
+  const [touchEnabled, setTouchEnabled] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [showChecklist, setShowChecklist] = useState(false);
 
@@ -41,7 +28,22 @@ export default function MobileTestChecklist() {
     setScrollY(window.scrollY);
   }, []);
 
+  // Initialize on client side and set up listeners
   useEffect(() => {
+    // Mark as client rendered
+    setIsClient(true);
+    
+    // Initialize values from window
+    setViewportWidth(window.innerWidth);
+    setViewportHeight(window.innerHeight);
+    setOrientation(
+      window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait'
+    );
+    setTouchEnabled(
+      window.matchMedia('(hover: none)').matches || 'ontouchstart' in window
+    );
+
+    // Set up event listeners
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
 
@@ -51,10 +53,8 @@ export default function MobileTestChecklist() {
     };
   }, [handleResize, handleScroll]);
 
-  if (typeof window === 'undefined') return null;
-
-  // Only show in development and for small screens
-  if (process.env.NODE_ENV === 'production') return null;
+  // Only render on client and in development
+  if (!isClient || process.env.NODE_ENV === 'production') return null;
 
   return (
     <>
