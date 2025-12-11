@@ -31,7 +31,7 @@ export default function CategoryCard({
         }
       >
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-75 group-hover:opacity-85 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/50 to-transparent opacity-75 group-hover:opacity-85 transition-opacity duration-300" />
 
         {/* Content Container */}
         <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">

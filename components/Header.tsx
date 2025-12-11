@@ -107,9 +107,9 @@ export default function Header() {
                 {/* Dropdown Menu */}
                 {item.submenu && (
                   <div className="absolute left-0 mt-0 w-48 bg-white border border-gray-100 rounded-lg shadow-lg-modern opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    {item.submenu.map((subitem) => (
+                    {item.submenu.map((subitem, idx) => (
                       <Link
-                        key={subitem.href}
+                        key={`${item.label}-${idx}`}
                         href={subitem.href}
                         className="block px-4 py-3 text-text-light hover:text-primary hover:bg-blue-50 transition-all duration-300 first:rounded-t-lg last:rounded-b-lg text-sm font-medium"
                       >
@@ -170,9 +170,9 @@ export default function Header() {
                     </button>
                     {openMobileDropdown === item.label && (
                       <div className="bg-blue-50 animate-slideInDown">
-                        {item.submenu.map((subitem) => (
+                        {item.submenu.map((subitem, idx) => (
                           <Link
-                            key={subitem.href}
+                            key={`${item.label}-${idx}`}
                             href={subitem.href}
                             className="block px-6 py-2 text-text-light hover:text-primary hover:bg-blue-100 transition-all duration-300 text-sm font-medium"
                             onClick={() => {
