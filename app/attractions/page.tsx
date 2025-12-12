@@ -4,24 +4,7 @@ import { useState, useMemo } from 'react';
 import PageHero from '@/components/PageHero';
 import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
-import MapWrapper from '@/components/MapWrapper';
 import { LISTINGS } from '@/data/listings';
-import { mapLocations } from '@/data/mapLocations';
-
-const LOCATION_MAP: { [key: string]: string } = {
-  'north': 'North',
-  'south': 'South',
-  'east': 'East',
-  'west': 'West',
-  'central': 'Central',
-};
-
-const TYPE_MAP: { [key: string]: string } = {
-  'beach': 'Beach',
-  'nature': 'Nature',
-  'culture': 'Culture',
-  'adventure': 'Adventure',
-};
 
 export default function AttractionsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -44,19 +27,6 @@ export default function AttractionsPage() {
         reviews: listing.reviews,
       })
     );
-  }, []);
-
-  // Get attraction markers for map
-  const attractionMarkers = useMemo(() => {
-    return mapLocations
-      .filter(loc => loc.category === 'Diving' || loc.category === 'Attractions')
-      .map(loc => ({
-        position: [loc.coordinates.lat, loc.coordinates.lng] as [number, number],
-        title: loc.title,
-        category: loc.category,
-        slug: loc.slug,
-        description: loc.description,
-      }));
   }, []);
 
   // Filter attractions based on search and filters

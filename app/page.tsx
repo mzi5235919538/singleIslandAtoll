@@ -245,7 +245,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="section-title">Highlights in Fuvahmulah</h2>
             <p className="section-subtitle">
-              Explore the island\'s best destinations, from pristine beaches to world-class dining and luxury accommodations
+              Explore the island&apos;s best destinations, from pristine beaches to world-class dining and luxury accommodations
             </p>
           </div>
 

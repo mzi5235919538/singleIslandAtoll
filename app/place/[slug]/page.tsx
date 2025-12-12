@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getListingBySlug, getRelatedListings } from '@/data/listings';
 import RelatedListings from '@/components/RelatedListings';
 import MapWrapper from '@/components/MapWrapper';
-import { mapLocations, getLocationBySlug } from '@/data/mapLocations';
+import { getLocationBySlug } from '@/data/mapLocations';
 import { HiArrowRight, HiPhone, HiAtSymbol } from 'react-icons/hi';
 
 interface PageProps {

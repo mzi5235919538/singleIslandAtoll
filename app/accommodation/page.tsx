@@ -4,8 +4,6 @@ import { useState, useMemo } from 'react';
 import PageHero from '@/components/PageHero';
 import SearchFilterBar from '@/components/SearchFilterBar';
 import ListingCard from '@/components/ListingCard';
-import MapWrapper from '@/components/MapWrapper';
-import { mapLocations } from '@/data/mapLocations';
 import { LISTINGS } from '@/data/listings';
 
 export default function AccommodationPage() {
@@ -28,19 +26,6 @@ export default function AccommodationPage() {
       rating: listing.rating,
       reviews: listing.reviews,
     }));
-  }, []);
-
-  // Get accommodation markers for map
-  const accommodationMarkers = useMemo(() => {
-    return mapLocations
-      .filter((loc) => loc.category === 'Accommodation')
-      .map((loc) => ({
-        position: [loc.coordinates.lat, loc.coordinates.lng] as [number, number],
-        title: loc.title,
-        category: loc.category,
-        slug: loc.slug,
-        description: loc.description,
-      }));
   }, []);
 
   // Filter accommodations based on search and filters

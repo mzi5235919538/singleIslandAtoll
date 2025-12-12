@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useTransition } from 'react';
 
 /**
  * Mobile Test Checklist Component
@@ -29,19 +29,23 @@ export default function MobileTestChecklist() {
   }, []);
 
   // Initialize on client side and set up listeners
+  const [, startTransition] = useTransition();
+
   useEffect(() => {
     // Mark as client rendered
-    setIsClient(true);
-    
-    // Initialize values from window
-    setViewportWidth(window.innerWidth);
-    setViewportHeight(window.innerHeight);
-    setOrientation(
-      window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait'
-    );
-    setTouchEnabled(
-      window.matchMedia('(hover: none)').matches || 'ontouchstart' in window
-    );
+    startTransition(() => {
+      setIsClient(true);
+      
+      // Initialize values from window
+      setViewportWidth(window.innerWidth);
+      setViewportHeight(window.innerHeight);
+      setOrientation(
+        window.innerWidth > window.innerHeight ? 'Landscape' : 'Portrait'
+      );
+      setTouchEnabled(
+        window.matchMedia('(hover: none)').matches || 'ontouchstart' in window
+      );
+    });
 
     // Set up event listeners
     window.addEventListener('resize', handleResize);
@@ -51,7 +55,7 @@ export default function MobileTestChecklist() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleResize, handleScroll]);
+  }, [handleResize, handleScroll, startTransition]);
 
   // Only render on client and in development
   if (!isClient || process.env.NODE_ENV === 'production') return null;

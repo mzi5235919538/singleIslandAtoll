@@ -14,7 +14,7 @@ interface WebVitalsMetric {
 function sendToAnalytics(metric: WebVitalsMetric): void {
   // Send to Google Analytics
   if (typeof window !== 'undefined') {
-    const gtagFunc = (window as any as Record<string, unknown>).gtag;
+    const gtagFunc = (window as unknown as Record<string, unknown>).gtag;
     if (gtagFunc && typeof gtagFunc === 'function') {
       gtagFunc('event', metric.name, {
         event_category: 'Web Vitals',
@@ -35,12 +35,9 @@ function sendToAnalytics(metric: WebVitalsMetric): void {
   }
 }
 
-export function reportWebVitals(): void {
-  // Web Vitals will be measured using PerformanceObserver API
-  // This can be extended with actual PerformanceObserver implementation
-  if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
-    // Ready for integration with actual monitoring
-  }
+export function reportWebVitals(metric: WebVitalsMetric): void {
+  // Report web vitals
+  sendToAnalytics(metric);
 }
 
 /**

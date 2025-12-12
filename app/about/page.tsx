@@ -1,9 +1,7 @@
-import { HiArrowRight, HiHeart, HiStar, HiSparkles, HiTrendingUp } from 'react-icons/hi';
+import { HiArrowRight } from 'react-icons/hi';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
-import CTAButton from '@/components/CTAButton';
-import FeatureCard from '@/components/FeatureCard';
 import AdSenseContainer from '@/components/AdSenseContainer';
 
 export const metadata: Metadata = {

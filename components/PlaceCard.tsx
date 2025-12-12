@@ -28,7 +28,6 @@ export default function PlaceCard({
   category,
   categoryIcon,
   location,
-  featured_count = 0,
 }: PlaceCardProps) {
   return (
     <div className="group card-elevated h-full flex flex-col overflow-hidden hover:shadow-xl-modern transition-all duration-300 hover:-translate-y-2">

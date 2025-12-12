@@ -34,7 +34,7 @@ export default function Footer() {
               <span className="text-3xl">🏝️</span> <span>Fuvahmulah</span>
             </h3>
             <p className="text-slate-300 leading-relaxed text-sm md:text-base">
-              Your definitive guide to the world's premier tiger shark diving destination. Explore pristine beaches, world-class diving, authentic cuisine, and unforgettable island experiences.
+              Your definitive guide to the world&apos;s premier tiger shark diving destination. Explore pristine beaches, world-class diving, authentic cuisine, and unforgettable island experiences.
             </p>
             <div className="flex gap-2 pt-2">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 text-slate-400 hover:text-accent-light hover:bg-slate-700 transition-all duration-300 rounded-lg" aria-label="Facebook">

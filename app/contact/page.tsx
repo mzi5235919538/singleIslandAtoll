@@ -225,7 +225,7 @@ export default function Contact() {
             <div className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">📸 Share Your Fuvahmulah Moments</h2>
               <p className="text-lg text-blue-50 leading-relaxed">
-                Help us showcase the true beauty of Fuvahmulah! We're looking for high-quality authentic photos from your visit to feature on our website.
+                Help us showcase the true beauty of Fuvahmulah! We&apos;re looking for high-quality authentic photos from your visit to feature on our website.
               </p>
             </div>
 
@@ -283,7 +283,7 @@ export default function Contact() {
 
             <div className="text-center">
               <p className="text-blue-50 mb-4">
-                <strong>Ready to submit?</strong> Use the contact form above and select "Photo Submission for Website" as your subject.
+                <strong>Ready to submit?</strong> Use the contact form above and select &quot;Photo Submission for Website&quot; as your subject.
               </p>
               <p className="text-blue-50 mb-6">
                 Or email high-resolution photos directly to: <strong>photos@singleatoll-tourism.com</strong>

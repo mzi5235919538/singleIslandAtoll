@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -127,10 +127,13 @@ const slides: CarouselSlide[] = [
 
 export default function HeroCarousel() {
   const [mounted, setMounted] = useState(false);
+  const [, startTransition] = useTransition();
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    startTransition(() => {
+      setMounted(true);
+    });
+  }, [startTransition]);
 
   if (!mounted) return null;
 
